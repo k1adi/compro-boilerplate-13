@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="P&amp;ID Technical Schematic Placeholder">
+  <rect width="800" height="600" fill="#0f172a"/>
+  <g stroke="#1e293b" stroke-width="1">
+    <line x1="0" y1="100" x2="800" y2="100"/>
+    <line x1="0" y1="200" x2="800" y2="200"/>
+    <line x1="0" y1="300" x2="800" y2="300"/>
+    <line x1="0" y1="400" x2="800" y2="400"/>
+    <line x1="0" y1="500" x2="800" y2="500"/>
+    <line x1="160" y1="0" x2="160" y2="600"/>
+    <line x1="320" y1="0" x2="320" y2="600"/>
+    <line x1="480" y1="0" x2="480" y2="600"/>
+    <line x1="640" y1="0" x2="640" y2="600"/>
+  </g>
+  <!-- Outer technical frame -->
+  <rect x="24" y="24" width="752" height="552" fill="none" stroke="#475569" stroke-width="2"/>
+  <!-- P&ID Chiller & Cold Room Schematic Diagram -->
+  <g stroke="#94a3b8" stroke-width="2" fill="#1e293b">
+    <rect x="80" y="130" width="240" height="160" rx="4"/>
+    <rect x="460" y="130" width="260" height="160" rx="4"/>
+    <rect x="240" y="360" width="320" height="110" rx="4"/>
+  </g>
+  <!-- Piping lines -->
+  <path d="M 320 180 L 460 180" stroke="#fb923c" stroke-width="3" fill="none"/>
+  <path d="M 460 240 L 320 240" stroke="#38bdf8" stroke-width="3" stroke-dasharray="8 6" fill="none"/>
+  <path d="M 200 290 L 200 415 L 240 415" stroke="#38bdf8" stroke-width="3" fill="none"/>
+  <path d="M 590 290 L 590 415 L 560 415" stroke="#fb923c" stroke-width="3" fill="none"/>
+  <!-- Technical labels -->
+  <g font-family="monospace" fill="#f8fafc" font-size="14">
+    <text x="48" y="60" fill="#fb923c" font-weight="bold">SCHEMATIC REF // KBLI-43224-HVACR-PLANT</text>
+    <text x="104" y="170" font-weight="bold">COMPRESSOR RACK [180-1500 TR]</text>
+    <text x="104" y="198" fill="#cbd5e1" font-size="12">Suction: -28C | Discharge: 28 Bar</text>
+    <text x="104" y="222" fill="#cbd5e1" font-size="12">Refrigerant: NH3 / CO2 / R-448A</text>
+    <text x="484" y="170" font-weight="bold">COLD STORAGE EVAPORATOR ZONE</text>
+    <text x="484" y="198" fill="#cbd5e1" font-size="12">Core Temp: -22.0C (+/- 0.8C)</text>
+    <text x="484" y="222" fill="#cbd5e1" font-size="12">Insulation: PIR 150mm (42 kg/m3)</text>
+    <text x="264" y="400" font-weight="bold">PLC / SCADA TELEMETRY &amp; VSD PANEL</text>
+    <text x="264" y="426" fill="#cbd5e1" font-size="12">Modbus TCP / BACnet IP | Target: 0.76 kW/TR</text>
+    <text x="48" y="548" fill="#fb923c" font-size="13">[PHOTO PLACEHOLDER: REPLACE WITH VERIFIED CLIENT CHILLER PLANT PHOTO]</text>
+  </g>
+</svg>
+
