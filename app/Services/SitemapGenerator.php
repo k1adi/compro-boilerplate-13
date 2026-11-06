@@ -90,4 +90,3 @@ class SitemapGenerator
         return $entries;
     }
 }
-

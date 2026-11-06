@@ -24,4 +24,3 @@ readonly class SeoMetaData
         public array $schemaGraph = [],
     ) {}
 }
-

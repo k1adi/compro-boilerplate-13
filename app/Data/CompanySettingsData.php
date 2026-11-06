@@ -39,4 +39,3 @@ readonly class CompanySettingsData
         public bool $isSampleBoilerplate = true,
     ) {}
 }
-

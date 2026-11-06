@@ -14,4 +14,3 @@ readonly class FaqItemData
         public ?string $relatedServiceCode = null,
     ) {}
 }
-

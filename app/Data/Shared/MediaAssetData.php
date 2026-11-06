@@ -19,4 +19,3 @@ readonly class MediaAssetData
         public ?string $placeholderLabel = '[PHOTO PLACEHOLDER: REPLACE WITH CLIENT FACILITY PHOTO]',
     ) {}
 }
-

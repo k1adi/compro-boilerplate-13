@@ -22,7 +22,7 @@
                         <x-ui.badge variant="neutral">{{ $service->targetSegment }}</x-ui.badge>
                     </div>
 
-                    <h1 class="font-display text-[length:var(--text-display-xl)] font-extrabold tracking-tight text-ink leading-[1.08]">
+                    <h1 class="font-display text-[length:var(--text-hero)] font-bold tracking-tight text-ink leading-[1.12]">
                         {{ $service->title }}
                     </h1>
 

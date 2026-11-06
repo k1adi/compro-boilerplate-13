@@ -74,4 +74,3 @@ class StoreInquiryRequest extends FormRequest
         ];
     }
 }
-

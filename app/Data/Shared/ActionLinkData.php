@@ -19,4 +19,3 @@ readonly class ActionLinkData
         public ?string $ariaLabel = null,
     ) {}
 }
-

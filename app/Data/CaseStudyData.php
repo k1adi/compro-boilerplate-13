@@ -32,4 +32,3 @@ readonly class CaseStudyData
         public SeoMetaData $seo,
     ) {}
 }
-

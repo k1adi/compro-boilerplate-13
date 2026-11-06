@@ -39,4 +39,3 @@ readonly class HomePageData
         public SeoMetaData $seo,
     ) {}
 }
-

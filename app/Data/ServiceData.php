@@ -32,4 +32,3 @@ readonly class ServiceData
         public SeoMetaData $seo,
     ) {}
 }
-

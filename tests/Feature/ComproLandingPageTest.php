@@ -7,7 +7,7 @@ it('renders the indonesian landing page with full seo, schema graph, a11y landma
 
     $response->assertOk()
         ->assertSee('lang="id"', false)
-        ->assertSee('Rekayasa Rantai Dingin, Perpipaan Mekanikal, dan Otomasi Chiller untuk Fasilitas Industri.')
+        ->assertSee('Pendamping Hukum dan Perizinan Bisnis saat Perusahaan Anda Membutuhkannya.')
         ->assertSee('rel="canonical"', false)
         ->assertSee('hreflang="id"', false)
         ->assertSee('hreflang="en"', false)
@@ -39,8 +39,8 @@ it('renders the english landing page with reciprocal hreflang and localized copy
 
     $response->assertOk()
         ->assertSee('lang="en"', false)
-        ->assertSee('Cold-Chain Refrigeration, Mechanical Piping, and Chiller Plant Automation for Industrial Facilities.')
-        ->assertSee('Schedule a Site Thermal Audit')
+        ->assertSee('Trusted Business and Legal Counsel When It Matters Most.')
+        ->assertSee('Request a Free Consultation')
         ->assertSee('hreflang="id"', false)
         ->assertSee('hreflang="en"', false)
         ->assertSee('"@context":"https://schema.org"', false)
@@ -62,12 +62,12 @@ it('renders all bilingual secondary pages so zero navigation or cta links are de
 })->with([
     'ID Services Index' => ['/id/layanan', 'SRV-01'],
     'EN Services Index' => ['/en/services', 'SRV-01'],
-    'ID Service Detail SRV-01' => ['/id/layanan/instalasi-rantai-dingin', 'PIR/PUR'],
-    'EN Service Detail SRV-01' => ['/en/services/cold-chain-installation', 'PIR/PUR'],
+    'ID Service Detail SRV-01' => ['/id/layanan/pendirian-badan-usaha', 'OSS RBA'],
+    'EN Service Detail SRV-01' => ['/en/services/company-formation-licensing', 'OSS RBA'],
     'ID Case Studies Index' => ['/id/studi-kasus', 'CS-01'],
     'EN Case Studies Index' => ['/en/case-studies', 'CS-01'],
-    'ID Case Study Detail' => ['/id/studi-kasus/cold-storage-distribusi-cikarang', 'Cikarang'],
-    'EN Case Study Detail' => ['/en/case-studies/cikarang-cold-storage-hub', 'Cikarang'],
+    'ID Case Study Detail' => ['/id/studi-kasus/pendirian-pt-pma-logistik-jakarta', 'Jakarta Selatan'],
+    'EN Case Study Detail' => ['/en/case-studies/jakarta-logistics-pma-setup', 'Jakarta Selatan'],
     'ID About Page' => ['/id/tentang-kami', 'ISO 9001:2015'],
     'EN About Page' => ['/en/about', 'ISO 9001:2015'],
     'ID Contact Page' => ['/id/hubungi-kami', 'SRV-01'],
@@ -81,14 +81,14 @@ it('returns 404 for unknown service or case study slugs', function () {
 
 it('processes a valid technical rfq inquiry via json and returns a ticket reference code', function () {
     $response = $this->postJson('/id/inquiries', [
-        'full_name' => 'Budi Santoso (MEP Manager)',
-        'company_name' => 'PT Nusantara Pangan Dingin',
-        'work_email' => 'budi.santoso@nusantarapangan.co.id',
+        'full_name' => 'Budi Santoso (Direktur Operasional)',
+        'company_name' => 'PT Nusantara Maju Bersama',
+        'work_email' => 'budi.santoso@nusantaramaju.co.id',
         'phone_whatsapp' => '+62-812-8800-9900',
         'service_code' => 'SRV-01',
-        'facility_location' => 'Kawasan Industri Jababeka II, Cikarang',
-        'estimated_capacity' => '300 TR / 1.500 Pallet -22C',
-        'project_brief' => 'Kami membutuhkan desain dan instalasi cold room kapasitas 1.500 pallet dengan target komisioning Q3.',
+        'facility_location' => 'Jakarta Selatan',
+        'estimated_capacity' => 'Pendirian PT Lokal bulan depan',
+        'project_brief' => 'Kami membutuhkan pendampingan pendirian PT lokal beserta pengurusan NIB pada sistem OSS RBA.',
         'company_website_hp' => '',
     ]);
 
@@ -148,13 +148,13 @@ it('generates an xml sitemap with bilingual xhtml:link alternates and handles 30
         ->assertHeader('Content-Type', 'application/xml; charset=UTF-8')
         ->assertSee('<urlset', false)
         ->assertSee('xhtml:link', false)
-        ->assertSee('/id/layanan/instalasi-rantai-dingin', false)
-        ->assertSee('/en/services/cold-chain-installation', false);
+        ->assertSee('/id/layanan/pendirian-badan-usaha', false)
+        ->assertSee('/en/services/company-formation-licensing', false);
 
     $this->get('/about-us.html')->assertRedirect('/id/tentang-kami')->assertStatus(301);
     $this->get('/services.html')->assertRedirect('/id/layanan')->assertStatus(301);
-    $this->get('/product-detail?id=1')->assertRedirect('/id/layanan/instalasi-rantai-dingin')->assertStatus(301);
-    $this->get('/product-detail?id=4')->assertRedirect('/id/layanan/retrofit-otomasi-chiller')->assertStatus(301);
+    $this->get('/product-detail?id=1')->assertRedirect('/id/layanan/pendirian-badan-usaha')->assertStatus(301);
+    $this->get('/product-detail?id=4')->assertRedirect('/id/layanan/pendampingan-transaksi-bisnis')->assertStatus(301);
     $this->get('/projects.php')->assertRedirect('/id/studi-kasus')->assertStatus(301);
     $this->get('/contact-us.html')->assertRedirect('/id/hubungi-kami')->assertStatus(301);
 });

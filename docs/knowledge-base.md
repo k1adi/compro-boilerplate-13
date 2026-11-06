@@ -3,36 +3,35 @@
 > **Source-of-Truth Mandate:** This file is the sole factual source of truth for business copy, PHP 8.5 Mock DTOs (`app/Data/Mocks/`), and JSON-LD `@graph` schemas. Never invent services, client names, certifications, or statistics outside this file. Whenever business facts, service offerings, contact details, or SEO targets change, update this document in the same changeset.
 >
 > **Boilerplate & Antislop Honesty Governance (R-17, R-18, R-23, R-36, R-38):**
-> This repository is configured as a **B2B Industrial & Technical Service Company Boilerplate** using the reference archetype **PT Garda Teknika Presisi (GardaTek)**. Every sample metric, registration number, case study, and contact detail below is explicitly tagged `[BOILERPLATE SEED: REPLACE WITH REAL CLIENT DATA]`. When adapting this template for a live client:
-> 1. Replace every `[BOILERPLATE SEED]` entry with verified, audited client records.
+> This repository is configured as a **B2B Professional Service & Business Advisory Boilerplate** modeled on the clean editorial structure of `koolom.webflow.io` using the sample firm **Koolom Partners (PT Koolom Mitra Konsultan)**. Every sample metric, registration number, case study, and contact detail below is explicitly tagged `[BOILERPLATE SEED: REPLACE WITH REAL CLIENT DATA]`. When adapting this template for a live client:
+> 1. Replace every `[BOILERPLATE SEED]` entry with verified client records.
 > 2. If the client does not have a specific asset (such as ISO certifications, consented client logos, or real testimonials), set the corresponding DTO collection to an empty array (`[]`) so the Blade view omits that block entirely. Never ship fabricated numbers, AI avatars, or placeholder claims disguised as final data.
 
 ---
 
 ## 1. Core Identity & Legal Entity
-- **Legal Entity Name:** PT Garda Teknika Presisi `[BOILERPLATE SEED]`
-- **Brand Name:** GardaTek Engineering `[BOILERPLATE SEED]`
-- **Founding Year:** 2012 `[BOILERPLATE SEED]`
-- **Business Classification (KBLI) Codes:** `43224`, `28193` `[BOILERPLATE SEED]`. Official KBLI titles are intentionally not written here; copy them from the company's NIB (Nomor Induk Berusaha) during client onboarding.
-- **Value Proposition (ID):** Kami merancang, memasang, dan memelihara sistem pendingin rantai dingin (cold storage), perpipaan mekanikal, serta otomasi chiller untuk fasilitas manufaktur, farmasi, dan logistik di Indonesia dengan kapasitas terpasang mulai 20 TR hingga 1.500 TR.
-- **Value Proposition (EN):** We engineer, install, and maintain industrial cold-chain refrigeration, mechanical piping, and chiller automation systems for manufacturing, pharmaceutical, and logistics facilities across Indonesia with installed capacities ranging from 20 TR to 1,500 TR.
+- **Legal Entity Name:** PT Koolom Mitra Konsultan `[BOILERPLATE SEED]`
+- **Brand Name:** Koolom Partners `[BOILERPLATE SEED]`
+- **Founding Year:** 2014 `[BOILERPLATE SEED]`
+- **Business Classification (KBLI) Codes:** `70209` (Konsultasi Manajemen Bisnis), `69101` (Layanan Hukum & Kontrak Korporasi) `[BOILERPLATE SEED]`
+- **Value Proposition (ID):** Kami membantu perusahaan merapikan perizinan usaha, menyusun kontrak bisnis yang aman, dan mengelola kepatuhan regulasi secara praktis dengan estimasi biaya tertulis yang transparan.
+- **Value Proposition (EN):** We help businesses secure corporate licenses, draft clear commercial contracts, and manage regulatory compliance with transparent, upfront fee estimates.
 - **Languages Served:** Indonesian (`id`, default) and English (`en`).
 
 ## 2. Contact, Location & Entity Schema Data (For JSON-LD)
-- **Headquarters & Fabrication Workshop (West Java):** Kawasan Industri Jababeka II, Jl. Industri Selatan Blok JJ No. 14, Cikarang Selatan, Kabupaten Bekasi, Jawa Barat 17530, Indonesia `[BOILERPLATE SEED]`
-- **Technical Support Office (East Java):** Kawasan Industri Rungkut (SIER), Jl. Berbek Industri III No. 8, Sidoarjo, Jawa Timur 61256, Indonesia `[BOILERPLATE SEED]`
-- **Geo Coordinates (HQ):** `Lat: -6.3084, Long: 107.1485` `[BOILERPLATE SEED]`
-- **Operational Hours (ID):** Senin s/d Jumat: 08:00 s/d 17:00 WIB | Sabtu: 08:00 s/d 13:00 WIB
-- **Operational Hours (EN):** Monday to Friday: 08:00 to 17:00 WIB | Saturday: 08:00 to 13:00 WIB
-- **Emergency SLA Dispatch (ID):** Siaga Darurat SLA 24 Jam (Senin s/d Minggu, termasuk Hari Libur Nasional)
-- **Emergency SLA Dispatch (EN):** 24/7 Emergency SLA Dispatch (Monday to Sunday, including Public Holidays)
-- **Primary Phone:** `+62-21-8984-0110` `[BOILERPLATE SEED]`
-- **WhatsApp Lead Number:** `+62-811-1024-880` `[BOILERPLATE SEED]`
-- **Official Emails:** `engineering@gardatek.co.id` (engineering desk and RFQ), `info@gardatek.co.id` (general) `[BOILERPLATE SEED]`
+- **Headquarters Office (Jakarta):** Gedung Menara Sudirman Lt. 15, Jl. Jend. Sudirman Kav. 60, Kebayoran Baru, Jakarta Selatan 12190, Indonesia `[BOILERPLATE SEED]`
+- **Branch Office (Surabaya):** Graha Pangeran Lt. 8, Jl. Ahmad Yani No. 286, Gayungan, Surabaya, Jawa Timur 60234, Indonesia `[BOILERPLATE SEED]`
+- **Geo Coordinates (HQ):** `Lat: -6.2246, Long: 106.8096` `[BOILERPLATE SEED]`
+- **Operational Hours (ID):** Senin s/d Jumat: 09:00 s/d 18:00 WIB
+- **Operational Hours (EN):** Monday to Friday: 09:00 to 18:00 WIB
+- **Response Commitment (ID):** Respon Konsultasi Cepat < 24 Jam Kerja (Senin s/d Sabtu)
+- **Response Commitment (EN):** Fast Consultation Reply < 24 Business Hours (Monday to Saturday)
+- **Primary Phone:** `+62-21-5200-4180` `[BOILERPLATE SEED]`
+- **WhatsApp Lead Number:** `+62-811-9040-180` `[BOILERPLATE SEED]`
+- **Official Emails:** `consult@koolom.co.id` (client consultation desk), `info@koolom.co.id` (general) `[BOILERPLATE SEED]`
 - **Social & Official Profiles (`sameAs`):**
-  - LinkedIn: `https://www.linkedin.com/company/gardatek-engineering` `[BOILERPLATE SEED]`
-  - YouTube (Commissioning Documentation): `https://www.youtube.com/@gardatek-engineering` `[BOILERPLATE SEED]`
-  - Google Maps Place URL: `https://maps.google.com/?cid=0000000000000000000` `[BOILERPLATE SEED]` (not consumed by code yet)
+  - LinkedIn: `https://www.linkedin.com/company/koolom-partners` `[BOILERPLATE SEED]`
+  - YouTube: `https://www.youtube.com/@koolom-partners` `[BOILERPLATE SEED]`
 
 ---
 
@@ -43,213 +42,211 @@
 
 | Metric ID | Metric Label (ID / EN) | Exact Figure | Context / Verification Note | Boilerplate Status |
 | :--- | :--- | :--- | :--- | :--- |
-| `metric-years` | Pengalaman Operasional / Operational Track Record | `14 Tahun` / `14 Years` | Beroperasi sejak 2012 di koridor industri Jawa & Sumatera / Operating since 2012 across Java and Sumatra industrial corridors | `[BOILERPLATE SEED: REPLACE WITH REAL DATA]` |
-| `metric-capacity` | Kapasitas Pendinginan Terpasang / Installed Cooling Capacity | `48.500+ TR` | Akumulasi instalasi chiller & cold storage (2012 s/d 2026) / Cumulative chiller and cold storage commissioning (2012 to 2026) | `[BOILERPLATE SEED: REPLACE WITH REAL DATA]` |
-| `metric-sla` | Kepatuhan Waktu Tanggap Darurat / Emergency SLA Response Rate | `98,7% < 4 Jam` / `98.7% < 4 Hours` | Waktu tiba teknisi di lokasi klien Jabodetabek & Karawang / On-site technician arrival across Greater Jakarta and Karawang | `[BOILERPLATE SEED: REPLACE WITH REAL DATA]` |
-| `metric-projects` | Proyek Industri Selesai / Completed Industrial Commissions | `310 Fasilitas` / `310 Facilities` | Mencakup gudang rantai dingin, pabrik farmasi, dan pengolahan pangan / Covering cold warehouses, pharma plants, and food processing | `[BOILERPLATE SEED: REPLACE WITH REAL DATA]` |
+| `metric-response` | Respon Konsultasi / Consultation Reply | `< 24 Jam` / `< 24 Hours` | Waktu tanggap tertulis untuk setiap permohonan konsultasi baru / Written response time for every new inquiry | `[BOILERPLATE SEED: REPLACE WITH REAL DATA]` |
+| `metric-clients` | Klien Bisnis Terbantu / Business Clients Served | `450+ Klien` / `450+ Clients` | Perusahaan lokal dan PMA yang didampingi sejak 2014 / Local and foreign-invested companies advised since 2014 | `[BOILERPLATE SEED: REPLACE WITH REAL DATA]` |
+| `metric-years` | Pengalaman Praktik / Years of Practice | `12 Tahun` / `12 Years` | Mendampingi pendirian usaha, kontrak, dan kepatuhan bisnis / Advising on company setup, contracts, and compliance | `[BOILERPLATE SEED: REPLACE WITH REAL DATA]` |
+| `metric-cases` | Dokumen & Proyek Selesai / Matters Completed | `1.200+ Proyek` / `1,200+ Matters` | Kontrak komersial, izin usaha OSS, dan audit kepatuhan selesai / Commercial contracts, OSS licenses, and compliance audits delivered | `[BOILERPLATE SEED: REPLACE WITH REAL DATA]` |
 
-### 3.2 Certifications & Regulatory Compliance
+### 3.2 Certifications & Professional Memberships
 | Standard / Certification | Scope (ID / EN) | Issuing Body & Reference No. | Boilerplate Status |
 | :--- | :--- | :--- | :--- |
-| **ISO 9001:2015** | Sistem Manajemen Mutu Desain, Instalasi & Pemeliharaan HVACR / Quality Management System for HVACR Engineering & Maintenance | TUV Rheinland (Cert No: `ID-QMS-00000-SEED`) | `[BOILERPLATE SEED: REPLACE WITH REAL DATA]` |
-| **SMK3 Kemnaker RI (PP No. 50/2012)** | Keselamatan dan Kesehatan Kerja Konstruksi Mekanikal & Bejana Tekan / Occupational Health & Safety for Mechanical & Pressure Vessel Works | Kementerian Ketenagakerjaan RI (`Reg: SMK3-0000-SEED`) | `[BOILERPLATE SEED: REPLACE WITH REAL DATA]` |
-| **Verifikasi TKDN (Tingkat Komponen Dalam Negeri)** | Perakitan Panel Kontrol PLC/SCADA & Fabrikasi Rak Pipa (Capaian 42,6%) / Local Content Verification for Control Panels & Pipe Racks (42.6% Score) | PT Surveyor Indonesia (`Ref: TKDN-0000-SEED`) | `[BOILERPLATE SEED: REPLACE WITH REAL DATA]` |
-| **Sertifikasi Teknisi BNSP / Kemnaker** | Teknisi Refrigerasi Industri, Juru Las Kelas 1 (SMAW/GTAW), & Teknisi K3 Listrik / Certified Industrial Refrigeration, Class 1 Welders, and Electrical Safety Technicians | BNSP & Kemnaker RI | `[BOILERPLATE SEED: REPLACE WITH REAL DATA]` |
+| **ISO 9001:2015** | Sistem Manajemen Mutu Layanan Konsultasi Bisnis & Korporasi / Quality Management System for Corporate & Business Advisory | TUV Rheinland (`ID-QMS-9001-SEED`) | `[BOILERPLATE SEED: REPLACE WITH REAL DATA]` |
+| **Lisensi Konsultan Hukum & Bisnis** | Konsultan Hukum Korporasi & Perizinan Investasi Terdaftar / Registered Corporate Legal & Investment Licensing Advisors | PERADI & AKHKI (`REG-ADV-2014-SEED`) | `[BOILERPLATE SEED: REPLACE WITH REAL DATA]` |
+| **Sertifikasi Konsultan Pajak & Kepatuhan** | Konsultan Kepatuhan Pajak Korporasi & Audit Regulasi Usaha / Certified Corporate Tax & Regulatory Compliance Advisors | IKPI (`REG-TAX-2016-SEED`) | `[BOILERPLATE SEED: REPLACE WITH REAL DATA]` |
 
 ### 3.3 Client Sector References & Visual Asset Rules (R-18, R-23)
-- **Visual Logo Policy (R-23):** Never generate fake company logos or use unapproved brand marks. Until the client uploads licensed SVG client logos in the CMS, render client references strictly as **text-only sector descriptors** or explicit `[LOGO PLACEHOLDER]` slots.
+- **Visual Logo Policy (R-23):** Never generate fake company logos or use unapproved brand marks. Until the client uploads licensed SVG client logos in the CMS, render client references strictly as **text-only sector descriptors**.
 - **Permitted Sector Descriptors (Text-Only Default):**
-  1. Distribusi Logistik Rantai Dingin Nasional (Kawasan Industri MM2100, Bekasi)
-  2. Fasilitas Manufaktur Farmasi & Vaksin Steril (Rungkut Industri, Surabaya)
-  3. Pabrik Pengolahan Hasil Laut & Pembekuan Cepat IQF (Tanjung Emas, Semarang)
-  4. Pusat Data & Ruang Server Telekomunikasi Tier-III (Kuningan, Jakarta Selatan)
-- **Testimonials Governance (R-18):** By default, the boilerplate sets `testimonials: []` so no fictional quotes or AI-generated avatars appear. A testimonial component may only render when populated with a verifiable quote, full name, job title, company name, and written consent flag (`isVerifiedReal: true`).
+  1. Perusahaan Teknologi & Startup SaaS (Jakarta Selatan)
+  2. Distributor Perdagangan & Ritel Modern (Surabaya & Jakarta)
+  3. Perusahaan Manufaktur & Penanaman Modal Asing / PMA (Bekasi & Karawang)
+  4. Grup Properti Komersial & Perhotelan (Jakarta & Bali)
+- **Testimonials Governance (R-18):** By default, the boilerplate sets `testimonials: []` so no fictional quotes or AI-generated avatars appear.
 
 ---
 
-## 4. Services Matrix (Bilingual `id` & `en`)
+## 4. Services Matrix (Bilingual `id` & `en`, Modeled on `koolom.webflow.io/services-v3`)
 
 ### Service 01 (`SRV-01`)
-- **Title (ID):** Instalasi Sistem Rantai Dingin & Gudang Berpendingin
-- **Title (EN):** Cold-Chain Storage & Industrial Refrigeration Engineering
-- **URL Slug:** `id: /id/layanan/instalasi-rantai-dingin` | `en: /en/services/cold-chain-installation`
-- **Target Segment (ID):** Operator logistik cold-chain (3PL), pabrik pengolahan daging/hasil laut, dan distributor bahan pangan beku.
-- **Target Segment (EN):** Cold-chain 3PL operators, meat and seafood processors, and frozen food distribution hubs.
-- **Core Problem Solved (ID):** Mencegah kerusakan komoditas akibat fluktuasi suhu ruang simpan dan kebocoran termal pada operasional gudang berkapasitas tinggi.
-- **Core Problem Solved (EN):** Prevents commodity spoilage caused by storage temperature drift and thermal leakage in high-throughput warehouse operations.
-- **Technical Specs & Deliverables (ID):**
-  1. Rentang suhu terkalibrasi: Chiller Room (`+2°C` s/d `+8°C`), Freezer Storage (`-18°C` s/d `-25°C`), dan Blast Freezer (`-35°C` s/d `-40°C`).
-  2. Konstruksi panel insulasi Polyurethane (PIR/PUR) berdensitas `42 kg/m3` dengan ketebalan `100 mm` hingga `200 mm` dilengkapi cam-lock kedap udara.
-  3. Sistem refrigerasi kompresor screw/semi-hermetik (Freon R-448A/R-449A, Amonia NH3, atau CO2 Transkritikal) dengan pencatatan suhu otomatis 24 jam.
-  4. Pemanas lantai anti-beku (underfloor frost heave protection) dan tirai udara berkecepatan tinggi pada area loading dock.
-- **Technical Specs & Deliverables (EN):**
-  1. Calibrated temperature zones: Chiller Room (`+2°C` to `+8°C`), Freezer Storage (`-18°C` to `-25°C`), and Blast Freezer (`-35°C` to `-40°C`).
-  2. High-density Polyurethane (`42 kg/m3` PIR/PUR) insulated panels from `100 mm` to `200 mm` thickness with airtight cam-lock joints.
-  3. Screw or semi-hermetic compressor racks (R-448A/R-449A, Ammonia NH3, or Transcritical CO2) paired with 24-hour automated temperature logging.
-  4. Underfloor frost-heave heating mats and high-velocity air curtains across loading dock bays.
-- **Engineering Workflow Steps (5 Stages, R-05):**
-  1. **Audit Beban Termal & Simulasi (Thermal Load Audit):** Perhitungan beban transmisi dinding, infiltrasi pintu, dan panas produk harian.
-  2. **Rekayasa Desain & P&ID (Engineering & P&ID):** Pembuatan gambar kerja 3D, diagram perpipaan, serta seleksi kapasitas kompresor dan evaporator.
-  3. **Fabrikasi & Instalasi Mekanikal (Site Installation):** Pemasangan panel insulasi, pengelasan pipa refrigeran bertekanan, dan perakitan panel kontrol.
-  4. **Uji Tekan, Vakum & Komisioning (Pressure Test & Commissioning):** Uji tekan nitrogen `28 bar`, evakuasi vakum `< 500 mikron`, dan penarikan suhu bertahap (pull-down test).
-  5. **Serah Terima & Kalibrasi Sensor (Handover & Calibration):** Pelatihan operator lapangan, penyerahan dokumen As-Built Drawing, dan sertifikat kalibrasi sensor suhu.
-- **Specific CTA (ID / EN):** `Ajukan Perhitungan Beban Cold Storage` / `Request Cold Storage Load Calculation`
+- **Title (ID):** Pendirian Badan Usaha & Perizinan OSS
+- **Title (EN):** Company Formation & Business Licensing
+- **URL Slug:** `id: /id/layanan/pendirian-badan-usaha` | `en: /en/services/company-formation-licensing`
+- **Target Segment (ID):** Pendiri bisnis baru, UMKM yang bertransformasi menjadi PT, serta investor asing (PT PMA).
+- **Target Segment (EN):** Business founders, growing SMEs incorporating as a PT, and foreign investors establishing a PT PMA.
+- **Core Problem Solved (ID):** Memastikan pendirian PT, pemilihan kode KBLI, dan penerbitan izin usaha OSS RBA selesai tepat waktu tanpa penolakan berkas atau kesalahan struktur kepemilikan saham.
+- **Core Problem Solved (EN):** Ensures company incorporation, KBLI code selection, and OSS RBA business licensing are completed accurately without filing rejections or shareholding structure mistakes.
+- **Deliverables & Key Parameters (ID):**
+  1. Pemeriksaan nama PT, penyusunan Akta Pendirian Notaris, dan pengesahan SK Kemenkumham RI.
+  2. Pemetaan kode KBLI 2020 yang tepat sesuai aktivitas bisnis riil serta pengurusan NPWP Badan.
+  3. Penerbitan Nomor Induk Berusaha (NIB), Sertifikat Standar, dan izin operasional berbasis risiko pada sistem OSS RBA.
+  4. Penyusunan Anggaran Dasar dan Perjanjian Pemegang Saham (Shareholders Agreement) awal.
+- **Deliverables & Key Parameters (EN):**
+  1. Company name reservation, Notarial Deed of Establishment, and Ministry of Law (Kemenkumham) ratification decree.
+  2. Accurate KBLI business classification mapping and corporate Tax ID (NPWP) registration.
+  3. Risk-based Business Identification Number (NIB) and operational license issuance via OSS RBA.
+  4. Initial Articles of Association and foundational Shareholders Agreement drafting.
+- **Workflow Steps (4 Stages, Modeled on Koolom's 4-Step Timeline):**
+  1. **Konsultasi Awal Gratis (Free Initial Consultation):** Diskusi rencana bisnis, komposisi pemegang saham, dan pemetaan KBLI yang sesuai.
+  2. **Estimasi Biaya Tertulis (Transparent Fee Quote):** Penyampaian rincian biaya resmi dan daftar dokumen persyaratan di awal tanpa biaya tersembunyi.
+  3. **Penyusunan Akta & Pengajuan Sistem (Drafting & Filing):** Penyusunan draf akta pendirian, penandatanganan notaris, dan pengajuan pengesahan Kemenkumham.
+  4. **Penerbitan NIB & Serah Terima (License Handover):** Penerbitan NIB/izin usaha OSS RBA dan penyerahan bundel dokumen legal perusahaan lengkap.
+- **Specific CTA (ID / EN):** `Konsultasi Pendirian Usaha` / `Start Company Formation`
 
 ### Service 02 (`SRV-02`)
-- **Title (ID):** Kontrak Pemeliharaan Preventif & Audit Termal HVACR
-- **Title (EN):** HVACR Preventive Maintenance Contracts & Thermal Auditing
-- **URL Slug:** `id: /id/layanan/pemeliharaan-preventif-hvacr` | `en: /en/services/hvacr-preventive-maintenance`
-- **Target Segment (ID):** Pabrik farmasi (CPOB/GMP), fasilitas F&B, gedung komersial, dan pusat data yang beroperasi 24/7.
-- **Target Segment (EN):** GMP pharmaceutical plants, food and beverage facilities, commercial buildings, and 24/7 data centers.
-- **Core Problem Solved (ID):** Menurunkan risiko henti mendadak (unplanned downtime) kompresor utama dan memangkas pemborosan konsumsi listrik akibat kondensor kotor atau ketidakseimbangan beban.
-- **Core Problem Solved (EN):** Reduces unplanned compressor downtime and eliminates electrical waste caused by fouled condensers or refrigerant charge imbalance.
-- **Technical Specs & Deliverables (ID):**
-  1. Inspeksi terjadwal bulanan dan kuartalan dengan waktu tanggap panggilan darurat (Emergency Call-Out) maksimal `< 4 jam` untuk wilayah Jabodetabek dan `< 6 jam` untuk Jawa Timur.
-  2. Pemindaian termografi inframerah (FLIR) pada panel distribusi daya dan kontaktor motor untuk mendeteksi titik panas sebelum terjadi hubung singkat.
-  3. Analisis vibrasi bantalan motor, uji keasaman oli kompresor, serta pembersihan kimiawi (descaling) tabung heat exchanger chiller.
-  4. Laporan audit efisiensi kelistrikan (`kW/TR`) lengkap dengan rekomendasi penghematan beban puncak.
-- **Technical Specs & Deliverables (EN):**
-  1. Monthly and quarterly scheduled inspections with an emergency call-out SLA of `< 4 hours` in Greater Jakarta and `< 6 hours` in East Java.
-  2. Infrared thermography scanning (FLIR) across power distribution panels and motor contactors to detect hotspots before failure.
-  3. Motor bearing vibration analysis, compressor oil acidity testing, and chemical descaling of chiller heat-exchanger tubes.
-  4. Comprehensive electrical efficiency (`kW/TR`) audit reports with peak-load reduction recommendations.
-- **Engineering Workflow Steps (4 Stages, R-05):**
-  1. **Inspeksi Baseline & Inventarisasi Aset (Asset Baseline Audit):** Pencatatan nomor seri, jam kerja kompresor, dan pengukuran performa awal (`kW/TR`).
-  2. **Eksekusi Pemeliharaan Terjadwal (Preventive Execution):** Pembersihan koil, kalibrasi sensor tekanan/suhu, dan penggantian suku cadang aus sesuai jam operasional.
-  3. **Diagnostik Prediktif (Predictive Diagnostics):** Pengambilan sampel oli, analisis getaran mekanis, dan pencitraan termal panel listrik.
-  4. **Pelaporan Digital & Evaluasi SLA (SLA Review):** Penyerahan berita acara parameter operasi dan rekapitulasi tren kesehatan mesin setiap kuartal.
-- **Specific CTA (ID / EN):** `Jadwalkan Inspeksi Baseline Mesin` / `Schedule a Baseline Equipment Inspection`
+- **Title (ID):** Penyusunan Kontrak Bisnis & Perjanjian Komersial
+- **Title (EN):** Corporate Contract Drafting & Review
+- **URL Slug:** `id: /id/layanan/penyusunan-kontrak-bisnis` | `en: /en/services/corporate-contract-drafting`
+- **Target Segment (ID):** Perusahaan B2B, distributor, vendor layanan, dan tim manajemen yang membutuhkan perlindungan hukum dalam transaksi komersial.
+- **Target Segment (EN):** B2B companies, distributors, service vendors, and management teams seeking clear legal protection in commercial deals.
+- **Core Problem Solved (ID):** Mencegah sengketa pembayaran, wanprestasi vendor, dan kebocoran rahasia dagang melalui kontrak berbahasa jelas yang melindungi posisi bisnis Anda.
+- **Core Problem Solved (EN):** Prevents payment disputes, vendor defaults, and confidentiality breaches through plain-language contracts that protect your commercial position.
+- **Deliverables & Key Parameters (ID):**
+  1. Penyusunan dan peninjauan (review) Perjanjian Kerja Sama (MoU/PKS), Kontrak Vendor, dan Perjanjian Distribusi.
+  2. Penyusunan Perjanjian Kerahasiaan (NDA), Perjanjian Kerja (PKWT/PKWTT), dan Peraturan Perusahaan.
+  3. Daftar risiko klausul (redline risk summary) beserta rekomendasi negosiasi yang praktis.
+  4. Tersedia dalam format dwibahasa (Bahasa Indonesia & Bahasa Inggris) sesuai kewajiban UU Bahasa.
+- **Deliverables & Key Parameters (EN):**
+  1. Drafting and review of Master Service Agreements (MSA), Vendor Contracts, and Distribution Agreements.
+  2. Non-Disclosure Agreements (NDA), Employment Contracts, and Company Regulations.
+  3. Clear redline risk summaries with practical negotiation fallback clauses.
+  4. Delivered in compliant bilingual format (Indonesian and English) per Indonesian statutory requirements.
+- **Workflow Steps (4 Stages):**
+  1. **Pemetaan Transaksi (Deal Scoping):** Memahami tujuan transaksi, nilai komersial, dan potensi risiko utama yang ingin dihindari.
+  2. **Penawaran Biaya Tetap (Fixed Fee Estimate):** Penetapan biaya penyusunan atau review per dokumen secara transparan sebelum kerja dimulai.
+  3. **Penyusunan & Redlining (Drafting & Redlining):** Pengerjaan draf kontrak atau koreksi klausul dalam 3 hingga 5 hari kerja.
+  4. **Finalisasi & Panduan Negosiasi (Finalization):** Penyerahan kontrak siap tanda tangan disertai sesi penjelasan poin krusial.
+- **Specific CTA (ID / EN):** `Ajukan Review Kontrak` / `Request Contract Review`
 
 ### Service 03 (`SRV-03`)
-- **Title (ID):** Fabrikasi Pipa Industri & Integrasi Mekanikal-Elektrikal (MEP)
-- **Title (EN):** Industrial Piping Fabrication & MEP System Integration
-- **URL Slug:** `id: /id/layanan/fabrikasi-mekanikal-pipa` | `en: /en/services/mechanical-piping-fabrication`
-- **Target Segment (ID):** Pabrik pengolahan kimia, industri makanan-minuman, dan fasilitas utilitas pabrik baru (greenfield/brownfield).
-- **Target Segment (EN):** Chemical processing plants, food and beverage factories, and greenfield/brownfield utility plants.
-- **Core Problem Solved (ID):** Menyediakan jalur distribusi fluida dingin (chilled water), uap (steam), dan udara tekan bebas bocor yang memenuhi standar uji tak rusak (NDT) industri.
-- **Core Problem Solved (EN):** Delivers leak-free chilled water, steam, and compressed air distribution networks verified against industrial non-destructive testing (NDT) standards.
-- **Technical Specs & Deliverables (ID):**
-  1. Pengelasan pipa baja karbon (Carbon Steel Sch 40/80) dan baja tahan karat (Stainless Steel SS304/SS316L orbital/GTAW) oleh juru las bersertifikat Kemnaker.
-  2. Insulasi termal pipa chilled water menggunakan cellular glass atau elastomeric nitrile rubber berlapis cladding aluminium `0,6 mm`.
-  3. Pengujian Non-Destructive Test (NDT Penetrant / Radiography X-Ray pada titik las kritis) dan uji hidrostatik hingga `1,5x` tekanan kerja desain.
-  4. Integrasi pompa sirkulasi (primary/secondary variable flow), cooling tower, dan katup penyeimbang hidronik (balancing valves).
-- **Technical Specs & Deliverables (EN):**
-  1. Carbon steel (Sch 40/80) and food-grade stainless steel (SS304/SS316L GTAW) pipe welding executed by Kemnaker-certified Class 1 welders.
-  2. Thermal pipe insulation using cellular glass or nitrile rubber jacketed with `0.6 mm` embossed aluminum cladding.
-  3. Non-Destructive Testing (dye penetrant and X-ray radiography on critical weld joints) plus hydrostatic testing at `1.5x` design working pressure.
-  4. Complete hydronic integration including primary/secondary variable-speed pumps, cooling towers, and calibrated balancing valves.
-- **Engineering Workflow Steps (4 Stages, R-05):**
-  1. **Survei Jalur & Isometric Drawing (Route Survey & Isometrics):** Pengukuran elevasi lapangan dan pembuatan gambar isometrik bebas benturan (clash-free routing).
-  2. **Pre-Fabrikasi Bengkel (Workshop Spool Fabrication):** Pemotongan, pembubutan bevel, dan pengelasan modul pipa (pipe spools) di bengkel terkontrol.
-  3. **Ereksi Lapangan & Insulasi (Site Erection & Cladding):** Pemasangan gantungan (pipe supports), penyambungan jalur utama, dan pelapisan insulasi termal.
-  4. **Uji Hidrostatik, Flushing & Balancing (Hydrotest & Hydronic Balancing):** Pengujian tekanan air, pembilasan kerak internal, dan penyeimbangan laju aliran tiap cabang.
-- **Specific CTA (ID / EN):** `Kirim Gambar Isometrik untuk Estimasi` / `Submit Isometric Drawings for Estimation`
+- **Title (ID):** Audit Kepatuhan Regulasi & Layanan Retainer Korporasi
+- **Title (EN):** Regulatory Compliance & Corporate Legal Retainer
+- **URL Slug:** `id: /id/layanan/kepatuhan-regulasi-retainer` | `en: /en/services/regulatory-compliance-retainer`
+- **Target Segment (ID):** Perusahaan berkembang yang membutuhkan pendampingan hukum dan kepatuhan rutin setiap bulan tanpa harus membangun departemen legal internal yang besar.
+- **Target Segment (EN):** Growing companies that need ongoing monthly legal and regulatory support without the overhead of a large in-house legal department.
+- **Core Problem Solved (ID):** Memastikan seluruh izin operasional, pelaporan LKPM, dan dokumen korporasi selalu patuh pada aturan terbaru sambil menyediakan akses konsultasi langsung kapan pun dibutuhkan.
+- **Core Problem Solved (EN):** Keeps operational licenses, LKPM investment filings, and corporate governance records up to date while providing on-demand access to senior advisors.
+- **Deliverables & Key Parameters (ID):**
+  1. Kuota jam konsultasi bulanan terdedikasi dengan konsultan senior untuk diskusi operasional harian.
+  2. Pelaporan Kegiatan Penanaman Modal (LKPM) berkala dan pembaruan masa berlaku izin usaha.
+  3. Penyusunan risalah RUPS Tahunan/Luar Biasa, perubahan pengurus, dan administrasi korporasi.
+  4. Audit kepatuhan berkala terhadap regulasi ketenagakerjaan, perlindungan data, dan kemitraan usaha.
+- **Deliverables & Key Parameters (EN):**
+  1. Dedicated monthly advisory hours with senior consultants for day-to-day operational questions.
+  2. Quarterly Investment Activity Report (LKPM) filings and license renewal tracking.
+  3. Annual and Extraordinary General Meeting (GMS) resolutions, director changes, and corporate secretarial upkeep.
+  4. Periodic compliance health checks covering employment, data privacy, and commercial regulations.
+- **Workflow Steps (4 Stages):**
+  1. **Pemeriksaan Kesehatan Legal (Compliance Checkup):** Evaluasi status izin usaha, kontrak aktif, dan kewajiban pelaporan perusahaan saat ini.
+  2. **Pemilihan Paket Retainer (Retainer Plan Selection):** Penentuan kuota jam layanan bulanan yang sesuai dengan skala aktivitas perusahaan.
+  3. **Pendampingan Rutin Bulanan (Ongoing Advisory):** Penanganan review kontrak harian, tanya-jawab regulasi, dan pelaporan wajib.
+  4. **Evaluasi Kuartalan (Quarterly Compliance Report):** Laporan ringkas seluruh pekerjaan yang diselesaikan dan jadwal kepatuhan kuartal berikutnya.
+- **Specific CTA (ID / EN):** `Lihat Paket Retainer Bulanan` / `Explore Monthly Retainer Plans`
 
 ### Service 04 (`SRV-04`)
-- **Title (ID):** Retrofitting Efisiensi Energi & Otomasi Chiller (PLC/SCADA)
-- **Title (EN):** Chiller Energy Retrofitting & PLC/SCADA Plant Automation
-- **URL Slug:** `id: /id/layanan/retrofit-otomasi-chiller` | `en: /en/services/chiller-automation-retrofit`
-- **Target Segment (ID):** Fasilitas industri dengan usia sistem chiller di atas 7 tahun yang mengalami kenaikan biaya listrik bulanan.
-- **Target Segment (EN):** Industrial facilities operating chiller plants older than 7 years facing rising monthly electricity costs.
-- **Core Problem Solved (ID):** Memodernisasi sistem kontrol chiller dan pompa konvensional menjadi sistem berbasis beban aktual (VSD/Inverter) tanpa harus mengganti seluruh unit mesin utama.
-- **Core Problem Solved (EN):** Modernizes legacy fixed-speed chiller and pump plants into load-responsive VSD/PLC systems without full mechanical plant replacement.
-- **Technical Specs & Deliverables (ID):**
-  1. Pemasangan Variable Speed Drive (VSD/Inverter) pada motor pompa chilled water, pompa condenser, dan kipas cooling tower.
-  2. Perakitan panel kontrol berbasis PLC (Siemens / Schneider / Omron) dengan antarmuka layar sentuh HMI 10 inci dan komunikasi protokol Modbus TCP / BACnet IP.
-  3. Penggantian refrigeran lama (R-22 / R-404A) ke refrigeran ramah lingkungan ber-GWP rendah tanpa penggantian pipa utama (drop-in/retrofit).
-  4. Pemantauan tren COP (Coefficient of Performance) dan konsumsi daya (`kWh`) secara real-time beserta alarm gangguan via WhatsApp/Email gateway.
-- **Technical Specs & Deliverables (EN):**
-  1. Variable Speed Drive (VSD) integration across chilled water pumps, condenser water pumps, and cooling tower fans.
-  2. Custom PLC control panels (Siemens, Schneider, or Omron) with 10-inch industrial HMI touchscreens and Modbus TCP / BACnet IP connectivity.
-  3. Refrigerant retrofit from phased-out HCFCs/HFCs (R-22 / R-404A) to low-GWP alternatives with full elastomer and oil compatibility conversion.
-  4. Real-time COP and `kWh` telemetry logging with automated fault alerts via WhatsApp and email gateways.
-- **Engineering Workflow Steps (4 Stages, R-05):**
-  1. **Pencatatan Beban & Audit kW/TR (Baseline Data Logging):** Pemasangan power logger dan ultrasonic flowmeter selama 7 hari penuh untuk memetakan profil beban nyata.
-  2. **Perhitungan ROI & Desain Otomasi (ROI & Control Architecture):** Simulasi penghematan listrik tahunan (`kWh`) dan perancangan logika sekuensial staging chiller.
-  3. **Instalasi Bertahap Tanpa Henti Total (Phased Live Retrofit):** Integrasi panel VSD/PLC dan sensor per jalur secara bergantian agar operasional pabrik tetap berjalan.
-  4. **Verifikasi Penghematan Energi (Post-Retrofit M&V):** Pengukuran ulang nilai `kW/TR` pasca-instalasi mengacu pada protokol IPMVP untuk membuktikan penurunan konsumsi energi.
-- **Specific CTA (ID / EN):** `Hitung Potensi Penghematan Energi Chiller` / `Calculate Chiller Energy Savings Potential`
+- **Title (ID):** Pendampingan Transaksi Bisnis, Akuisisi & Uji Tuntas (Due Diligence)
+- **Title (EN):** Business Transactions, M&A & Legal Due Diligence
+- **URL Slug:** `id: /id/layanan/pendampingan-transaksi-bisnis` | `en: /en/services/business-transaction-advisory`
+- **Target Segment (ID):** Pemilik bisnis, investor, dan korporasi yang sedang merencanakan investasi baru, pembelian saham, kerja sama joint venture, atau akuisisi usaha.
+- **Target Segment (EN):** Business owners, investors, and corporations planning new investments, share acquisitions, joint ventures, or asset purchases.
+- **Core Problem Solved (ID):** Mengidentifikasi risiko tersembunyi pada perusahaan target (utang, sengketa, atau izin tidak lengkap) sebelum Anda menandatangani perjanjian investasi atau akuisisi.
+- **Core Problem Solved (EN):** Identifies hidden liabilities in target companies (undisclosed debts, disputes, or missing permits) before you sign investment or acquisition agreements.
+- **Deliverables & Key Parameters (ID):**
+  1. Pemeriksaan Uji Tuntas Hukum (Legal Due Diligence) menyeluruh atas aset, perizinan, kontrak, dan status sengketa.
+  2. Penyusunan Term Sheet, Conditional Sale and Purchase Agreement (CSPA), dan Akta Jual Beli Saham.
+  3. Pengurusan pengumuman koran, persetujuan kreditur/pemegang saham, dan pelaporan perubahan kepemilikan.
+  4. Pendampingan langsung di meja negosiasi hingga penutupan transaksi (closing).
+- **Deliverables & Key Parameters (EN):**
+  1. Comprehensive Legal Due Diligence (LDD) covering corporate permits, material contracts, assets, and litigation records.
+  2. Drafting of Term Sheets, Conditional Share Purchase Agreements (CSPA), and Transfer Deeds.
+  3. Statutory newspaper announcements, shareholder approvals, and post-closing ministry notifications.
+  4. Direct representation across negotiation sessions through final transaction closing.
+- **Workflow Steps (4 Stages):**
+  1. **Diskusi Struktur Transaksi (Transaction Structuring):** Penentuan skema transaksi paling efisien (akuisisi saham, pembelian aset, atau joint venture).
+  2. **Pelaksanaan Uji Tuntas (Due Diligence Audit):** Pemeriksaan dokumen perusahaan target dan penyusunan laporan temuan risiko eksekutif.
+  3. **Penyusunan & Negosiasi Perjanjian (Contract Negotiation):** Penyusunan perjanjian transaksi dengan klausul jaminan dan ganti rugi yang melindungi posisi Anda.
+  4. **Penutupan & Pasca-Transaksi (Closing & Post-Merger):** Penandatanganan akta transaksi, pembaruan daftar pemegang saham, dan serah terima dokumen.
+- **Specific CTA (ID / EN):** `Jadwalkan Diskusi Transaksi` / `Schedule a Transaction Briefing`
 
 ---
 
-## 5. Featured Case Studies / Project Portfolio Bank (Bilingual Seed Records)
+## 5. Featured Case Studies / Client Matters Portfolio (Bilingual Seed Records)
 
-> **Governance Note (R-36, R-38):** These 3 project records serve as structured boilerplate examples (`isSamplePlaceholder: true`). Replace with actual client project records before production deployment.
+> **Governance Note (R-36, R-38):** These 3 case records serve as structured boilerplate examples (`isSamplePlaceholder: true`). Replace with actual client project records before production deployment.
 
 ### Case Study 01 (`CS-01`)
-- **Title (ID):** Pembangunan Cold Storage Multi-Zona 2.400 Pallet untuk Pusat Distribusi Pangan Beku
-- **Title (EN):** 2,400-Pallet Multi-Zone Cold Storage Facility for Frozen Food Distribution Hub
-- **Slug:** `id: /id/studi-kasus/cold-storage-distribusi-cikarang` | `en: /en/case-studies/cikarang-cold-storage-hub`
-- **Client Descriptor:** Operator Logistik Rantai Dingin Nasional (Nama Klien Dirahasiakan Sesuai NDA) `[BOILERPLATE SEED]`
-- **Location & Year:** Cikarang, Jawa Barat | 2025 `[BOILERPLATE SEED]`
-- **Related Service:** `SRV-01` (Instalasi Sistem Rantai Dingin)
-- **Engineering Challenge (ID):** Klien membutuhkan fasilitas penyimpanan beku `-22°C` dengan 12 pintu loading dock aktif yang mampu mempertahankan suhu stabil meskipun terjadi 80 siklus bongkar-muat truk per hari.
-- **Engineering Challenge (EN):** The client required a `-22°C` freezer warehouse with 12 active loading docks capable of maintaining stable core temperatures during 80 daily truck loading cycles.
-- **Technical Solution (ID):** Instalasi rak kompresor paralel semi-hermetik total `180 TR`, panel insulasi PIR `150 mm`, sistem pencairan bunga es gas panas (hot-gas defrost), dan ruang anteroom bertekanan positif `+4°C`.
-- **Technical Solution (EN):** Installed a `180 TR` parallel semi-hermetic compressor rack, `150 mm` PIR insulation panels, automated hot-gas defrosting, and a `+4°C` dehumidified loading anteroom.
-- **Measurable Outcome (ID / EN):** Fluktuasi suhu ruang utama terjaga di bawah `±0,8°C` selama jam puncak operasional / Core freezer temperature drift held within `±0.8°C` during peak dock hours `[BOILERPLATE SEED]`.
+- **Title (ID):** Pendirian PT PMA & Perizinan Operasional Lengkap untuk Perusahaan Logistik Regional
+- **Title (EN):** PT PMA Incorporation & Full Operational Licensing for Regional Logistics Provider
+- **Slug:** `id: /id/studi-kasus/pendirian-pt-pma-logistik-jakarta` | `en: /en/case-studies/jakarta-logistics-pma-setup`
+- **Client Descriptor:** Perusahaan Logistik & Rantai Pasok Asia Tenggara (Identitas Dijaga Sesuai NDA) `[BOILERPLATE SEED]`
+- **Location & Year:** Jakarta Selatan | 2025 `[BOILERPLATE SEED]`
+- **Related Service:** `SRV-01` (Pendirian Badan Usaha & Perizinan OSS)
+- **Business Challenge (ID):** Klien membutuhkan pendirian badan hukum PT PMA beserta izin operasional transportasi dan pergudangan multi-KBLI dalam waktu singkat agar dapat mengikuti tender kontrak distribusi nasional.
+- **Business Challenge (EN):** The client needed a fully licensed PT PMA entity with multi-KBLI warehousing and logistics permits under a tight deadline to qualify for a national distribution tender.
+- **Advisory Solution (ID):** Pemetaan klasifikasi KBLI yang presisi, penyusunan akta pendirian dan perjanjian pemegang saham dwibahasa, serta pendampingan verifikasi izin teknis pada sistem OSS RBA.
+- **Advisory Solution (EN):** Executed precise KBLI classification mapping, drafted bilingual incorporation deeds and shareholder agreements, and managed OSS RBA technical permit verifications.
+- **Measurable Outcome (ID / EN):** Seluruh izin operasional dan NIB terbit dalam `18 Hari Kerja` tanpa revisi pengajuan / Full operational NIB and licenses issued within `18 Business Days` with zero filing rejections `[BOILERPLATE SEED]`.
 
 ### Case Study 02 (`CS-02`)
-- **Title (ID):** Retrofit Otomasi VSD & PLC pada Sentral Chiller 900 TR Fasilitas Farmasi
-- **Title (EN):** VSD & PLC Automation Retrofit on a 900 TR Pharmaceutical Chiller Plant
-- **Slug:** `id: /id/studi-kasus/retrofit-chiller-farmasi-surabaya` | `en: /en/case-studies/surabaya-pharma-chiller-retrofit`
-- **Client Descriptor:** Pabrik Manufaktur Farmasi Steril CPOB `[BOILERPLATE SEED]`
+- **Title (ID):** Restrukturisasi 45 Kontrak Vendor & Distribusi untuk Jaringan Ritel Nasional
+- **Title (EN):** Restructuring 45 Vendor & Distribution Contracts for a National Retail Network
+- **Slug:** `id: /id/studi-kasus/restrukturisasi-kontrak-ritel-surabaya` | `en: /en/case-studies/surabaya-retail-contract-overhaul`
+- **Client Descriptor:** Grup Distribusi & Ritel Konsumen Nasional `[BOILERPLATE SEED]`
 - **Location & Year:** Surabaya, Jawa Timur | 2024 `[BOILERPLATE SEED]`
-- **Related Service:** `SRV-04` (Retrofitting Efisiensi Energi & Otomasi Chiller)
-- **Engineering Challenge (ID):** Tiga unit water-cooled chiller berusia 9 tahun beroperasi pada kecepatan tetap sehingga efisiensi sistem turun menjadi `1,08 kW/TR` saat beban malam hari.
-- **Engineering Challenge (EN):** Three 9-year-old water-cooled chillers operated at fixed speed, causing plant efficiency to degrade to `1.08 kW/TR` during partial night-shift loads.
-- **Technical Solution (ID):** Integrasi VSD pada pompa sekunder dan kipas cooling tower, pemasangan katup kontrol tekanan diferensial otomatis, serta pemrograman ulang staging beban berbasis PLC Siemens S7-1200.
-- **Technical Solution (EN):** Integrated VSDs across secondary chilled-water pumps and cooling tower fans, installed automated differential-pressure control valves, and reprogrammed chiller staging via Siemens S7-1200 PLC.
-- **Measurable Outcome (ID / EN):** Perbaikan efisiensi rata-rata pabrik menjadi `0,76 kW/TR` tanpa menghentikan jadwal produksi ruang bersih / Plant efficiency improved to `0.76 kW/TR` with zero cleanroom production shutdown `[BOILERPLATE SEED]`.
+- **Related Service:** `SRV-02` (Penyusunan Kontrak Bisnis & Perjanjian Komersial)
+- **Business Challenge (ID):** Klien menggunakan templat kontrak lama yang tidak mengatur batas waktu klaim retur barang dan denda keterlambatan pengiriman secara tegas, sehingga memicu perselisihan tagihan berulang.
+- **Business Challenge (EN):** The client relied on legacy contract templates that lacked clear return-claim windows and delivery penalty clauses, resulting in recurring billing disputes.
+- **Advisory Solution (ID):** Penyusunan buku standar kontrak distribusi baru (Master Distribution Agreement), klausul SLA pengiriman yang terukur, serta sesi sosialisasi untuk tim pengadaan dan penjualan.
+- **Advisory Solution (EN):** Drafted standardized Master Distribution Agreements with measurable delivery SLA clauses and conducted training sessions for procurement and sales teams.
+- **Measurable Outcome (ID / EN):** Waktu negosiasi kontrak vendor baru turun dari `3 Minggu menjadi 4 Hari Kerja` / New vendor contract turnaround reduced from `3 Weeks to 4 Business Days` `[BOILERPLATE SEED]`.
 
 ### Case Study 03 (`CS-03`)
-- **Title (ID):** Fabrikasi Jalur Pipa Chilled Water SS304 Sepanjang 1,4 KM untuk Pabrik Pengolahan Susu
-- **Title (EN):** 1.4 KM SS304 Chilled Water Piping Network for Dairy Processing Plant
-- **Slug:** `id: /id/studi-kasus/pipa-chilled-water-pabrik-susu-pasuruan` | `en: /en/case-studies/pasuruan-dairy-piping-network`
-- **Client Descriptor:** Industri Pengolahan Susu & Minuman Kemasan `[BOILERPLATE SEED]`
-- **Location & Year:** Pasuruan, Jawa Timur | 2025 `[BOILERPLATE SEED]`
-- **Related Service:** `SRV-03` (Fabrikasi Pipa Industri & Integrasi MEP)
-- **Engineering Challenge (ID):** Menyambungkan jalur pasokan glikol dingin `-4°C` ke 6 lini pasteurisasi baru dengan toleransi kebocoran nol dan standar kebersihan ruang produksi pangan.
-- **Engineering Challenge (EN):** Connected a `-4°C` chilled glycol supply header to 6 new pasteurization lines under food-grade hygiene rules and zero-leak tolerances.
-- **Technical Solution (ID):** Pre-fabrikasi modul pipa Stainless Steel SS304 Sch 40 dengan pengelasan GTAW purge gas argon, pengujian NDT penetrant 100% sambungan, dan insulasi tertutup berjaket aluminium.
-- **Technical Solution (EN):** Pre-fabricated SS304 Sch 40 pipe spools using argon-purged GTAW welding, executed 100% dye-penetrant joint inspections, and applied vapor-sealed aluminum cladding.
-- **Measurable Outcome (ID / EN):** Lulus uji tekan hidrostatik `12 bar` selama 24 jam penuh pada percobaan pertama / Passed 24-hour `12 bar` hydrostatic pressure testing on the first commissioning run `[BOILERPLATE SEED]`.
+- **Title (ID):** Uji Tuntas Hukum (Legal Due Diligence) & Akuisisi Mayoritas Saham Perusahaan SaaS B2B
+- **Title (EN):** Legal Due Diligence & Majority Share Acquisition of a B2B SaaS Company
+- **Slug:** `id: /id/studi-kasus/uji-tuntas-akuisisi-saas-jakarta` | `en: /en/case-studies/jakarta-b2b-saas-acquisition`
+- **Client Descriptor:** Grup Investasi & Teknologi Korporasi `[BOILERPLATE SEED]`
+- **Location & Year:** Jakarta Selatan | 2025 `[BOILERPLATE SEED]`
+- **Related Service:** `SRV-04` (Pendampingan Transaksi Bisnis, Akuisisi & Uji Tuntas)
+- **Business Challenge (ID):** Investor perlu memastikan kepemilikan Hak Kekayaan Intelektual (HKI) kode perangkat lunak, kepatuhan kontrak karyawan, dan ketiadaan kewajiban pajak tersembunyi sebelum mengakuisisi 70% saham.
+- **Business Challenge (EN):** The investor needed to verify software IP ownership, employment contract compliance, and the absence of hidden tax liabilities prior to acquiring a 70% equity stake.
+- **Advisory Solution (ID):** Pelaksanaan uji tuntas hukum menyeluruh dalam 14 hari, pengalihan hak cipta perangkat lunak ke badan hukum perusahaan, serta penyusunan CSPA dengan mekanisme pembayaran bertahap (escrow/milestone).
+- **Advisory Solution (EN):** Completed a 14-day legal due diligence audit, formalized IP assignment deeds into the corporate entity, and structured a milestone-based CSPA.
+- **Measurable Outcome (ID / EN):** Transaksi akuisisi senilai `Rp 28 Miliar` selesai tepat jadwal dengan perlindungan klausul indemnifikasi penuh / `IDR 28 Billion` acquisition closed on schedule with full indemnity protection `[BOILERPLATE SEED]`.
 
 ---
 
-## 6. Technical FAQ Bank (For `FAQPage` Schema, Per R-28)
+## 6. FAQ Bank (For `FAQPage` Schema, Modeled on `koolom.webflow.io`)
 
-> **Rule R-28 Enforcement:** Every FAQ item below addresses a specific engineering, procurement, or operational question asked by industrial B2B buyers. Never add generic template questions ("Can I cancel anytime?", "Is my data secure?").
+> **Rule R-28 Enforcement:** Every FAQ item below addresses a clear, practical question asked by business owners and corporate teams considering legal or business advisory services.
 
-1. **Category:** `SLA & Maintenance`
-   - **Q (ID):** Berapa batas waktu tanggap (response time) teknisi jika terjadi gangguan kompresor darurat di luar jam kerja?
-   - **A (ID):** Untuk pemegang Kontrak Pemeliharaan Preventif (SLA), tim teknisi siaga kami diberangkatkan menuju lokasi dalam waktu maksimal 4 jam untuk area Jabodetabek-Karawang dan maksimal 6 jam untuk koridor Surabaya-Sidoarjo-Pasuruan, 24 jam sehari termasuk hari libur nasional.
-   - **Q (EN):** What is the guaranteed technician response time if a critical compressor fault occurs outside normal working hours?
-   - **A (EN):** For Preventive Maintenance Contract (SLA) holders, our on-call field engineers dispatch to reach your site within 4 hours across Greater Jakarta-Karawang and within 6 hours across the Surabaya-Sidoarjo-Pasuruan industrial corridor, 24/7 including public holidays.
+1. **Category:** `Konsultasi & Biaya`
+   - **Q (ID):** Apakah konsultasi awal dikenakan biaya, dan bagaimana sistem penentuan biaya layanan di Koolom Partners?
+   - **A (ID):** Sesi diskusi awal selama 30 menit tidak dikenakan biaya (gratis) dan bersifat 100% rahasia. Setelah memahami kebutuhan Anda, kami selalu memberikan penawaran biaya tetap tertulis (fixed-fee quote) di muka sebelum pekerjaan dimulai, sehingga tidak ada biaya kejutan di akhir.
+   - **Q (EN):** Do you offer free initial consultations, and how are your service fees structured?
+   - **A (EN):** Yes, our initial 30-minute consultation is free of charge and 100% confidential. Once we understand your scope, we provide a clear, written fixed-fee estimate upfront before any work begins, so there are never billing surprises.
 
-2. **Category:** `Engineering & Compliance`
-   - **Q (ID):** Apakah GardaTek menyediakan dokumen perhitungan beban pendinginan (cooling load calculation) dan P&ID sebelum pengajuan penawaran harga final?
-   - **A (ID):** Ya. Setiap penawaran proyek instalasi cold storage maupun chiller selalu diawali dengan survei lokasi, perhitungan beban termal terperinci (transmisi, infiltrasi, dan produk), serta draf diagram perpipaan (P&ID) dan daftar volume material (BoQ) terbuka.
-   - **Q (EN):** Does GardaTek provide engineering cooling-load calculations and P&ID schematics prior to final commercial quotation?
-   - **A (EN):** Yes. Every cold storage or chiller installation proposal begins with an on-site survey, itemized thermal load calculations (transmission, infiltration, and product heat), a preliminary P&ID schematic, and an itemized Bill of Quantities (BoQ).
+2. **Category:** `Pendirian Usaha & OSS`
+   - **Q (ID):** Berapa lama proses pendirian PT atau PT PMA hingga Nomor Induk Berusaha (NIB) siap digunakan untuk beroperasi?
+   - **A (ID):** Untuk PT lokal dengan struktur standar, proses penyusunan akta, pengesahan SK Kemenkumham, NPWP, hingga terbitnya NIB pada sistem OSS RBA umumnya selesai dalam 5 hingga 10 hari kerja setelah dokumen persyaratan lengkap. Untuk PT PMA berkisar antara 10 hingga 18 hari kerja.
+   - **Q (EN):** How long does it take to incorporate a local PT or foreign-owned PT PMA until the NIB license is ready for operation?
+   - **A (EN):** For a standard local PT, deed drafting, Ministry ratification, tax registration, and OSS RBA NIB issuance typically take 5 to 10 business days once documents are complete. For a foreign-invested PT PMA, the process takes 10 to 18 business days.
 
-3. **Category:** `Retrofitting & Operations`
-   - **Q (ID):** Apakah pekerjaan retrofit panel PLC/VSD atau penggantian jalur pipa mengharuskan penghentian total (total shutdown) operasional pabrik?
-   - **A (ID):** Tidak harus berhenti total. Kami menjadwalkan metode Phased Live Retrofit, di mana penyambungan katup isolasi (tie-in) dan pengalihan panel kontrol dilakukan secara bergantian per unit mesin atau pada jeda pemeliharaan terjadwal akhir pekan.
-   - **Q (EN):** Does a PLC/VSD chiller retrofit or piping expansion require a complete plant production shutdown?
-   - **A (EN):** A full plant shutdown is rarely required. We execute a Phased Live Retrofit methodology where isolation valve tie-ins and control panel switchovers are staged unit-by-unit on standby lines or during scheduled weekend maintenance windows.
+3. **Category:** `Kontrak Bisnis`
+   - **Q (ID):** Berapa lama waktu pengerjaan untuk penyusunan draf kontrak baru atau peninjauan (review) kontrak dari mitra bisnis kami?
+   - **A (ID):** Peninjauan (review) dan pemberian catatan revisi (redlining) atas draf kontrak komersial standar diselesaikan dalam 2 hingga 3 hari kerja, sedangkan penyusunan kontrak baru dari awal rata-rata memerlukan 3 hingga 5 hari kerja.
+   - **Q (EN):** What is the turnaround time for drafting a new commercial contract or reviewing an agreement from a counterparty?
+   - **A (EN):** Reviewing and redlining a standard commercial contract takes 2 to 3 business days, while drafting a custom agreement from scratch typically takes 3 to 5 business days.
 
-4. **Category:** `Procurement & TKDN`
-   - **Q (ID):** Apakah pekerjaan instalasi dan panel kontrol dari GardaTek dilengkapi dokumen sertifikasi K3 dan verifikasi TKDN untuk kebutuhan tender korporasi/BUMN?
-   - **A (ID):** Seluruh pekerjaan lapangan dipimpin oleh pengawas K3 bersertifikat Kemnaker RI dengan juru las berlisensi Kelas 1, serta dilengkapi dokumen verifikasi TKDN (capaian `42,6%`) untuk perakitan panel kontrol dan fabrikasi rak perpipaan lokal.
-   - **Q (EN):** Are GardaTek installations and control panels backed by Kemnaker OHS certifications and TKDN local-content documentation for corporate or state-enterprise tenders?
-   - **A (EN):** All site works are supervised by Kemnaker-certified OHS officers and Class 1 licensed welders, accompanied by verified TKDN local-content documentation (`42.6%` score) for locally assembled PLC control panels and fabricated pipe racks.
+4. **Category:** `Tim & Pendampingan`
+   - **Q (ID):** Apakah pekerjaan perusahaan kami akan ditangani langsung oleh konsultan berpengalaman?
+   - **A (ID):** Ya. Setiap klien didampingi langsung oleh konsultan senior yang bertanggung jawab penuh sejak diskusi pertama hingga dokumen selesai, bukan diserahkan begitu saja kepada staf junior yang berganti-ganti.
+   - **Q (EN):** Will our business matters be handled directly by experienced senior consultants?
+   - **A (EN):** Yes. You work directly with an assigned senior consultant from the first briefing through final delivery, never handed off to a rotating cast of junior staff.
 
-5. **Category:** `Warranty & Spare Parts`
-   - **Q (ID):** Bagaimana cakupan garansi purnajual untuk instalasi sistem baru maupun pekerjaan overhaul kompresor?
-   - **A (ID):** Instalasi sistem baru dilindungi garansi pengerjaan mekanikal-elektrikal selama 12 bulan sejak tanggal Berita Acara Serah Terima (BAST) ditambah garansi resmi pabrikan unit utama, sedangkan pekerjaan overhaul kompresor mencakup garansi operasional 6 bulan.
-   - **Q (EN):** What post-commissioning warranty applies to new refrigeration installations and compressor overhauls?
-   - **A (EN):** New system installations carry a 12-month mechanical and electrical workmanship warranty from the date of commissioning handover alongside OEM equipment warranties, while compressor overhauls include a 6-month operational warranty.
+5. **Category:** `Kerahasiaan Data`
+   - **Q (ID):** Bagaimana Koolom Partners menjaga kerahasiaan dokumen bisnis dan rencana transaksi perusahaan kami?
+   - **A (ID):** Seluruh informasi dan dokumen yang Anda bagikan dilindungi oleh standar kerahasiaan profesi sejak kontak pertama. Kami juga siap menandatangani Perjanjian Kerahasiaan (NDA) sebelum Anda mengirimkan dokumen transaksi sensitif.
+   - **Q (EN):** How does Koolom Partners protect the confidentiality of our business documents and transaction plans?
+   - **A (EN):** Every document and briefing you share is protected under strict professional confidentiality from first contact. We are also happy to sign a mutual Non-Disclosure Agreement (NDA) before you transmit sensitive transaction files.
 
 ---
 
@@ -257,13 +254,13 @@
 
 | Legacy URL (Old Site) | New Localized Route (`/{locale}/...`) | Redirect Status | Primary Target Keyword (ID) | Primary Target Keyword (EN) |
 | :--- | :--- | :--- | :--- | :--- |
-| `/index.html` or `/home` | `/id` (default) / `/en` | `301` | Kontraktor Cold Storage & HVACR Industri Indonesia | Industrial Cold Storage & HVACR Engineering Indonesia |
-| `/about-us.html` | `/id/tentang-kami` / `/en/about` | `301` | Perusahaan Engineering Mekanikal & Refrigerasi Bersertifikat ISO | ISO Certified Industrial Refrigeration Engineering Company |
-| `/services.html` | `/id/layanan` / `/en/services` | `301` | Jasa Instalasi & Maintenance Chiller Industri | Industrial Chiller Installation & Maintenance Services |
-| `/product-detail?id=1` | `/id/layanan/instalasi-rantai-dingin` | `301` | Jasa Pembuatan Cold Storage Gudang Beku Bekasi Surabaya | Industrial Cold Storage Room Construction Indonesia |
-| `/product-detail?id=2` | `/id/layanan/pemeliharaan-preventif-hvacr` | `301` | Kontrak Service & Maintenance Chiller Pabrik | Industrial Chiller Preventive Maintenance Contract |
-| `/product-detail?id=3` | `/id/layanan/fabrikasi-mekanikal-pipa` | `301` | Kontraktor Instalasi Pipa Chilled Water & Steam Industri | Chilled Water & Industrial Piping Fabrication Contractor |
-| `/product-detail?id=4` | `/id/layanan/retrofit-otomasi-chiller` | `301` | Jasa Retrofit & Otomasi PLC Efisiensi Energi Chiller | Chiller VSD PLC Energy Retrofit Specialist |
-| `/projects.php` | `/id/studi-kasus` / `/en/case-studies` | `301` | Portofolio Proyek Cold Storage & Chiller Industri | Industrial Refrigeration & Chiller Project Case Studies |
-| `/blog.php` | `/id/artikel` / `/en/articles` | `301` (PLANNED: no redirect or article route exists until workflow Step 4.4 is built) | Artikel Teknis Refrigerasi & Efisiensi Energi HVACR | Industrial HVACR & Cold-Chain Engineering Guides |
-| `/contact-us.html` | `/id/hubungi-kami` / `/en/contact` | `301` | Konsultasi & Penawaran Harga Cold Storage Chiller | Request Industrial Refrigeration & Chiller Quotation |
+| `/index.html` or `/home` | `/id` (default) / `/en` | `301` | Konsultan Hukum Bisnis & Perizinan Perusahaan Indonesia | Corporate Legal & Business Licensing Consultant Indonesia |
+| `/about-us.html` | `/id/tentang-kami` / `/en/about` | `301` | Firma Konsultan Hukum & Kepatuhan Korporasi Terpercaya | Trusted Corporate Legal & Business Advisory Firm |
+| `/services.html` | `/id/layanan` / `/en/services` | `301` | Layanan Pendirian PT, Review Kontrak & Kepatuhan Bisnis | Company Formation, Contract Drafting & Compliance Services |
+| `/product-detail?id=1` | `/id/layanan/pendirian-badan-usaha` | `301` | Jasa Pendirian PT, PT PMA & Pengurusan Izin OSS RBA | PT & PT PMA Company Formation and OSS Licensing Indonesia |
+| `/product-detail?id=2` | `/id/layanan/penyusunan-kontrak-bisnis` | `301` | Jasa Pembuatan & Review Kontrak Kerja Sama Bisnis | Commercial Contract Drafting & Legal Review Service |
+| `/product-detail?id=3` | `/id/layanan/kepatuhan-regulasi-retainer` | `301` | Jasa Retainer Legal Perusahaan & Kepatuhan LKPM | Corporate Legal Retainer & Regulatory Compliance Indonesia |
+| `/product-detail?id=4` | `/id/layanan/pendampingan-transaksi-bisnis` | `301` | Jasa Legal Due Diligence & Pendampingan Akuisisi Perusahaan | Legal Due Diligence & M&A Transaction Advisory |
+| `/projects.php` | `/id/studi-kasus` / `/en/case-studies` | `301` | Studi Kasus Perizinan Korporasi & Kontrak Bisnis | Corporate Licensing & Commercial Transaction Case Studies |
+| `/blog.php` | `/id/artikel` / `/en/articles` | `301` (PLANNED: no redirect or article route exists until workflow Step 4.4 is built) | Panduan Hukum Bisnis, Perizinan OSS & Kontrak Korporasi | Indonesian Business Law, OSS Licensing & Contract Guides |
+| `/contact-us.html` | `/id/hubungi-kami` / `/en/contact` | `301` | Konsultasi Hukum Bisnis & Estimasi Biaya Layanan | Free Corporate Legal & Business Advisory Consultation |

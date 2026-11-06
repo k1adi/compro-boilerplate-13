@@ -14,4 +14,3 @@ readonly class MetricProofData
         public bool $isSamplePlaceholder = true,
     ) {}
 }
-

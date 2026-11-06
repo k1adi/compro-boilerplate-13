@@ -15,14 +15,14 @@
     $resolvedExternal = $action?->isExternal ?? ($isExternal || $external);
     $resolvedAriaLabel = $action?->ariaLabel ?? null;
 
-    $baseClasses = 'inline-flex min-h-11 items-center justify-center gap-2.5 rounded-[var(--radius-button)] px-5 py-2.5 text-sm font-semibold transition-colors duration-150 select-none';
+    $baseClasses = 'inline-flex min-h-11 items-center justify-center gap-2.5 rounded-[var(--radius-button)] px-5 py-2.5 text-sm font-semibold transition-all duration-150 select-none';
 
     $variantClasses = match ($resolvedVariant) {
-        'primary' => 'bg-accent text-accent-ink hover:bg-accent-hover active:translate-y-px border border-transparent',
-        'secondary' => 'bg-primary text-ink-inverse hover:bg-zinc-800 dark:bg-zinc-100 dark:text-zinc-950 dark:hover:bg-zinc-200 active:translate-y-px border border-transparent',
-        'outline' => 'border border-border-interactive bg-surface-elevated text-ink hover:border-ink hover:bg-surface active:translate-y-px',
-        'ghost' => 'border border-transparent bg-transparent text-ink hover:bg-surface-elevated hover:border-border-subtle active:translate-y-px',
-        default => 'bg-accent text-accent-ink hover:bg-accent-hover active:translate-y-px border border-transparent',
+        'primary' => 'bg-accent text-accent-ink hover:bg-accent-hover shadow-sm active:translate-y-px border border-transparent',
+        'secondary' => 'bg-secondary-800 text-white hover:bg-secondary-900 active:translate-y-px border border-transparent',
+        'outline' => 'border border-border-interactive bg-surface text-ink hover:border-secondary-700 hover:text-secondary-700 active:translate-y-px',
+        'ghost' => 'border border-transparent bg-transparent text-ink hover:bg-surface-soft active:translate-y-px',
+        default => 'bg-accent text-accent-ink hover:bg-accent-hover shadow-sm active:translate-y-px border border-transparent',
     };
 @endphp
 

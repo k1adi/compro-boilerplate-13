@@ -6,7 +6,7 @@
 
 ## 1. What This Project Is
 
-A bilingual (`id` default, `en`) B2B **service company profile website** (Compro) built as a reusable boilerplate. The sample business is a fictional industrial cold-chain, chiller, and process-piping contractor (`GardaTek Engineering`, `PT Garda Teknika Presisi`). All of its data is **seed data** and is labeled as such on screen. The code is meant to be forked for a real business (see Section 12).
+A bilingual (`id` default, `en`) B2B **service company profile website** (Compro) built as a reusable boilerplate. The sample business is a corporate legal, licensing, and business advisory firm (`Koolom Partners`, `PT Koolom Mitra Konsultan`) modeled on the `koolom.webflow.io` reference layout. All of its data is **seed data** and is labeled as such on screen. The code is meant to be forked for a real business (see Section 12).
 
 | Layer | Choice | Where it is pinned |
 | :--- | :--- | :--- |
@@ -69,6 +69,7 @@ Update this table in the same changeset whenever a phase, page, component, route
 - Images are SVG schematic placeholders in `public/images/placeholders/`, flagged `isPlaceholder`.
 - No sitemap or page cache. Each request rebuilds DTOs (cheap for the mock repository).
 - `APP_LOCALE` in `.env.example` is `en`, but `/` redirects to `/id`. The URL prefix, not `APP_LOCALE`, decides the language.
+- `docs/design.md`, `resources/css/compro.css`, and public Blade section templates have been fully updated to the `koolom.webflow.io` Bento layout and the **White (Primary) + Blue (Secondary) + Orange (Tertiary)** triadic color spectrum.
 
 Last automated verification: 2026-11-04, `php artisan test --compact` (20 tests, 114 assertions passing), `vendor/bin/pint --format agent` passing, `npm run build` passing.
 

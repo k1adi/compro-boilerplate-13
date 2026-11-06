@@ -48,7 +48,7 @@ class ComproPageController extends Controller
         $services = $this->repository->getServices($locale);
         $baseUrl = rtrim(config('app.url', 'http://localhost'), '/');
         $pageUrl = $baseUrl.($isId ? '/id/tentang-kami' : '/en/about');
-        $title = ($isId ? 'Profil Engineering, Sertifikasi ISO/K3 & Workshop' : 'Engineering Profile, ISO/OHS Compliance & Workshop').' | '.$settings->brandName;
+        $title = ($isId ? 'Tentang Kami, Tim Konsultan & Standar Layanan' : 'About Our Firm, Advisory Standards & Credentials').' | '.$settings->brandName;
 
         $seo = new SeoMetaData(
             title: $title,
@@ -89,7 +89,7 @@ class ComproPageController extends Controller
         $faqs = $this->repository->getFaqs($locale);
         $baseUrl = rtrim(config('app.url', 'http://localhost'), '/');
         $pageUrl = $baseUrl.($isId ? '/id/layanan' : '/en/services');
-        $title = ($isId ? 'Layanan Instalasi Cold Storage, Chiller & Perpipaan Industri' : 'Industrial Cold Storage, Chiller & Piping Engineering Services').' | '.$settings->brandName;
+        $title = ($isId ? 'Layanan Pendirian PT, Kontrak Bisnis & Kepatuhan Regulasi' : 'Company Formation, Contract Drafting & Compliance Services').' | '.$settings->brandName;
 
         $seo = new SeoMetaData(
             title: $title,
@@ -110,7 +110,7 @@ class ComproPageController extends Controller
                 pageDescription: $settings->valueProposition,
                 breadcrumbs: [
                     ['name' => $isId ? 'Beranda' : 'Home', 'url' => $baseUrl.'/'.$locale],
-                    ['name' => $isId ? 'Layanan Teknis' : 'Engineering Services', 'url' => $pageUrl],
+                    ['name' => $isId ? 'Layanan' : 'Services', 'url' => $pageUrl],
                 ],
                 faqs: $faqs,
             ),
@@ -162,7 +162,7 @@ class ComproPageController extends Controller
                 pageDescription: $service->seo->description,
                 breadcrumbs: [
                     ['name' => $isId ? 'Beranda' : 'Home', 'url' => $baseUrl.'/'.$locale],
-                    ['name' => $isId ? 'Layanan Teknis' : 'Engineering Services', 'url' => $baseUrl.($isId ? '/id/layanan' : '/en/services')],
+                    ['name' => $isId ? 'Layanan' : 'Services', 'url' => $baseUrl.($isId ? '/id/layanan' : '/en/services')],
                     ['name' => $service->title, 'url' => $service->seo->canonicalUrl],
                 ],
                 service: $service,
@@ -188,7 +188,7 @@ class ComproPageController extends Controller
         $services = $this->repository->getServices($locale);
         $baseUrl = rtrim(config('app.url', 'http://localhost'), '/');
         $pageUrl = $baseUrl.($isId ? '/id/studi-kasus' : '/en/case-studies');
-        $title = ($isId ? 'Studi Kasus Proyek Cold Storage, Chiller & Perpipaan' : 'Industrial Cold Storage, Chiller & Piping Case Studies').' | '.$settings->brandName;
+        $title = ($isId ? 'Studi Kasus Perizinan Usaha, Kontrak & Akuisisi Bisnis' : 'Client Case Studies in Licensing, Contracts & M&A').' | '.$settings->brandName;
 
         $seo = new SeoMetaData(
             title: $title,
@@ -267,9 +267,10 @@ class ComproPageController extends Controller
         $isId = $locale === 'id';
         $settings = $this->repository->getCompanySettings($locale);
         $services = $this->repository->getServices($locale);
+        $faqs = $this->repository->getFaqs($locale);
         $baseUrl = rtrim(config('app.url', 'http://localhost'), '/');
         $pageUrl = $baseUrl.($isId ? '/id/hubungi-kami' : '/en/contact');
-        $title = ($isId ? 'Jadwalkan Audit Termal & Permintaan BoQ Teknis' : 'Schedule a Site Thermal Audit & Technical RFQ').' | '.$settings->brandName;
+        $title = ($isId ? 'Hubungi Kami & Jadwalkan Konsultasi Gratis' : 'Contact Us & Request a Free Consultation').' | '.$settings->brandName;
 
         $seo = new SeoMetaData(
             title: $title,
@@ -290,14 +291,16 @@ class ComproPageController extends Controller
                 pageDescription: $settings->valueProposition,
                 breadcrumbs: [
                     ['name' => $isId ? 'Beranda' : 'Home', 'url' => $baseUrl.'/'.$locale],
-                    ['name' => $isId ? 'Hubungi Kami' : 'Contact & RFQ', 'url' => $pageUrl],
+                    ['name' => $isId ? 'Kontak' : 'Contact', 'url' => $pageUrl],
                 ],
+                faqs: $faqs,
             ),
         );
 
         return view('pages.contact', [
             'settings' => $settings,
             'services' => $services,
+            'faqs' => $faqs,
             'selectedServiceCode' => (string) $request->query('service', 'SRV-01'),
             'seo' => $seo,
         ]);
@@ -323,8 +326,8 @@ class ComproPageController extends Controller
             'status' => 'success',
             'reference_code' => $referenceCode,
             'message' => $isId
-                ? "Permintaan teknis Anda telah tercatat dengan nomor referensi {$referenceCode}. Tim Application Engineer kami akan menghubungi {$validated['work_email']} / {$validated['phone_whatsapp']} dalam maksimal 4 jam kerja."
-                : "Your technical inquiry has been logged under reference {$referenceCode}. Our Application Engineering desk will contact {$validated['work_email']} / {$validated['phone_whatsapp']} within 4 working hours.",
+                ? "Permohonan konsultasi Anda telah tercatat dengan nomor referensi {$referenceCode}. Konsultan senior kami akan menghubungi {$validated['work_email']} / {$validated['phone_whatsapp']} dalam maksimal 1 hari kerja."
+                : "Your consultation inquiry has been logged under reference {$referenceCode}. Our senior consultant will contact {$validated['work_email']} / {$validated['phone_whatsapp']} within 1 business day.",
             'summary' => [
                 'company_name' => $validated['company_name'],
                 'service_code' => $validated['service_code'],
@@ -353,13 +356,12 @@ class ComproPageController extends Controller
         $id = (int) $request->query('id', 1);
 
         $slugMap = [
-            1 => '/id/layanan/instalasi-rantai-dingin',
-            2 => '/id/layanan/pemeliharaan-preventif-hvacr',
-            3 => '/id/layanan/fabrikasi-mekanikal-pipa',
-            4 => '/id/layanan/retrofit-otomasi-chiller',
+            1 => '/id/layanan/pendirian-badan-usaha',
+            2 => '/id/layanan/penyusunan-kontrak-bisnis',
+            3 => '/id/layanan/kepatuhan-regulasi-retainer',
+            4 => '/id/layanan/pendampingan-transaksi-bisnis',
         ];
 
         return redirect($slugMap[$id] ?? '/id/layanan', 301);
     }
 }
-

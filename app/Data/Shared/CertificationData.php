@@ -15,4 +15,3 @@ readonly class CertificationData
         public bool $isSamplePlaceholder = true,
     ) {}
 }
-

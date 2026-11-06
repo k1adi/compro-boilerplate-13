@@ -16,4 +16,3 @@ readonly class TestimonialData
         public bool $isVerifiedReal = false,
     ) {}
 }
-

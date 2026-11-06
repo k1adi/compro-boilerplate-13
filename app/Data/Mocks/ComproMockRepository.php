@@ -27,65 +27,65 @@ class ComproMockRepository
         $isId = $locale === 'id';
 
         return new CompanySettingsData(
-            legalName: 'PT Garda Teknika Presisi',
-            brandName: 'GardaTek Engineering',
-            foundingYear: 2012,
-            kbliCodes: ['43224', '28193'],
+            legalName: 'PT Koolom Mitra Konsultan',
+            brandName: 'Koolom Partners',
+            foundingYear: 2014,
+            kbliCodes: ['70209', '69101'],
             valueProposition: $isId
-                ? 'Kami merancang, memasang, dan memelihara sistem pendingin rantai dingin (cold storage), perpipaan mekanikal, serta otomasi chiller untuk fasilitas manufaktur, farmasi, dan logistik di Indonesia dengan kapasitas terpasang mulai 20 TR hingga 1.500 TR.'
-                : 'We engineer, install, and maintain industrial cold-chain refrigeration, mechanical piping, and chiller automation systems for manufacturing, pharmaceutical, and logistics facilities across Indonesia with installed capacities ranging from 20 TR to 1,500 TR.',
-            hqAddress: 'Kawasan Industri Jababeka II, Jl. Industri Selatan Blok JJ No. 14, Cikarang Selatan, Kabupaten Bekasi, Jawa Barat 17530, Indonesia',
-            branchAddress: 'Kawasan Industri Rungkut (SIER), Jl. Berbek Industri III No. 8, Sidoarjo, Jawa Timur 61256, Indonesia',
-            geoCoordinates: ['lat' => -6.3084, 'lng' => 107.1485],
+                ? 'Kami membantu perusahaan merapikan perizinan usaha, menyusun kontrak bisnis yang aman, dan mengelola kepatuhan regulasi secara praktis dengan estimasi biaya tertulis yang transparan.'
+                : 'We help businesses secure corporate licenses, draft clear commercial contracts, and manage regulatory compliance with transparent, upfront fee estimates.',
+            hqAddress: 'Gedung Menara Sudirman Lt. 15, Jl. Jend. Sudirman Kav. 60, Kebayoran Baru, Jakarta Selatan 12190, Indonesia',
+            branchAddress: 'Graha Pangeran Lt. 8, Jl. Ahmad Yani No. 286, Gayungan, Surabaya, Jawa Timur 60234, Indonesia',
+            geoCoordinates: ['lat' => -6.2246, 'lng' => 106.8096],
             officeHours: $isId
-                ? 'Senin s/d Jumat: 08:00 s/d 17:00 WIB | Sabtu: 08:00 s/d 13:00 WIB'
-                : 'Monday to Friday: 08:00 to 17:00 WIB | Saturday: 08:00 to 13:00 WIB',
+                ? 'Senin s/d Jumat: 09:00 s/d 18:00 WIB'
+                : 'Monday to Friday: 09:00 to 18:00 WIB',
             emergencySlaHours: $isId
-                ? 'Siaga Darurat SLA 24 Jam (Senin s/d Minggu, termasuk Hari Libur Nasional)'
-                : '24/7 Emergency SLA Dispatch (Monday to Sunday, including Public Holidays)',
-            primaryPhone: '+62-21-8984-0110',
-            whatsappLeadNumber: '+62-811-1024-880',
-            engineeringEmail: 'engineering@gardatek.co.id',
-            generalEmail: 'info@gardatek.co.id',
+                ? 'Respon Konsultasi Cepat < 24 Jam Kerja (Senin s/d Sabtu)'
+                : 'Fast Consultation Reply < 24 Business Hours (Monday to Saturday)',
+            primaryPhone: '+62-21-5200-4180',
+            whatsappLeadNumber: '+62-811-9040-180',
+            engineeringEmail: 'consult@koolom.co.id',
+            generalEmail: 'info@koolom.co.id',
             sameAsUrls: [
-                'linkedin' => 'https://www.linkedin.com/company/gardatek-engineering',
-                'youtube' => 'https://www.youtube.com/@gardatek-engineering',
+                'linkedin' => 'https://www.linkedin.com/company/koolom-partners',
+                'youtube' => 'https://www.youtube.com/@koolom-partners',
             ],
             metrics: [
                 new MetricProofData(
+                    id: 'metric-response',
+                    label: $isId ? 'Respon Konsultasi' : 'Consultation Reply',
+                    exactFigure: $isId ? '< 24 Jam' : '< 24 Hours',
+                    contextNote: $isId
+                        ? 'Waktu tanggap tertulis untuk setiap permohonan konsultasi baru'
+                        : 'Written response time for every new client inquiry',
+                    isSamplePlaceholder: true,
+                ),
+                new MetricProofData(
+                    id: 'metric-clients',
+                    label: $isId ? 'Klien Bisnis Terbantu' : 'Business Clients Served',
+                    exactFigure: $isId ? '450+ Klien' : '450+ Clients',
+                    contextNote: $isId
+                        ? 'Perusahaan lokal dan PMA yang didampingi sejak 2014'
+                        : 'Local and foreign-invested companies advised since 2014',
+                    isSamplePlaceholder: true,
+                ),
+                new MetricProofData(
                     id: 'metric-years',
-                    label: $isId ? 'Pengalaman Operasional' : 'Operational Track Record',
-                    exactFigure: $isId ? '14 Tahun' : '14 Years',
+                    label: $isId ? 'Pengalaman Praktik' : 'Years of Practice',
+                    exactFigure: $isId ? '12 Tahun' : '12 Years',
                     contextNote: $isId
-                        ? 'Beroperasi sejak 2012 di koridor industri Jawa & Sumatera'
-                        : 'Operating since 2012 across Java and Sumatra industrial corridors',
+                        ? 'Mendampingi pendirian usaha, kontrak, dan kepatuhan bisnis'
+                        : 'Advising on company setup, contracts, and compliance',
                     isSamplePlaceholder: true,
                 ),
                 new MetricProofData(
-                    id: 'metric-capacity',
-                    label: $isId ? 'Kapasitas Pendinginan Terpasang' : 'Installed Cooling Capacity',
-                    exactFigure: $isId ? '48.500+ TR' : '48,500+ TR',
+                    id: 'metric-cases',
+                    label: $isId ? 'Dokumen & Proyek Selesai' : 'Matters Completed',
+                    exactFigure: $isId ? '1.200+ Proyek' : '1,200+ Matters',
                     contextNote: $isId
-                        ? 'Akumulasi instalasi chiller & cold storage (2012 s/d 2026)'
-                        : 'Cumulative chiller and cold storage commissioning (2012 to 2026)',
-                    isSamplePlaceholder: true,
-                ),
-                new MetricProofData(
-                    id: 'metric-sla',
-                    label: $isId ? 'Kepatuhan Waktu Tanggap Darurat' : 'Emergency SLA Response Rate',
-                    exactFigure: $isId ? '98,7% < 4 Jam' : '98.7% < 4 Hours',
-                    contextNote: $isId
-                        ? 'Waktu tiba teknisi di lokasi klien Jabodetabek & Karawang'
-                        : 'On-site technician arrival across Greater Jakarta and Karawang',
-                    isSamplePlaceholder: true,
-                ),
-                new MetricProofData(
-                    id: 'metric-projects',
-                    label: $isId ? 'Proyek Industri Selesai' : 'Completed Industrial Commissions',
-                    exactFigure: $isId ? '310 Fasilitas' : '310 Facilities',
-                    contextNote: $isId
-                        ? 'Gudang rantai dingin, pabrik farmasi, dan pengolahan pangan'
-                        : 'Cold warehouses, pharmaceutical plants, and food processing',
+                        ? 'Kontrak komersial, izin usaha OSS, dan audit kepatuhan selesai'
+                        : 'Commercial contracts, OSS licenses, and compliance audits delivered',
                     isSamplePlaceholder: true,
                 ),
             ],
@@ -93,52 +93,43 @@ class ComproMockRepository
                 new CertificationData(
                     standardCode: 'ISO 9001:2015',
                     scope: $isId
-                        ? 'Sistem Manajemen Mutu Desain, Instalasi & Pemeliharaan HVACR'
-                        : 'Quality Management System for HVACR Engineering & Maintenance',
+                        ? 'Sistem Manajemen Mutu Layanan Konsultasi Bisnis & Korporasi'
+                        : 'Quality Management System for Corporate & Business Advisory',
                     issuingBody: 'TUV Rheinland',
-                    referenceNumber: 'ID-QMS-00000-SEED',
+                    referenceNumber: 'ID-QMS-9001-SEED',
                     isSamplePlaceholder: true,
                 ),
                 new CertificationData(
-                    standardCode: 'SMK3 Kemnaker RI',
+                    standardCode: 'PERADI & AKHKI',
                     scope: $isId
-                        ? 'Keselamatan & Kesehatan Kerja Konstruksi Mekanikal & Bejana Tekan (PP No. 50/2012)'
-                        : 'Occupational Health & Safety for Mechanical & Pressure Vessel Works (PP No. 50/2012)',
-                    issuingBody: 'Kementerian Ketenagakerjaan RI',
-                    referenceNumber: 'SMK3-0000-SEED',
+                        ? 'Konsultan Hukum Korporasi & Perizinan Investasi Terdaftar'
+                        : 'Registered Corporate Legal & Investment Licensing Advisors',
+                    issuingBody: 'PERADI & AKHKI',
+                    referenceNumber: 'REG-ADV-2014-SEED',
                     isSamplePlaceholder: true,
                 ),
                 new CertificationData(
-                    standardCode: 'TKDN 42,6%',
+                    standardCode: 'IKPI Certified',
                     scope: $isId
-                        ? 'Verifikasi Tingkat Komponen Dalam Negeri Panel Kontrol PLC/SCADA & Rak Pipa'
-                        : 'Local Content Verification for PLC/SCADA Control Panels & Pipe Racks (42.6%)',
-                    issuingBody: 'PT Surveyor Indonesia',
-                    referenceNumber: 'TKDN-0000-SEED',
-                    isSamplePlaceholder: true,
-                ),
-                new CertificationData(
-                    standardCode: 'BNSP & Kemnaker Kelas 1',
-                    scope: $isId
-                        ? 'Teknisi Refrigerasi Industri, Juru Las Kelas 1 (SMAW/GTAW), & Teknisi K3 Listrik'
-                        : 'Certified Industrial Refrigeration, Class 1 Welders (SMAW/GTAW), & Electrical Safety',
-                    issuingBody: 'BNSP & Kemnaker RI',
-                    referenceNumber: 'LIC-TECH-SEED',
+                        ? 'Konsultan Kepatuhan Pajak Korporasi & Audit Regulasi Usaha'
+                        : 'Certified Corporate Tax & Regulatory Compliance Advisors',
+                    issuingBody: 'IKPI',
+                    referenceNumber: 'REG-TAX-2016-SEED',
                     isSamplePlaceholder: true,
                 ),
             ],
             clientSectorDescriptors: $isId
                 ? [
-                    'Distribusi Logistik Rantai Dingin Nasional (Kawasan Industri MM2100, Bekasi)',
-                    'Fasilitas Manufaktur Farmasi & Vaksin Steril (Rungkut Industri, Surabaya)',
-                    'Pabrik Pengolahan Hasil Laut & Pembekuan Cepat IQF (Tanjung Emas, Semarang)',
-                    'Pusat Data & Ruang Server Telekomunikasi Tier-III (Kuningan, Jakarta Selatan)',
+                    'Perusahaan Teknologi & Startup SaaS (Jakarta Selatan)',
+                    'Distributor Perdagangan & Ritel Modern (Surabaya & Jakarta)',
+                    'Perusahaan Manufaktur & Penanaman Modal Asing / PMA (Bekasi & Karawang)',
+                    'Grup Properti Komersial & Perhotelan (Jakarta & Bali)',
                 ]
                 : [
-                    'National Cold-Chain Logistics Distribution Hub (MM2100 Industrial Town, Bekasi)',
-                    'Sterile Pharmaceutical & Vaccine Manufacturing Plant (Rungkut Industrial Estate, Surabaya)',
-                    'Seafood Processing & IQF Blast Freezing Facility (Tanjung Emas, Semarang)',
-                    'Tier-III Telecommunications Data Center & Server Facility (Kuningan, South Jakarta)',
+                    'Technology & B2B SaaS Companies (South Jakarta)',
+                    'Commercial Distribution & Modern Retail Networks (Surabaya & Jakarta)',
+                    'Foreign-Invested Manufacturing / PT PMA Entities (Bekasi & Karawang)',
+                    'Commercial Real Estate & Hospitality Groups (Jakarta & Bali)',
                 ],
             isSampleBoilerplate: true,
         );
@@ -157,284 +148,400 @@ class ComproMockRepository
             [
                 'code' => 'SRV-01',
                 'slug' => [
-                    'id' => 'instalasi-rantai-dingin',
-                    'en' => 'cold-chain-installation',
+                    'id' => 'pendirian-badan-usaha',
+                    'en' => 'company-formation-licensing',
                 ],
                 'title' => [
-                    'id' => 'Instalasi Sistem Rantai Dingin & Gudang Berpendingin',
-                    'en' => 'Cold-Chain Storage & Industrial Refrigeration Engineering',
+                    'id' => 'Pendirian Badan Usaha & Perizinan OSS',
+                    'en' => 'Company Formation & Business Licensing',
                 ],
                 'targetSegment' => [
-                    'id' => 'Operator logistik cold-chain (3PL), pabrik pengolahan daging/hasil laut, dan distributor bahan pangan beku.',
-                    'en' => 'Cold-chain 3PL operators, meat and seafood processors, and frozen food distribution hubs.',
+                    'id' => 'Pendiri bisnis baru, UMKM yang bertransformasi menjadi PT, serta investor asing (PT PMA).',
+                    'en' => 'Business founders, growing SMEs incorporating as a PT, and foreign investors establishing a PT PMA.',
                 ],
                 'problemSolved' => [
-                    'id' => 'Mencegah kerusakan komoditas akibat fluktuasi suhu ruang simpan dan kebocoran termal pada operasional gudang berkapasitas tinggi.',
-                    'en' => 'Prevents commodity spoilage caused by storage temperature drift and thermal leakage in high-throughput warehouse operations.',
+                    'id' => 'Memastikan pendirian PT, pemilihan kode KBLI, dan penerbitan izin usaha OSS RBA selesai tepat waktu tanpa penolakan berkas atau kesalahan struktur kepemilikan saham.',
+                    'en' => 'Ensures company incorporation, KBLI code selection, and OSS RBA business licensing are completed accurately without filing rejections or shareholding structure mistakes.',
                 ],
                 'deliverables' => [
                     'id' => [
-                        'Rentang suhu terkalibrasi: Chiller Room (+2°C s/d +8°C), Freezer Storage (-18°C s/d -25°C), dan Blast Freezer (-35°C s/d -40°C).',
-                        'Konstruksi panel insulasi Polyurethane (PIR/PUR) berdensitas 42 kg/m3 dengan ketebalan 100 mm hingga 200 mm dilengkapi cam-lock kedap udara.',
-                        'Sistem refrigerasi kompresor screw/semi-hermetik (Freon R-448A/R-449A, Amonia NH3, atau CO2 Transkritikal) dengan pencatatan suhu otomatis 24 jam.',
-                        'Pemanas lantai anti-beku (underfloor frost heave protection) dan tirai udara berkecepatan tinggi pada area loading dock.',
+                        'Pemeriksaan nama PT, penyusunan Akta Pendirian Notaris, dan pengesahan SK Kemenkumham RI.',
+                        'Pemetaan kode KBLI 2020 yang tepat sesuai aktivitas bisnis riil serta pengurusan NPWP Badan.',
+                        'Penerbitan Nomor Induk Berusaha (NIB), Sertifikat Standar, dan izin operasional berbasis risiko pada sistem OSS RBA.',
+                        'Penyusunan Anggaran Dasar dan Perjanjian Pemegang Saham (Shareholders Agreement) awal.',
                     ],
                     'en' => [
-                        'Calibrated temperature zones: Chiller Room (+2°C to +8°C), Freezer Storage (-18°C to -25°C), and Blast Freezer (-35°C to -40°C).',
-                        'High-density Polyurethane (42 kg/m3 PIR/PUR) insulated panels from 100 mm to 200 mm thickness with airtight cam-lock joints.',
-                        'Screw or semi-hermetic compressor racks (R-448A/R-449A, Ammonia NH3, or Transcritical CO2) paired with 24-hour automated temperature logging.',
-                        'Underfloor frost-heave heating mats and high-velocity air curtains across loading dock bays.',
+                        'Company name reservation, Notarial Deed of Establishment, and Ministry of Law (Kemenkumham) ratification decree.',
+                        'Accurate KBLI business classification mapping and corporate Tax ID (NPWP) registration.',
+                        'Risk-based Business Identification Number (NIB) and operational license issuance via OSS RBA.',
+                        'Initial Articles of Association and foundational Shareholders Agreement drafting.',
                     ],
                 ],
-                'technicalSpecs' => [
+                'specs' => [
                     'id' => [
-                        ['parameter' => 'Rentang Suhu Desain', 'value' => '+8°C s/d -40°C'],
-                        ['parameter' => 'Densitas Insulasi PIR/PUR', 'value' => '42 kg/m3 (100 mm s/d 200 mm)'],
-                        ['parameter' => 'Uji Tekan Nitrogen & Vakum', 'value' => '28 bar / < 500 mikron'],
-                        ['parameter' => 'Opsi Refrigeran', 'value' => 'R-448A, R-449A, NH3, CO2'],
+                        ['parameter' => 'Bentuk Badan Usaha', 'value' => 'PT Lokal, PT PMA & CV'],
+                        ['parameter' => 'Sistem Perizinan', 'value' => 'OSS RBA & AHU Online'],
+                        ['parameter' => 'Estimasi Penyelesaian', 'value' => '5 s/d 18 Hari Kerja'],
+                        ['parameter' => 'Skema Biaya', 'value' => 'Paket Biaya Tetap (Fixed Fee)'],
                     ],
                     'en' => [
-                        ['parameter' => 'Design Temperature Range', 'value' => '+8°C down to -40°C'],
-                        ['parameter' => 'PIR/PUR Insulation Density', 'value' => '42 kg/m3 (100 mm to 200 mm)'],
-                        ['parameter' => 'Nitrogen Pressure & Vacuum Test', 'value' => '28 bar / < 500 microns'],
-                        ['parameter' => 'Refrigerant Options', 'value' => 'R-448A, R-449A, NH3, CO2'],
+                        ['parameter' => 'Entity Types', 'value' => 'Local PT, PT PMA & CV'],
+                        ['parameter' => 'Licensing System', 'value' => 'OSS RBA & AHU Online'],
+                        ['parameter' => 'Estimated Turnaround', 'value' => '5 to 18 Business Days'],
+                        ['parameter' => 'Fee Structure', 'value' => 'Upfront Fixed-Fee Package'],
                     ],
                 ],
-                'workflowSteps' => [
+                'steps' => [
                     'id' => [
-                        ['stepNumber' => 1, 'title' => 'Audit Beban Termal & Simulasi', 'description' => 'Perhitungan beban transmisi dinding, infiltrasi pintu, dan panas produk harian.'],
-                        ['stepNumber' => 2, 'title' => 'Rekayasa Desain & P&ID', 'description' => 'Pembuatan gambar kerja 3D, diagram perpipaan, serta seleksi kapasitas kompresor dan evaporator.'],
-                        ['stepNumber' => 3, 'title' => 'Fabrikasi & Instalasi Mekanikal', 'description' => 'Pemasangan panel insulasi, pengelasan pipa refrigeran bertekanan, dan perakitan panel kontrol.'],
-                        ['stepNumber' => 4, 'title' => 'Uji Tekan, Vakum & Komisioning', 'description' => 'Uji tekan nitrogen 28 bar, evakuasi vakum < 500 mikron, dan penarikan suhu bertahap (pull-down test).'],
-                        ['stepNumber' => 5, 'title' => 'Serah Terima & Kalibrasi Sensor', 'description' => 'Pelatihan operator lapangan, penyerahan dokumen As-Built Drawing, dan sertifikat kalibrasi sensor suhu.'],
+                        [
+                            'stepNumber' => 1,
+                            'title' => 'Konsultasi Awal Gratis',
+                            'description' => 'Diskusi rencana bisnis, komposisi pemegang saham, dan pemetaan kode KBLI yang sesuai.',
+                        ],
+                        [
+                            'stepNumber' => 2,
+                            'title' => 'Estimasi Biaya Tertulis',
+                            'description' => 'Penyampaian rincian biaya resmi dan daftar dokumen persyaratan di awal tanpa biaya tersembunyi.',
+                        ],
+                        [
+                            'stepNumber' => 3,
+                            'title' => 'Penyusunan Akta & Pengajuan',
+                            'description' => 'Penyusunan draf akta pendirian, penandatanganan notaris, dan pengajuan pengesahan Kemenkumham.',
+                        ],
+                        [
+                            'stepNumber' => 4,
+                            'title' => 'Penerbitan NIB & Serah Terima',
+                            'description' => 'Penerbitan NIB/izin usaha OSS RBA dan penyerahan bundel dokumen legal perusahaan lengkap.',
+                        ],
                     ],
                     'en' => [
-                        ['stepNumber' => 1, 'title' => 'Thermal Load Audit & Simulation', 'description' => 'Calculation of wall transmission load, dock door infiltration, and daily product heat load.'],
-                        ['stepNumber' => 2, 'title' => 'Engineering Design & P&ID', 'description' => '3D shop drawings, piping schematics, and compressor/evaporator capacity sizing.'],
-                        ['stepNumber' => 3, 'title' => 'Site Mechanical Installation', 'description' => 'Insulated panel erection, pressurized refrigerant pipe welding, and control panel assembly.'],
-                        ['stepNumber' => 4, 'title' => 'Pressure Test, Vacuum & Commissioning', 'description' => '28 bar nitrogen pressure hold, < 500 micron vacuum evacuation, and stepped pull-down testing.'],
-                        ['stepNumber' => 5, 'title' => 'Handover & Sensor Calibration', 'description' => 'Plant operator training, As-Built Drawing dossier handover, and temperature sensor calibration certificates.'],
+                        [
+                            'stepNumber' => 1,
+                            'title' => 'Free Initial Consultation',
+                            'description' => 'Discuss your business model, shareholding structure, and appropriate KBLI classifications.',
+                        ],
+                        [
+                            'stepNumber' => 2,
+                            'title' => 'Transparent Written Quote',
+                            'description' => 'Receive an itemized fixed-fee quote and document checklist upfront with zero hidden charges.',
+                        ],
+                        [
+                            'stepNumber' => 3,
+                            'title' => 'Deed Drafting & Filing',
+                            'description' => 'Prepare the incorporation deed, execute notarial signing, and secure Ministry ratification.',
+                        ],
+                        [
+                            'stepNumber' => 4,
+                            'title' => 'NIB Issuance & Handover',
+                            'description' => 'Issue your OSS RBA NIB and operational licenses with a complete corporate legal binder.',
+                        ],
                     ],
                 ],
                 'ctaLabel' => [
-                    'id' => 'Ajukan Perhitungan Beban Cold Storage',
-                    'en' => 'Request Cold Storage Load Calculation',
+                    'id' => 'Konsultasi Pendirian Usaha',
+                    'en' => 'Start Company Formation',
                 ],
-                'relatedCaseStudySlugs' => [
-                    'id' => ['cold-storage-distribusi-cikarang'],
-                    'en' => ['cikarang-cold-storage-hub'],
-                ],
+                'relatedStudies' => ['pendirian-pt-pma-logistik-jakarta', 'jakarta-logistics-pma-setup'],
             ],
             [
                 'code' => 'SRV-02',
                 'slug' => [
-                    'id' => 'pemeliharaan-preventif-hvacr',
-                    'en' => 'hvacr-preventive-maintenance',
+                    'id' => 'penyusunan-kontrak-bisnis',
+                    'en' => 'corporate-contract-drafting',
                 ],
                 'title' => [
-                    'id' => 'Kontrak Pemeliharaan Preventif & Audit Termal HVACR',
-                    'en' => 'HVACR Preventive Maintenance Contracts & Thermal Auditing',
+                    'id' => 'Penyusunan Kontrak Bisnis & Perjanjian Komersial',
+                    'en' => 'Corporate Contract Drafting & Review',
                 ],
                 'targetSegment' => [
-                    'id' => 'Pabrik farmasi (CPOB/GMP), fasilitas F&B, gedung komersial, dan pusat data yang beroperasi 24/7.',
-                    'en' => 'GMP pharmaceutical plants, food and beverage facilities, commercial buildings, and 24/7 data centers.',
+                    'id' => 'Perusahaan B2B, distributor, vendor layanan, dan tim manajemen dalam transaksi komersial.',
+                    'en' => 'B2B companies, distributors, service vendors, and management teams in commercial deals.',
                 ],
                 'problemSolved' => [
-                    'id' => 'Menurunkan risiko henti mendadak (unplanned downtime) kompresor utama dan memangkas pemborosan konsumsi listrik akibat kondensor kotor atau ketidakseimbangan beban.',
-                    'en' => 'Reduces unplanned compressor downtime and eliminates electrical waste caused by fouled condensers or refrigerant charge imbalance.',
+                    'id' => 'Mencegah sengketa pembayaran, wanprestasi vendor, dan kebocoran rahasia dagang melalui kontrak berbahasa jelas yang melindungi posisi bisnis Anda.',
+                    'en' => 'Prevents payment disputes, vendor defaults, and confidentiality breaches through plain-language contracts that protect your commercial position.',
                 ],
                 'deliverables' => [
                     'id' => [
-                        'Inspeksi terjadwal bulanan dan kuartalan dengan waktu tanggap panggilan darurat maksimal < 4 jam (Jabodetabek) dan < 6 jam (Jawa Timur).',
-                        'Pemindaian termografi inframerah (FLIR) pada panel distribusi daya dan kontaktor motor untuk mendeteksi titik panas sebelum terjadi hubung singkat.',
-                        'Analisis vibrasi bantalan motor, uji keasaman oli kompresor, serta pembersihan kimiawi (descaling) tabung heat exchanger chiller.',
-                        'Laporan audit efisiensi kelistrikan (kW/TR) lengkap dengan rekomendasi penghematan beban puncak.',
+                        'Penyusunan dan peninjauan (review) Perjanjian Kerja Sama (MoU/PKS), Kontrak Vendor, dan Perjanjian Distribusi.',
+                        'Penyusunan Perjanjian Kerahasiaan (NDA), Perjanjian Kerja (PKWT/PKWTT), dan Peraturan Perusahaan.',
+                        'Daftar risiko klausul (redline risk summary) beserta rekomendasi negosiasi yang praktis.',
+                        'Tersedia dalam format dwibahasa (Bahasa Indonesia & Bahasa Inggris) sesuai kewajiban UU Bahasa.',
                     ],
                     'en' => [
-                        'Monthly and quarterly scheduled inspections with an emergency call-out SLA of < 4 hours in Greater Jakarta and < 6 hours in East Java.',
-                        'Infrared thermography scanning (FLIR) across power distribution panels and motor contactors to detect hotspots before failure.',
-                        'Motor bearing vibration analysis, compressor oil acidity testing, and chemical descaling of chiller heat-exchanger tubes.',
-                        'Comprehensive electrical efficiency (kW/TR) audit reports with peak-load reduction recommendations.',
+                        'Drafting and review of Master Service Agreements (MSA), Vendor Contracts, and Distribution Agreements.',
+                        'Non-Disclosure Agreements (NDA), Employment Contracts, and Company Regulations.',
+                        'Clear redline risk summaries with practical negotiation fallback clauses.',
+                        'Delivered in compliant bilingual format (Indonesian and English) per statutory requirements.',
                     ],
                 ],
-                'technicalSpecs' => [
+                'specs' => [
                     'id' => [
-                        ['parameter' => 'SLA Tanggap Darurat', 'value' => '< 4 Jam (Jabar) / < 6 Jam (Jatim)'],
-                        ['parameter' => 'Diagnostik Termal & Vibrasi', 'value' => 'Kamera Inframerah FLIR & Vibration Meter'],
-                        ['parameter' => 'Target Efisiensi Spesifik', 'value' => 'Pemantauan kW/TR & Subcooling/Superheat'],
-                        ['parameter' => 'Frekuensi Kunjungan', 'value' => 'Bulanan / Kuartalan + Panggilan 24/7'],
+                        ['parameter' => 'Waktu Review Kontrak', 'value' => '2 s/d 3 Hari Kerja'],
+                        ['parameter' => 'Penyusunan Kontrak Baru', 'value' => '3 s/d 5 Hari Kerja'],
+                        ['parameter' => 'Format Bahasa', 'value' => 'Indonesia, Inggris, atau Dwibahasa'],
+                        ['parameter' => 'Revisi Termasuk', 'value' => '2 Putaran Revisi Negosiasi'],
                     ],
                     'en' => [
-                        ['parameter' => 'Emergency Dispatch SLA', 'value' => '< 4 Hours (West Java) / < 6 Hours (East Java)'],
-                        ['parameter' => 'Thermal & Vibration Diagnostics', 'value' => 'FLIR Thermography & Bearing Vibration'],
-                        ['parameter' => 'Specific Efficiency Tracking', 'value' => 'kW/TR & Subcooling/Superheat Logging'],
-                        ['parameter' => 'Inspection Cadence', 'value' => 'Monthly / Quarterly + 24/7 On-Call'],
+                        ['parameter' => 'Contract Review SLA', 'value' => '2 to 3 Business Days'],
+                        ['parameter' => 'Custom Drafting SLA', 'value' => '3 to 5 Business Days'],
+                        ['parameter' => 'Language Format', 'value' => 'Indonesian, English, or Bilingual'],
+                        ['parameter' => 'Included Revisions', 'value' => '2 Rounds of Negotiation Edits'],
                     ],
                 ],
-                'workflowSteps' => [
+                'steps' => [
                     'id' => [
-                        ['stepNumber' => 1, 'title' => 'Inspeksi Baseline & Inventarisasi Aset', 'description' => 'Pencatatan nomor seri, jam kerja kompresor, dan pengukuran performa awal (kW/TR).'],
-                        ['stepNumber' => 2, 'title' => 'Eksekusi Pemeliharaan Terjadwal', 'description' => 'Pembersihan koil, kalibrasi sensor tekanan/suhu, dan penggantian suku cadang aus sesuai jam operasional.'],
-                        ['stepNumber' => 3, 'title' => 'Diagnostik Prediktif', 'description' => 'Pengambilan sampel oli, analisis getaran mekanis, dan pencitraan termal panel listrik.'],
-                        ['stepNumber' => 4, 'title' => 'Pelaporan Digital & Evaluasi SLA', 'description' => 'Penyerahan berita acara parameter operasi dan rekapitulasi tren kesehatan mesin setiap kuartal.'],
+                        [
+                            'stepNumber' => 1,
+                            'title' => 'Pemetaan Transaksi',
+                            'description' => 'Memahami tujuan transaksi, nilai komersial, dan potensi risiko utama yang ingin dihindari.',
+                        ],
+                        [
+                            'stepNumber' => 2,
+                            'title' => 'Penawaran Biaya Tetap',
+                            'description' => 'Penetapan biaya penyusunan atau review per dokumen secara transparan sebelum kerja dimulai.',
+                        ],
+                        [
+                            'stepNumber' => 3,
+                            'title' => 'Penyusunan & Redlining',
+                            'description' => 'Pengerjaan draf kontrak atau koreksi klausul dalam 2 hingga 5 hari kerja.',
+                        ],
+                        [
+                            'stepNumber' => 4,
+                            'title' => 'Finalisasi & Panduan Negosiasi',
+                            'description' => 'Penyerahan kontrak siap tanda tangan disertai sesi penjelasan poin krusial.',
+                        ],
                     ],
                     'en' => [
-                        ['stepNumber' => 1, 'title' => 'Asset Baseline Audit', 'description' => 'Serial inventory, compressor run-hour logging, and baseline kW/TR performance measurement.'],
-                        ['stepNumber' => 2, 'title' => 'Scheduled Preventive Execution', 'description' => 'Coil descaling, pressure/temperature sensor calibration, and wear-part replacement by run-hours.'],
-                        ['stepNumber' => 3, 'title' => 'Predictive Diagnostics', 'description' => 'Compressor oil acidity sampling, bearing vibration analysis, and electrical panel thermography.'],
-                        ['stepNumber' => 4, 'title' => 'Digital Reporting & Quarterly SLA Review', 'description' => 'Submission of operational parameter logs and quarterly plant health trend reviews.'],
+                        [
+                            'stepNumber' => 1,
+                            'title' => 'Deal Scoping',
+                            'description' => 'Understand your commercial goals, payment terms, and key operational risks.',
+                        ],
+                        [
+                            'stepNumber' => 2,
+                            'title' => 'Fixed Fee Estimate',
+                            'description' => 'Confirm a transparent per-document drafting or review fee before work starts.',
+                        ],
+                        [
+                            'stepNumber' => 3,
+                            'title' => 'Drafting & Redlining',
+                            'description' => 'Deliver a custom contract draft or annotated redline review within 2 to 5 business days.',
+                        ],
+                        [
+                            'stepNumber' => 4,
+                            'title' => 'Finalization & Briefing',
+                            'description' => 'Hand over execution-ready contracts with a practical walkthrough of key negotiation points.',
+                        ],
                     ],
                 ],
                 'ctaLabel' => [
-                    'id' => 'Jadwalkan Inspeksi Baseline Mesin',
-                    'en' => 'Schedule a Baseline Equipment Inspection',
+                    'id' => 'Ajukan Review Kontrak',
+                    'en' => 'Request Contract Review',
                 ],
-                'relatedCaseStudySlugs' => [
-                    'id' => ['retrofit-chiller-farmasi-surabaya'],
-                    'en' => ['surabaya-pharma-chiller-retrofit'],
-                ],
+                'relatedStudies' => ['restrukturisasi-kontrak-ritel-surabaya', 'surabaya-retail-contract-overhaul'],
             ],
             [
                 'code' => 'SRV-03',
                 'slug' => [
-                    'id' => 'fabrikasi-mekanikal-pipa',
-                    'en' => 'mechanical-piping-fabrication',
+                    'id' => 'kepatuhan-regulasi-retainer',
+                    'en' => 'regulatory-compliance-retainer',
                 ],
                 'title' => [
-                    'id' => 'Fabrikasi Pipa Industri & Integrasi Mekanikal-Elektrikal (MEP)',
-                    'en' => 'Industrial Piping Fabrication & MEP System Integration',
+                    'id' => 'Audit Kepatuhan Regulasi & Layanan Retainer Korporasi',
+                    'en' => 'Regulatory Compliance & Corporate Legal Retainer',
                 ],
                 'targetSegment' => [
-                    'id' => 'Pabrik pengolahan kimia, industri makanan-minuman, dan fasilitas utilitas pabrik baru (greenfield/brownfield).',
-                    'en' => 'Chemical processing plants, food and beverage factories, and greenfield/brownfield utility plants.',
+                    'id' => 'Perusahaan berkembang yang membutuhkan pendampingan hukum dan kepatuhan rutin setiap bulan.',
+                    'en' => 'Growing companies needing ongoing monthly legal and regulatory support.',
                 ],
                 'problemSolved' => [
-                    'id' => 'Menyediakan jalur distribusi fluida dingin (chilled water), uap (steam), dan udara tekan bebas bocor yang memenuhi standar uji tak rusak (NDT) industri.',
-                    'en' => 'Delivers leak-free chilled water, steam, and compressed air distribution networks verified against industrial non-destructive testing (NDT) standards.',
+                    'id' => 'Memastikan seluruh izin operasional, pelaporan LKPM, dan dokumen korporasi selalu patuh pada aturan terbaru sambil menyediakan akses konsultasi langsung kapan pun dibutuhkan.',
+                    'en' => 'Keeps operational licenses, LKPM investment filings, and corporate governance records up to date while providing on-demand access to senior advisors.',
                 ],
                 'deliverables' => [
                     'id' => [
-                        'Pengelasan pipa baja karbon (Carbon Steel Sch 40/80) dan baja tahan karat (Stainless Steel SS304/SS316L orbital/GTAW) oleh juru las bersertifikat Kemnaker.',
-                        'Insulasi termal pipa chilled water menggunakan cellular glass atau elastomeric nitrile rubber berlapis cladding aluminium 0,6 mm.',
-                        'Pengujian Non-Destructive Test (NDT Penetrant / Radiography X-Ray pada titik las kritis) dan uji hidrostatik hingga 1,5x tekanan kerja desain.',
-                        'Integrasi pompa sirkulasi (primary/secondary variable flow), cooling tower, dan katup penyeimbang hidronik (balancing valves).',
+                        'Kuota jam konsultasi bulanan terdedikasi dengan konsultan senior untuk diskusi operasional harian.',
+                        'Pelaporan Kegiatan Penanaman Modal (LKPM) berkala dan pembaruan masa berlaku izin usaha.',
+                        'Penyusunan risalah RUPS Tahunan/Luar Biasa, perubahan pengurus, dan administrasi korporasi.',
+                        'Audit kepatuhan berkala terhadap regulasi ketenagakerjaan, perlindungan data, dan kemitraan usaha.',
                     ],
                     'en' => [
-                        'Carbon steel (Sch 40/80) and food-grade stainless steel (SS304/SS316L GTAW) pipe welding executed by Kemnaker-certified Class 1 welders.',
-                        'Thermal pipe insulation using cellular glass or nitrile rubber jacketed with 0.6 mm embossed aluminum cladding.',
-                        'Non-Destructive Testing (dye penetrant and X-ray radiography on critical weld joints) plus hydrostatic testing at 1.5x design working pressure.',
-                        'Complete hydronic integration including primary/secondary variable-speed pumps, cooling towers, and calibrated balancing valves.',
+                        'Dedicated monthly advisory hours with senior consultants for day-to-day operational questions.',
+                        'Quarterly Investment Activity Report (LKPM) filings and license renewal tracking.',
+                        'Annual and Extraordinary General Meeting (GMS) resolutions, director changes, and corporate secretarial upkeep.',
+                        'Periodic compliance health checks covering employment, data privacy, and commercial regulations.',
                     ],
                 ],
-                'technicalSpecs' => [
+                'specs' => [
                     'id' => [
-                        ['parameter' => 'Material Perpipaan', 'value' => 'Carbon Steel Sch 40/80 & SS304/SS316L'],
-                        ['parameter' => 'Metode Pengelasan & Uji', 'value' => 'GTAW/SMAW Kelas 1 + NDT Penetrant/X-Ray'],
-                        ['parameter' => 'Uji Tekan Hidrostatik', 'value' => '1,5x Tekanan Kerja Desain (24 Jam)'],
-                        ['parameter' => 'Jaket Insulasi Termal', 'value' => 'PIR / Nitrile Rubber + Aluminium 0,6 mm'],
+                        ['parameter' => 'Model Kerja Sama', 'value' => 'Retainer Bulanan / Kuartalan'],
+                        ['parameter' => 'Konsultan Pendamping', 'value' => 'Konsultan Senior Terdedikasi'],
+                        ['parameter' => 'Pelaporan Wajib', 'value' => 'LKPM, RUPS Tahunan & Perizinan'],
+                        ['parameter' => 'Waktu Tanggap', 'value' => 'Prioritas < 24 Jam Kerja'],
                     ],
                     'en' => [
-                        ['parameter' => 'Piping Materials', 'value' => 'Carbon Steel Sch 40/80 & SS304/SS316L'],
-                        ['parameter' => 'Welding & Inspection', 'value' => 'Class 1 GTAW/SMAW + NDT Penetrant/X-Ray'],
-                        ['parameter' => 'Hydrostatic Pressure Test', 'value' => '1.5x Design Working Pressure (24 Hours)'],
-                        ['parameter' => 'Thermal Insulation Jacket', 'value' => 'PIR / Nitrile Rubber + 0.6 mm Aluminum'],
+                        ['parameter' => 'Engagement Model', 'value' => 'Monthly / Quarterly Retainer'],
+                        ['parameter' => 'Assigned Advisor', 'value' => 'Dedicated Senior Consultant'],
+                        ['parameter' => 'Statutory Filings', 'value' => 'LKPM, Annual GMS & Permits'],
+                        ['parameter' => 'Response SLA', 'value' => 'Priority < 24 Business Hours'],
                     ],
                 ],
-                'workflowSteps' => [
+                'steps' => [
                     'id' => [
-                        ['stepNumber' => 1, 'title' => 'Survei Jalur & Isometric Drawing', 'description' => 'Pengukuran elevasi lapangan dan pembuatan gambar isometrik bebas benturan (clash-free routing).'],
-                        ['stepNumber' => 2, 'title' => 'Pre-Fabrikasi Bengkel', 'description' => 'Pemotongan, pembubutan bevel, dan pengelasan modul pipa (pipe spools) di bengkel terkontrol.'],
-                        ['stepNumber' => 3, 'title' => 'Ereksi Lapangan & Insulasi', 'description' => 'Pemasangan gantungan (pipe supports), penyambungan jalur utama, dan pelapisan insulasi termal.'],
-                        ['stepNumber' => 4, 'title' => 'Uji Hidrostatik, Flushing & Balancing', 'description' => 'Pengujian tekanan air, pembilasan kerak internal, dan penyeimbangan laju aliran tiap cabang.'],
+                        [
+                            'stepNumber' => 1,
+                            'title' => 'Pemeriksaan Kesehatan Legal',
+                            'description' => 'Evaluasi status izin usaha, kontrak aktif, dan kewajiban pelaporan perusahaan saat ini.',
+                        ],
+                        [
+                            'stepNumber' => 2,
+                            'title' => 'Pemilihan Paket Retainer',
+                            'description' => 'Penentuan kuota jam layanan bulanan yang sesuai dengan skala aktivitas perusahaan.',
+                        ],
+                        [
+                            'stepNumber' => 3,
+                            'title' => 'Pendampingan Rutin Bulanan',
+                            'description' => 'Penanganan review kontrak harian, tanya-jawab regulasi, dan pelaporan wajib.',
+                        ],
+                        [
+                            'stepNumber' => 4,
+                            'title' => 'Evaluasi Kuartalan',
+                            'description' => 'Laporan ringkas seluruh pekerjaan yang diselesaikan dan jadwal kepatuhan berikutnya.',
+                        ],
                     ],
                     'en' => [
-                        ['stepNumber' => 1, 'title' => 'Route Survey & Isometric Drawings', 'description' => 'Field elevation survey and clash-free isometric pipe routing drawings.'],
-                        ['stepNumber' => 2, 'title' => 'Workshop Spool Pre-Fabrication', 'description' => 'Precision cutting, beveling, and controlled workshop welding of modular pipe spools.'],
-                        ['stepNumber' => 3, 'title' => 'Site Erection & Thermal Cladding', 'description' => 'Hanger support installation, header tie-ins, and vapor-sealed aluminum insulation jacketing.'],
-                        ['stepNumber' => 4, 'title' => 'Hydrotest, Flushing & Hydronic Balancing', 'description' => 'Hydrostatic pressure testing, internal line flushing, and calibrated branch flow balancing.'],
+                        [
+                            'stepNumber' => 1,
+                            'title' => 'Compliance Health Check',
+                            'description' => 'Review current business permits, active contracts, and statutory filing obligations.',
+                        ],
+                        [
+                            'stepNumber' => 2,
+                            'title' => 'Retainer Plan Selection',
+                            'description' => 'Select a monthly advisory allocation tailored to your company transaction volume.',
+                        ],
+                        [
+                            'stepNumber' => 3,
+                            'title' => 'Ongoing Monthly Advisory',
+                            'description' => 'Handle day-to-day contract reviews, regulatory questions, and mandatory filings.',
+                        ],
+                        [
+                            'stepNumber' => 4,
+                            'title' => 'Quarterly Compliance Report',
+                            'description' => 'Receive a clear summary of completed matters and upcoming regulatory deadlines.',
+                        ],
                     ],
                 ],
                 'ctaLabel' => [
-                    'id' => 'Kirim Gambar Isometrik untuk Estimasi',
-                    'en' => 'Submit Isometric Drawings for Estimation',
+                    'id' => 'Lihat Paket Retainer Bulanan',
+                    'en' => 'Explore Monthly Retainer Plans',
                 ],
-                'relatedCaseStudySlugs' => [
-                    'id' => ['pipa-chilled-water-pabrik-susu-pasuruan'],
-                    'en' => ['pasuruan-dairy-piping-network'],
-                ],
+                'relatedStudies' => [],
             ],
             [
                 'code' => 'SRV-04',
                 'slug' => [
-                    'id' => 'retrofit-otomasi-chiller',
-                    'en' => 'chiller-automation-retrofit',
+                    'id' => 'pendampingan-transaksi-bisnis',
+                    'en' => 'business-transaction-advisory',
                 ],
                 'title' => [
-                    'id' => 'Retrofitting Efisiensi Energi & Otomasi Chiller (PLC/SCADA)',
-                    'en' => 'Chiller Energy Retrofitting & PLC/SCADA Plant Automation',
+                    'id' => 'Pendampingan Transaksi Bisnis, Akuisisi & Uji Tuntas (Due Diligence)',
+                    'en' => 'Business Transactions, M&A & Legal Due Diligence',
                 ],
                 'targetSegment' => [
-                    'id' => 'Fasilitas industri dengan usia sistem chiller di atas 7 tahun yang mengalami kenaikan biaya listrik bulanan.',
-                    'en' => 'Industrial facilities operating chiller plants older than 7 years facing rising monthly electricity costs.',
+                    'id' => 'Pemilik bisnis, investor, dan korporasi yang merencanakan investasi, joint venture, atau akuisisi usaha.',
+                    'en' => 'Business owners, investors, and corporations planning investments, joint ventures, or acquisitions.',
                 ],
                 'problemSolved' => [
-                    'id' => 'Memodernisasi sistem kontrol chiller dan pompa konvensional menjadi sistem berbasis beban aktual (VSD/Inverter) tanpa harus mengganti seluruh unit mesin utama.',
-                    'en' => 'Modernizes legacy fixed-speed chiller and pump plants into load-responsive VSD/PLC systems without full mechanical plant replacement.',
+                    'id' => 'Mengidentifikasi risiko tersembunyi pada perusahaan target (utang, sengketa, atau izin tidak lengkap) sebelum Anda menandatangani perjanjian investasi atau akuisisi.',
+                    'en' => 'Identifies hidden liabilities in target companies (undisclosed debts, disputes, or missing permits) before you sign investment or acquisition agreements.',
                 ],
                 'deliverables' => [
                     'id' => [
-                        'Pemasangan Variable Speed Drive (VSD/Inverter) pada motor pompa chilled water, pompa condenser, dan kipas cooling tower.',
-                        'Perakitan panel kontrol berbasis PLC (Siemens / Schneider / Omron) dengan antarmuka layar sentuh HMI 10 inci dan komunikasi protokol Modbus TCP / BACnet IP.',
-                        'Penggantian refrigeran lama (R-22 / R-404A) ke refrigeran ramah lingkungan ber-GWP rendah tanpa penggantian pipa utama.',
-                        'Pemantauan tren COP (Coefficient of Performance) dan konsumsi daya (kWh) secara real-time beserta alarm gangguan via WhatsApp/Email gateway.',
+                        'Pemeriksaan Uji Tuntas Hukum (Legal Due Diligence) menyeluruh atas aset, perizinan, kontrak, dan status sengketa.',
+                        'Penyusunan Term Sheet, Conditional Sale and Purchase Agreement (CSPA), dan Akta Jual Beli Saham.',
+                        'Pengurusan pengumuman koran, persetujuan kreditur/pemegang saham, dan pelaporan perubahan kepemilikan.',
+                        'Pendampingan langsung di meja negosiasi hingga penutupan transaksi (closing).',
                     ],
                     'en' => [
-                        'Variable Speed Drive (VSD) integration across chilled water pumps, condenser water pumps, and cooling tower fans.',
-                        'Custom PLC control panels (Siemens, Schneider, or Omron) with 10-inch industrial HMI touchscreens and Modbus TCP / BACnet IP connectivity.',
-                        'Refrigerant retrofit from phased-out HCFCs/HFCs (R-22 / R-404A) to low-GWP alternatives with full elastomer and oil compatibility conversion.',
-                        'Real-time COP and kWh telemetry logging with automated fault alerts via WhatsApp and email gateways.',
+                        'Comprehensive Legal Due Diligence (LDD) covering corporate permits, material contracts, assets, and litigation records.',
+                        'Drafting of Term Sheets, Conditional Share Purchase Agreements (CSPA), and Transfer Deeds.',
+                        'Statutory newspaper announcements, shareholder approvals, and post-closing ministry notifications.',
+                        'Direct representation across negotiation sessions through final transaction closing.',
                     ],
                 ],
-                'technicalSpecs' => [
+                'specs' => [
                     'id' => [
-                        ['parameter' => 'Platform Kontrol & HMI', 'value' => 'PLC Siemens / Schneider / Omron + HMI 10"'],
-                        ['parameter' => 'Protokol Integrasi BMS', 'value' => 'Modbus RTU/TCP & BACnet IP'],
-                        ['parameter' => 'Metode Eksekusi', 'value' => 'Phased Live Retrofit (Tanpa Henti Total)'],
-                        ['parameter' => 'Protokol Verifikasi Energi', 'value' => 'Logging Ultrasonic Flow & Power Meter (kW/TR)'],
+                        ['parameter' => 'Cakupan Transaksi', 'value' => 'Akuisisi Saham, Aset & Joint Venture'],
+                        ['parameter' => 'Durasi Uji Tuntas (LDD)', 'value' => '10 s/d 14 Hari Kerja'],
+                        ['parameter' => 'Output Utama', 'value' => 'Laporan Risiko Eksekutif & CSPA'],
+                        ['parameter' => 'Kerahasiaan', 'value' => 'Dilindungi NDA Sejak Hari Pertama'],
                     ],
                     'en' => [
-                        ['parameter' => 'PLC & HMI Platform', 'value' => 'Siemens / Schneider / Omron PLC + 10" HMI'],
-                        ['parameter' => 'BMS Integration Protocol', 'value' => 'Modbus RTU/TCP & BACnet IP'],
-                        ['parameter' => 'Execution Methodology', 'value' => 'Phased Live Retrofit (Zero Full Shutdown)'],
-                        ['parameter' => 'Energy Verification Protocol', 'value' => 'Ultrasonic Flow & Power Logging (kW/TR)'],
+                        ['parameter' => 'Transaction Scope', 'value' => 'Share M&A, Asset Deal & Joint Venture'],
+                        ['parameter' => 'Due Diligence Window', 'value' => '10 to 14 Business Days'],
+                        ['parameter' => 'Key Deliverables', 'value' => 'Executive Red-Flag Report & CSPA'],
+                        ['parameter' => 'Confidentiality', 'value' => 'Strict Mutual NDA Protection'],
                     ],
                 ],
-                'workflowSteps' => [
+                'steps' => [
                     'id' => [
-                        ['stepNumber' => 1, 'title' => 'Pencatatan Beban & Audit kW/TR', 'description' => 'Pemasangan power logger dan ultrasonic flowmeter selama 7 hari penuh untuk memetakan profil beban nyata.'],
-                        ['stepNumber' => 2, 'title' => 'Perhitungan ROI & Desain Otomasi', 'description' => 'Simulasi penghematan listrik tahunan (kWh) dan perancangan logika sekuensial staging chiller.'],
-                        ['stepNumber' => 3, 'title' => 'Instalasi Bertahap Tanpa Henti Total', 'description' => 'Integrasi panel VSD/PLC dan sensor per jalur secara bergantian agar operasional pabrik tetap berjalan.'],
-                        ['stepNumber' => 4, 'title' => 'Verifikasi Penghematan Energi (M&V)', 'description' => 'Pengukuran ulang nilai kW/TR pasca-instalasi mengacu pada protokol IPMVP untuk membuktikan penurunan konsumsi energi.'],
+                        [
+                            'stepNumber' => 1,
+                            'title' => 'Diskusi Struktur Transaksi',
+                            'description' => 'Penentuan skema transaksi paling efisien (akuisisi saham, pembelian aset, atau joint venture).',
+                        ],
+                        [
+                            'stepNumber' => 2,
+                            'title' => 'Pelaksanaan Uji Tuntas',
+                            'description' => 'Pemeriksaan dokumen perusahaan target dan penyusunan laporan temuan risiko eksekutif.',
+                        ],
+                        [
+                            'stepNumber' => 3,
+                            'title' => 'Penyusunan & Negosiasi',
+                            'description' => 'Penyusunan perjanjian transaksi dengan klausul jaminan dan ganti rugi yang melindungi posisi Anda.',
+                        ],
+                        [
+                            'stepNumber' => 4,
+                            'title' => 'Penutupan & Pasca-Transaksi',
+                            'description' => 'Penandatanganan akta transaksi, pembaruan daftar pemegang saham, dan serah terima dokumen.',
+                        ],
                     ],
                     'en' => [
-                        ['stepNumber' => 1, 'title' => '7-Day Baseline kW/TR Data Logging', 'description' => 'Non-intrusive ultrasonic flowmeter and power analyzer logging across a full 7-day production cycle.'],
-                        ['stepNumber' => 2, 'title' => 'ROI Modeling & Control Architecture', 'description' => 'Annual kWh savings simulation and sequential chiller staging logic design.'],
-                        ['stepNumber' => 3, 'title' => 'Phased Live Retrofit Execution', 'description' => 'Line-by-line VSD/PLC switchover during standby windows so factory production stays online.'],
-                        ['stepNumber' => 4, 'title' => 'Post-Retrofit Energy M&V', 'description' => 'Post-commissioning kW/TR measurement under IPMVP guidelines to verify achieved energy reduction.'],
+                        [
+                            'stepNumber' => 1,
+                            'title' => 'Transaction Structuring',
+                            'description' => 'Determine the most effective deal structure (share acquisition, asset purchase, or joint venture).',
+                        ],
+                        [
+                            'stepNumber' => 2,
+                            'title' => 'Due Diligence Audit',
+                            'description' => 'Audit target company records and deliver an executive red-flag risk report.',
+                        ],
+                        [
+                            'stepNumber' => 3,
+                            'title' => 'Contract Negotiation',
+                            'description' => 'Draft transaction agreements with clear warranties and indemnification protections.',
+                        ],
+                        [
+                            'stepNumber' => 4,
+                            'title' => 'Closing & Post-Merger',
+                            'description' => 'Execute transfer deeds, update ministry shareholder registries, and complete handover.',
+                        ],
                     ],
                 ],
                 'ctaLabel' => [
-                    'id' => 'Hitung Potensi Penghematan Energi Chiller',
-                    'en' => 'Calculate Chiller Energy Savings Potential',
+                    'id' => 'Jadwalkan Diskusi Transaksi',
+                    'en' => 'Schedule a Transaction Briefing',
                 ],
-                'relatedCaseStudySlugs' => [
-                    'id' => ['retrofit-chiller-farmasi-surabaya'],
-                    'en' => ['surabaya-pharma-chiller-retrofit'],
-                ],
+                'relatedStudies' => ['uji-tuntas-akuisisi-saas-jakarta', 'jakarta-b2b-saas-acquisition'],
             ],
         ];
 
+        $contactUrl = route($isId ? 'compro.contact.id' : 'compro.contact.en', ['locale' => $locale]);
         $result = [];
+
         foreach ($rawServices as $item) {
             $slugId = $item['slug']['id'];
             $slugEn = $item['slug']['en'];
@@ -444,37 +551,37 @@ class ComproMockRepository
             $title = $item['title'][$locale];
             $problem = $item['problemSolved'][$locale];
 
-            $serviceDto = new ServiceData(
+            $result[] = new ServiceData(
                 code: $item['code'],
                 slug: $currentSlug,
                 title: $title,
                 targetSegment: $item['targetSegment'][$locale],
                 problemSolved: $problem,
                 deliverables: $item['deliverables'][$locale],
-                technicalSpecs: $item['technicalSpecs'][$locale],
-                workflowSteps: $item['workflowSteps'][$locale],
+                technicalSpecs: $item['specs'][$locale],
+                workflowSteps: $item['steps'][$locale],
+                primaryCta: new ActionLinkData(
+                    label: $item['ctaLabel'][$locale],
+                    url: $contactUrl.'?service='.$item['code'],
+                    variant: 'primary',
+                    icon: 'arrow-right',
+                ),
                 heroImage: new MediaAssetData(
                     url: '/images/placeholders/service-'.strtolower($item['code']).'.svg',
                     webpUrl: null,
                     avifUrl: null,
                     alt: $title.' ('.$item['code'].')',
                     width: 800,
-                    height: 600,
-                    aspectRatio: '4/3',
+                    height: 500,
+                    aspectRatio: '16/10',
                     caption: $item['code'].' // '.$title,
                     isPlaceholder: true,
                     placeholderLabel: $isId
-                        ? '[FOTO DOKUMENTASI TEKNIS '.$item['code'].': GANTI DENGAN FOTO INSTALASI KLIEN]'
-                        : '[TECHNICAL DOCUMENTATION PHOTO '.$item['code'].': REPLACE WITH CLIENT SITE PHOTO]',
+                        ? '[ILUSTRASI LAYANAN '.$item['code'].': GANTI DENGAN FOTO TIM/KANTOR KLIEN]'
+                        : '[SERVICE VISUAL '.$item['code'].': REPLACE WITH CLIENT OFFICE/TEAM PHOTO]',
                 ),
-                primaryCta: new ActionLinkData(
-                    label: $item['ctaLabel'][$locale],
-                    url: ($isId ? '/id/hubungi-kami' : '/en/contact').'?service='.$item['code'],
-                    variant: 'primary',
-                    icon: 'arrow-right',
-                ),
-                datasheetPdfUrl: ($isId ? '/id/hubungi-kami' : '/en/contact').'?service='.$item['code'].'&intent=datasheet',
-                relatedCaseStudySlugs: $item['relatedCaseStudySlugs'][$locale],
+                datasheetPdfUrl: null,
+                relatedCaseStudySlugs: $item['relatedStudies'],
                 seo: new SeoMetaData(
                     title: $title.' | '.$settings->brandName,
                     description: $problem,
@@ -488,8 +595,6 @@ class ComproMockRepository
                     ],
                 ),
             );
-
-            $result[] = $serviceDto;
         }
 
         return $result;
@@ -519,106 +624,106 @@ class ComproMockRepository
             [
                 'code' => 'CS-01',
                 'slug' => [
-                    'id' => 'cold-storage-distribusi-cikarang',
-                    'en' => 'cikarang-cold-storage-hub',
+                    'id' => 'pendirian-pt-pma-logistik-jakarta',
+                    'en' => 'jakarta-logistics-pma-setup',
                 ],
                 'title' => [
-                    'id' => 'Pembangunan Cold Storage Multi-Zona 2.400 Pallet untuk Pusat Distribusi Pangan Beku',
-                    'en' => '2,400-Pallet Multi-Zone Cold Storage Facility for Frozen Food Distribution Hub',
+                    'id' => 'Pendirian PT PMA & Perizinan Operasional Lengkap untuk Perusahaan Logistik Regional',
+                    'en' => 'PT PMA Incorporation & Full Operational Licensing for Regional Logistics Provider',
                 ],
                 'clientDescriptor' => [
-                    'id' => 'Operator Logistik Rantai Dingin Nasional (Nama Klien Dirahasiakan Sesuai NDA)',
-                    'en' => 'National Cold-Chain Logistics Operator (Client Identity Protected Under NDA)',
+                    'id' => 'Perusahaan Logistik & Rantai Pasok Asia Tenggara (Identitas Dijaga Sesuai NDA)',
+                    'en' => 'Southeast Asian Logistics & Supply Chain Provider (Identity Protected Under NDA)',
                 ],
-                'location' => 'Cikarang, Jawa Barat',
+                'location' => 'Jakarta Selatan',
                 'completionYear' => 2025,
                 'relatedServiceCode' => 'SRV-01',
                 'relatedServiceSlug' => [
-                    'id' => 'instalasi-rantai-dingin',
-                    'en' => 'cold-chain-installation',
+                    'id' => 'pendirian-badan-usaha',
+                    'en' => 'company-formation-licensing',
                 ],
-                'installedCapacity' => '180 TR (-22°C Freezer & +4°C Anteroom)',
+                'installedCapacity' => $isId ? 'PT PMA Multi-KBLI & Izin OSS RBA' : 'Multi-KBLI PT PMA & OSS RBA Permits',
                 'challenge' => [
-                    'id' => 'Klien membutuhkan fasilitas penyimpanan beku -22°C dengan 12 pintu loading dock aktif yang mampu mempertahankan suhu stabil meskipun terjadi 80 siklus bongkar-muat truk per hari.',
-                    'en' => 'The client required a -22°C freezer warehouse with 12 active loading docks capable of maintaining stable core temperatures during 80 daily truck loading cycles.',
+                    'id' => 'Klien membutuhkan pendirian badan hukum PT PMA beserta izin operasional transportasi dan pergudangan multi-KBLI dalam waktu singkat agar dapat mengikuti tender kontrak distribusi nasional.',
+                    'en' => 'The client needed a fully licensed PT PMA entity with multi-KBLI warehousing and logistics permits under a tight deadline to qualify for a national distribution tender.',
                 ],
                 'solution' => [
-                    'id' => 'Instalasi rak kompresor paralel semi-hermetik total 180 TR, panel insulasi PIR 150 mm, sistem pencairan bunga es gas panas (hot-gas defrost), dan ruang anteroom bertekanan positif +4°C.',
-                    'en' => 'Installed a 180 TR parallel semi-hermetic compressor rack, 150 mm PIR insulation panels, automated hot-gas defrosting, and a +4°C dehumidified loading anteroom.',
+                    'id' => 'Pemetaan klasifikasi KBLI yang presisi, penyusunan akta pendirian dan perjanjian pemegang saham dwibahasa, serta pendampingan verifikasi izin teknis pada sistem OSS RBA.',
+                    'en' => 'Executed precise KBLI classification mapping, drafted bilingual incorporation deeds and shareholder agreements, and managed OSS RBA technical permit verifications.',
                 ],
                 'outcome' => [
-                    'id' => 'Fluktuasi suhu ruang utama terjaga di bawah ±0,8°C selama jam puncak operasional',
-                    'en' => 'Core freezer temperature drift held within ±0.8°C during peak dock hours',
+                    'id' => 'Seluruh izin operasional dan NIB terbit dalam 18 Hari Kerja tanpa revisi pengajuan',
+                    'en' => 'Full operational NIB and licenses issued within 18 Business Days with zero filing rejections',
                 ],
             ],
             [
                 'code' => 'CS-02',
                 'slug' => [
-                    'id' => 'retrofit-chiller-farmasi-surabaya',
-                    'en' => 'surabaya-pharma-chiller-retrofit',
+                    'id' => 'restrukturisasi-kontrak-ritel-surabaya',
+                    'en' => 'surabaya-retail-contract-overhaul',
                 ],
                 'title' => [
-                    'id' => 'Retrofit Otomasi VSD & PLC pada Sentral Chiller 900 TR Fasilitas Farmasi',
-                    'en' => 'VSD & PLC Automation Retrofit on a 900 TR Pharmaceutical Chiller Plant',
+                    'id' => 'Restrukturisasi 45 Kontrak Vendor & Distribusi untuk Jaringan Ritel Nasional',
+                    'en' => 'Restructuring 45 Vendor & Distribution Contracts for a National Retail Network',
                 ],
                 'clientDescriptor' => [
-                    'id' => 'Pabrik Manufaktur Farmasi Steril CPOB',
-                    'en' => 'GMP Sterile Pharmaceutical Manufacturing Plant',
+                    'id' => 'Grup Distribusi & Ritel Konsumen Nasional',
+                    'en' => 'National Consumer Retail & Distribution Group',
                 ],
                 'location' => 'Surabaya, Jawa Timur',
                 'completionYear' => 2024,
-                'relatedServiceCode' => 'SRV-04',
+                'relatedServiceCode' => 'SRV-02',
                 'relatedServiceSlug' => [
-                    'id' => 'retrofit-otomasi-chiller',
-                    'en' => 'chiller-automation-retrofit',
+                    'id' => 'penyusunan-kontrak-bisnis',
+                    'en' => 'corporate-contract-drafting',
                 ],
-                'installedCapacity' => '900 TR (3x 300 TR Water-Cooled Chiller)',
+                'installedCapacity' => $isId ? '45 Kontrak Vendor & Distribusi Dwibahasa' : '45 Bilingual Vendor & Distribution Contracts',
                 'challenge' => [
-                    'id' => 'Tiga unit water-cooled chiller berusia 9 tahun beroperasi pada kecepatan tetap sehingga efisiensi sistem turun menjadi 1,08 kW/TR saat beban malam hari.',
-                    'en' => 'Three 9-year-old water-cooled chillers operated at fixed speed, causing plant efficiency to degrade to 1.08 kW/TR during partial night-shift loads.',
+                    'id' => 'Klien menggunakan templat kontrak lama yang tidak mengatur batas waktu klaim retur barang dan denda keterlambatan pengiriman secara tegas, sehingga memicu perselisihan tagihan berulang.',
+                    'en' => 'The client relied on legacy contract templates that lacked clear return-claim windows and delivery penalty clauses, resulting in recurring billing disputes.',
                 ],
                 'solution' => [
-                    'id' => 'Integrasi VSD pada pompa sekunder dan kipas cooling tower, pemasangan katup kontrol tekanan diferensial otomatis, serta pemrograman ulang staging beban berbasis PLC Siemens S7-1200.',
-                    'en' => 'Integrated VSDs across secondary chilled-water pumps and cooling tower fans, installed automated differential-pressure control valves, and reprogrammed chiller staging via Siemens S7-1200 PLC.',
+                    'id' => 'Penyusunan buku standar kontrak distribusi baru (Master Distribution Agreement), klausul SLA pengiriman yang terukur, serta sesi sosialisasi untuk tim pengadaan dan penjualan.',
+                    'en' => 'Drafted standardized Master Distribution Agreements with measurable delivery SLA clauses and conducted training sessions for procurement and sales teams.',
                 ],
                 'outcome' => [
-                    'id' => 'Perbaikan efisiensi rata-rata pabrik menjadi 0,76 kW/TR tanpa menghentikan jadwal produksi ruang bersih',
-                    'en' => 'Plant efficiency improved to 0.76 kW/TR with zero cleanroom production shutdown',
+                    'id' => 'Waktu negosiasi kontrak vendor baru turun dari 3 Minggu menjadi 4 Hari Kerja',
+                    'en' => 'New vendor contract turnaround reduced from 3 Weeks to 4 Business Days',
                 ],
             ],
             [
                 'code' => 'CS-03',
                 'slug' => [
-                    'id' => 'pipa-chilled-water-pabrik-susu-pasuruan',
-                    'en' => 'pasuruan-dairy-piping-network',
+                    'id' => 'uji-tuntas-akuisisi-saas-jakarta',
+                    'en' => 'jakarta-b2b-saas-acquisition',
                 ],
                 'title' => [
-                    'id' => 'Fabrikasi Jalur Pipa Chilled Water SS304 Sepanjang 1,4 KM untuk Pabrik Pengolahan Susu',
-                    'en' => '1.4 KM SS304 Chilled Water Piping Network for Dairy Processing Plant',
+                    'id' => 'Uji Tuntas Hukum (Legal Due Diligence) & Akuisisi Mayoritas Saham Perusahaan SaaS B2B',
+                    'en' => 'Legal Due Diligence & Majority Share Acquisition of a B2B SaaS Company',
                 ],
                 'clientDescriptor' => [
-                    'id' => 'Industri Pengolahan Susu & Minuman Kemasan',
-                    'en' => 'Dairy & Packaged Beverage Processing Facility',
+                    'id' => 'Grup Investasi & Teknologi Korporasi',
+                    'en' => 'Corporate Technology & Investment Group',
                 ],
-                'location' => 'Pasuruan, Jawa Timur',
+                'location' => 'Jakarta Selatan',
                 'completionYear' => 2025,
-                'relatedServiceCode' => 'SRV-03',
+                'relatedServiceCode' => 'SRV-04',
                 'relatedServiceSlug' => [
-                    'id' => 'fabrikasi-mekanikal-pipa',
-                    'en' => 'mechanical-piping-fabrication',
+                    'id' => 'pendampingan-transaksi-bisnis',
+                    'en' => 'business-transaction-advisory',
                 ],
-                'installedCapacity' => '1,4 KM Header SS304 Sch 40 (-4°C Glycol)',
+                'installedCapacity' => $isId ? 'Akuisisi 70% Saham & Pengalihan HKI' : '70% Equity Acquisition & IP Assignment',
                 'challenge' => [
-                    'id' => 'Menyambungkan jalur pasokan glikol dingin -4°C ke 6 lini pasteurisasi baru dengan toleransi kebocoran nol dan standar kebersihan ruang produksi pangan.',
-                    'en' => 'Connected a -4°C chilled glycol supply header to 6 new pasteurization lines under food-grade hygiene rules and zero-leak tolerances.',
+                    'id' => 'Investor perlu memastikan kepemilikan Hak Kekayaan Intelektual (HKI) kode perangkat lunak, kepatuhan kontrak karyawan, dan ketiadaan kewajiban pajak tersembunyi sebelum mengakuisisi 70% saham.',
+                    'en' => 'The investor needed to verify software IP ownership, employment contract compliance, and the absence of hidden tax liabilities prior to acquiring a 70% equity stake.',
                 ],
                 'solution' => [
-                    'id' => 'Pre-fabrikasi modul pipa Stainless Steel SS304 Sch 40 dengan pengelasan GTAW purge gas argon, pengujian NDT penetrant 100% sambungan, dan insulasi tertutup berjaket aluminium.',
-                    'en' => 'Pre-fabricated SS304 Sch 40 pipe spools using argon-purged GTAW welding, executed 100% dye-penetrant joint inspections, and applied vapor-sealed aluminum cladding.',
+                    'id' => 'Pelaksanaan uji tuntas hukum menyeluruh dalam 14 hari, pengalihan hak cipta perangkat lunak ke badan hukum perusahaan, serta penyusunan CSPA dengan mekanisme pembayaran bertahap.',
+                    'en' => 'Completed a 14-day legal due diligence audit, formalized IP assignment deeds into the corporate entity, and structured a milestone-based CSPA.',
                 ],
                 'outcome' => [
-                    'id' => 'Lulus uji tekan hidrostatik 12 bar selama 24 jam penuh pada percobaan pertama',
-                    'en' => 'Passed 24-hour 12 bar hydrostatic pressure testing on the first commissioning run',
+                    'id' => 'Transaksi akuisisi senilai Rp 28 Miliar selesai tepat jadwal dengan perlindungan klausul indemnifikasi penuh',
+                    'en' => 'IDR 28 Billion acquisition closed on schedule with full indemnity protection',
                 ],
             ],
         ];
@@ -658,8 +763,8 @@ class ComproMockRepository
                     caption: $study['code'].' // '.$study['location'].' ('.$study['completionYear'].')',
                     isPlaceholder: true,
                     placeholderLabel: $isId
-                        ? '[DOKUMENTASI PROYEK '.$study['code'].': GANTI DENGAN FOTO KOMISIONING KLIEN]'
-                        : '[PROJECT COMMISSION PHOTO '.$study['code'].': REPLACE WITH CLIENT SITE PHOTO]',
+                        ? '[DOKUMENTASI STUDI KASUS '.$study['code'].': GANTI DENGAN FOTO PROYEK KLIEN]'
+                        : '[CASE STUDY VISUAL '.$study['code'].': REPLACE WITH CLIENT MATTER PHOTO]',
                 ),
                 gallery: [],
                 isSamplePlaceholder: true,
@@ -702,57 +807,58 @@ class ComproMockRepository
         return [
             new FaqItemData(
                 id: 'faq-01',
-                category: 'SLA & Maintenance',
+                category: $isId ? 'Konsultasi & Biaya' : 'Consultation & Fees',
                 question: $isId
-                    ? 'Berapa batas waktu tanggap (response time) teknisi jika terjadi gangguan kompresor darurat di luar jam kerja?'
-                    : 'What is the guaranteed technician response time if a critical compressor fault occurs outside normal working hours?',
+                    ? 'Apakah konsultasi awal dikenakan biaya, dan bagaimana sistem penentuan biaya layanan di Koolom Partners?'
+                    : 'Do you offer free initial consultations, and how are your service fees structured?',
                 answer: $isId
-                    ? 'Untuk pemegang Kontrak Pemeliharaan Preventif (SLA), tim teknisi siaga kami diberangkatkan menuju lokasi dalam waktu maksimal 4 jam untuk area Jabodetabek-Karawang dan maksimal 6 jam untuk koridor Surabaya-Sidoarjo-Pasuruan, 24 jam sehari termasuk hari libur nasional.'
-                    : 'For Preventive Maintenance Contract (SLA) holders, our on-call field engineers dispatch to reach your site within 4 hours across Greater Jakarta-Karawang and within 6 hours across the Surabaya-Sidoarjo-Pasuruan industrial corridor, 24/7 including public holidays.',
-                relatedServiceCode: 'SRV-02',
+                    ? 'Sesi diskusi awal selama 30 menit tidak dikenakan biaya (gratis) dan bersifat 100% rahasia. Setelah memahami kebutuhan Anda, kami selalu memberikan penawaran biaya tetap tertulis (fixed-fee quote) di muka sebelum pekerjaan dimulai, sehingga tidak ada biaya kejutan di akhir.'
+                    : 'Yes, our initial 30-minute consultation is free of charge and 100% confidential. Once we understand your scope, we provide a clear, written fixed-fee estimate upfront before any work begins, so there are never billing surprises.',
+                relatedServiceCode: 'SRV-01',
             ),
             new FaqItemData(
                 id: 'faq-02',
-                category: 'Engineering & Compliance',
+                category: $isId ? 'Pendirian Usaha & OSS' : 'Company Setup & OSS',
                 question: $isId
-                    ? 'Apakah GardaTek menyediakan dokumen perhitungan beban pendinginan (cooling load calculation) dan P&ID sebelum pengajuan penawaran harga final?'
-                    : 'Does GardaTek provide engineering cooling-load calculations and P&ID schematics prior to final commercial quotation?',
+                    ? 'Berapa lama proses pendirian PT atau PT PMA hingga Nomor Induk Berusaha (NIB) siap digunakan untuk beroperasi?'
+                    : 'How long does it take to incorporate a local PT or foreign-owned PT PMA until the NIB license is ready for operation?',
                 answer: $isId
-                    ? 'Ya. Setiap penawaran proyek instalasi cold storage maupun chiller selalu diawali dengan survei lokasi, perhitungan beban termal terperinci (transmisi, infiltrasi, dan produk), serta draf diagram perpipaan (P&ID) dan daftar volume material (BoQ) terbuka.'
-                    : 'Yes. Every cold storage or chiller installation proposal begins with an on-site survey, itemized thermal load calculations (transmission, infiltration, and product heat), a preliminary P&ID schematic, and an itemized Bill of Quantities (BoQ).',
+                    ? 'Untuk PT lokal dengan struktur standar, proses penyusunan akta, pengesahan SK Kemenkumham, NPWP, hingga terbitnya NIB pada sistem OSS RBA umumnya selesai dalam 5 hingga 10 hari kerja setelah dokumen persyaratan lengkap. Untuk PT PMA berkisar antara 10 hingga 18 hari kerja.'
+                    : 'For a standard local PT, deed drafting, Ministry ratification, tax registration, and OSS RBA NIB issuance typically take 5 to 10 business days once documents are complete. For a foreign-invested PT PMA, the process takes 10 to 18 business days.',
                 relatedServiceCode: 'SRV-01',
             ),
             new FaqItemData(
                 id: 'faq-03',
-                category: 'Retrofitting & Operations',
+                category: $isId ? 'Kontrak Bisnis' : 'Commercial Contracts',
                 question: $isId
-                    ? 'Apakah pekerjaan retrofit panel PLC/VSD atau penggantian jalur pipa mengharuskan penghentian total (total shutdown) operasional pabrik?'
-                    : 'Does a PLC/VSD chiller retrofit or piping expansion require a complete plant production shutdown?',
+                    ? 'Berapa lama waktu pengerjaan untuk penyusunan draf kontrak baru atau peninjauan (review) kontrak dari mitra bisnis kami?'
+                    : 'What is the turnaround time for drafting a new commercial contract or reviewing an agreement from a counterparty?',
                 answer: $isId
-                    ? 'Tidak harus berhenti total. Kami menjadwalkan metode Phased Live Retrofit, di mana penyambungan katup isolasi (tie-in) dan pengalihan panel kontrol dilakukan secara bergantian per unit mesin atau pada jeda pemeliharaan terjadwal akhir pekan.'
-                    : 'A full plant shutdown is rarely required. We execute a Phased Live Retrofit methodology where isolation valve tie-ins and control panel switchovers are staged unit-by-unit on standby lines or during scheduled weekend maintenance windows.',
-                relatedServiceCode: 'SRV-04',
+                    ? 'Peninjauan (review) dan pemberian catatan revisi (redlining) atas draf kontrak komersial standar diselesaikan dalam 2 hingga 3 hari kerja, sedangkan penyusunan kontrak baru dari awal rata-rata memerlukan 3 hingga 5 hari kerja.'
+                    : 'Reviewing and redlining a standard commercial contract takes 2 to 3 business days, while drafting a custom agreement from scratch typically takes 3 to 5 business days.',
+                relatedServiceCode: 'SRV-02',
             ),
             new FaqItemData(
                 id: 'faq-04',
-                category: 'Procurement & TKDN',
+                category: $isId ? 'Tim & Pendampingan' : 'Senior Advisory Team',
                 question: $isId
-                    ? 'Apakah pekerjaan instalasi dan panel kontrol dari GardaTek dilengkapi dokumen sertifikasi K3 dan verifikasi TKDN untuk kebutuhan tender korporasi/BUMN?'
-                    : 'Are GardaTek installations and control panels backed by Kemnaker OHS certifications and TKDN local-content documentation for corporate or state-enterprise tenders?',
+                    ? 'Apakah pekerjaan perusahaan kami akan ditangani langsung oleh konsultan berpengalaman?'
+                    : 'Will our business matters be handled directly by experienced senior consultants?',
                 answer: $isId
-                    ? 'Seluruh pekerjaan lapangan dipimpin oleh pengawas K3 bersertifikat Kemnaker RI dengan juru las berlisensi Kelas 1, serta dilengkapi dokumen verifikasi TKDN (capaian 42,6%) untuk perakitan panel kontrol dan fabrikasi rak perpipaan lokal.'
-                    : 'All site works are supervised by Kemnaker-certified OHS officers and Class 1 licensed welders, accompanied by verified TKDN local-content documentation (42.6% score) for locally assembled PLC control panels and fabricated pipe racks.',
+                    ? 'Ya. Setiap klien didampingi langsung oleh konsultan senior yang bertanggung jawab penuh sejak diskusi pertama hingga dokumen selesai, bukan diserahkan begitu saja kepada staf junior yang berganti-ganti.'
+                    : 'Yes. You work directly with an assigned senior consultant from the first briefing through final delivery, never handed off to a rotating cast of junior staff.',
                 relatedServiceCode: 'SRV-03',
             ),
             new FaqItemData(
                 id: 'faq-05',
-                category: 'Warranty & Spare Parts',
+                category: $isId ? 'Kerahasiaan Data' : 'Confidentiality & NDA',
                 question: $isId
-                    ? 'Bagaimana cakupan garansi purnajual untuk instalasi sistem baru maupun pekerjaan overhaul kompresor?'
-                    : 'What post-commissioning warranty applies to new refrigeration installations and compressor overhauls?',
+                    ? 'Bagaimana Koolom Partners menjaga kerahasiaan dokumen bisnis dan rencana transaksi perusahaan kami?'
+                    : 'How does Koolom Partners protect the confidentiality of our business documents and transaction plans?',
                 answer: $isId
-                    ? 'Instalasi sistem baru dilindungi garansi pengerjaan mekanikal-elektrikal selama 12 bulan sejak tanggal Berita Acara Serah Terima (BAST) ditambah garansi resmi pabrikan unit utama, sedangkan pekerjaan overhaul kompresor mencakup garansi operasional 6 bulan.'
-                    : 'New system installations carry a 12-month mechanical and electrical workmanship warranty from the date of commissioning handover alongside OEM equipment warranties, while compressor overhauls include a 6-month operational warranty.',
+                    ? 'Seluruh informasi dan dokumen yang Anda bagikan dilindungi oleh standar kerahasiaan profesi sejak kontak pertama. Kami juga siap menandatangani Perjanjian Kerahasiaan (NDA) sebelum Anda mengirimkan dokumen transaksi sensitif.'
+                    : 'Every document and briefing you share is protected under strict professional confidentiality from first contact. We are also happy to sign a mutual Non-Disclosure Agreement (NDA) before you transmit sensitive transaction files.',
+                relatedServiceCode: 'SRV-04',
             ),
         ];
     }
@@ -768,8 +874,8 @@ class ComproMockRepository
         $pageUrl = $baseUrl.'/'.$locale;
 
         $title = $isId
-            ? 'Kontraktor Cold Storage, Chiller & Perpipaan Industri | '.$settings->brandName
-            : 'Industrial Cold Storage, Chiller & Mechanical Piping Engineering | '.$settings->brandName;
+            ? 'Konsultan Hukum Bisnis, Pendirian PT & Perizinan Usaha | '.$settings->brandName
+            : 'Corporate Legal Advisory, Company Formation & Business Licensing | '.$settings->brandName;
         $description = $settings->valueProposition;
 
         $schemaGraph = $this->schemaBuilder->buildPageGraph(
@@ -785,19 +891,19 @@ class ComproMockRepository
         );
 
         return new HomePageData(
-            sectorCode: 'KBLI 43224 // INDUSTRIAL HVACR, COLD-CHAIN & MEP ENGINEERING',
+            sectorCode: $isId ? 'KONSULTAN HUKUM & PERIZINAN BISNIS' : 'CORPORATE LEGAL & BUSINESS ADVISORY',
             headline: $isId
-                ? 'Rekayasa Rantai Dingin, Perpipaan Mekanikal, dan Otomasi Chiller untuk Fasilitas Industri.'
-                : 'Cold-Chain Refrigeration, Mechanical Piping, and Chiller Plant Automation for Industrial Facilities.',
+                ? 'Pendamping Hukum dan Perizinan Bisnis saat Perusahaan Anda Membutuhkannya.'
+                : 'Trusted Business and Legal Counsel When It Matters Most.',
             subheadline: $settings->valueProposition,
             primaryCta: new ActionLinkData(
-                label: $isId ? 'Jadwalkan Audit Termal Lokasi' : 'Schedule a Site Thermal Audit',
+                label: $isId ? 'Jadwalkan Konsultasi Gratis' : 'Request a Free Consultation',
                 url: '#rfq-form',
                 variant: 'primary',
                 icon: 'arrow-right',
             ),
             secondaryCta: new ActionLinkData(
-                label: $isId ? 'Lihat Matriks Spesifikasi Layanan' : 'Review Service Specification Matrix',
+                label: $isId ? 'Lihat Layanan Kami' : 'Explore Our Services',
                 url: '#service-matrix',
                 variant: 'outline',
                 icon: 'none',
@@ -807,46 +913,46 @@ class ComproMockRepository
                 webpUrl: null,
                 avifUrl: null,
                 alt: $isId
-                    ? 'Skema instalasi rak kompresor paralel cold storage dan jalur perpipaan chilled water industri'
-                    : 'Industrial parallel compressor rack and chilled water header piping schematic',
+                    ? 'Tim konsultan hukum dan bisnis Koolom Partners mendampingi klien korporasi'
+                    : 'Koolom Partners corporate legal and business advisory team',
                 width: 800,
                 height: 600,
                 aspectRatio: '4/3',
                 caption: $isId
-                    ? 'Rentang Kapasitas: 20 TR s/d 1.500 TR | Tanggap Darurat SLA: < 4 Jam (Jabodetabek-Karawang)'
-                    : 'Capacity Range: 20 TR to 1,500 TR | Emergency SLA Dispatch: < 4 Hours (Greater Jakarta-Karawang)',
+                    ? '450+ Klien Korporasi | Estimasi Biaya Tertulis di Muka | Respon < 24 Jam Kerja'
+                    : '450+ Corporate Clients | Upfront Fixed-Fee Quotes | Reply Within 24 Business Hours',
                 isPlaceholder: true,
                 placeholderLabel: $isId
-                    ? '[FOTO UTAMA FASILITAS / RUANG MESIN CHILLER: GANTI DENGAN FOTO ASLI KLIEN]'
-                    : '[HERO FACILITY / CHILLER PLANT ROOM PHOTO: REPLACE WITH REAL CLIENT PHOTO]',
+                    ? '[FOTO UTAMA TIM / RUANG KONSULTASI KLIEN: GANTI DENGAN FOTO ASLI]'
+                    : '[HERO ADVISORY TEAM / OFFICE PHOTO: REPLACE WITH REAL CLIENT PHOTO]',
             ),
             specCaption: $isId
-                ? 'Kapasitas Terukur: 20 TR s/d 1.500 TR | Suhu Desain: +8°C s/d -40°C | Uji Tekan: 28 Bar'
-                : 'Rated Capacity: 20 TR to 1,500 TR | Design Temp: +8°C down to -40°C | Pressure Test: 28 Bar',
+                ? 'Pendirian PT & PMA | Kontrak Komersial | Retainer Kepatuhan | Uji Tuntas M&A'
+                : 'Company Setup | Commercial Contracts | Compliance Retainer | M&A Due Diligence',
             servicesHeading: $isId
-                ? 'Matriks Kapabilitas Rekayasa & Pemeliharaan Industri'
-                : 'Industrial Engineering & Maintenance Capability Matrix',
+                ? 'Bagaimana Kami Membantu Bisnis Anda'
+                : 'How We Can Help Your Business',
             servicesSummary: $isId
-                ? 'Setiap lingkup pekerjaan dirancang berdasarkan perhitungan beban termal aktual, gambar isometrik P&ID, serta target efisiensi energi (kW/TR) yang terukur.'
-                : 'Every scope of work is engineered around calculated thermal loads, clash-free P&ID isometrics, and measurable electrical efficiency (kW/TR) targets.',
+                ? 'Layanan praktis dan terstruktur untuk setiap tahap perkembangan perusahaan Anda, mulai dari pendirian badan usaha hingga transaksi strategis.'
+                : 'Practical, structured counsel for every stage of your company growth, from initial incorporation to complex commercial transactions.',
             caseStudiesHeading: $isId
-                ? 'Rekam Jejak Komisioning & Hasil Pengukuran Lapangan'
-                : 'Commissioned Project Dossiers & Measured Field Outcomes',
+                ? 'Studi Kasus & Solusi Nyata untuk Klien Kami'
+                : 'Recent Client Matters & Practical Outcomes',
             caseStudiesSummary: $isId
-                ? 'Dokumentasi proyek instalasi gudang berpendingin, pemipaan proses pangan, dan modernisasi kontrol chiller pada fasilitas manufaktur.'
-                : 'Documented cold storage installations, food-grade process piping networks, and chiller control retrofits across active manufacturing plants.',
+                ? 'Contoh pendampingan perizinan investasi, penataan kontrak distribusi, dan transaksi akuisisi yang telah kami selesaikan.'
+                : 'Selected examples of investment licensing, distribution contract overhauls, and acquisition due diligence delivered for our clients.',
             faqHeading: $isId
-                ? 'Pertanyaan Teknis, Kepatuhan K3/TKDN & SLA Operasional'
-                : 'Technical Specifications, OHS/TKDN Compliance & SLA FAQ',
+                ? 'Pertanyaan yang Sering Diajukan'
+                : 'Common Questions Before You Start',
             faqSummary: $isId
-                ? 'Jawaban teknis langsung untuk tim engineering, manajer utilitas pabrik, dan departemen pengadaan (procurement).'
-                : 'Direct engineering answers for plant utility managers, MEP project engineers, and corporate procurement teams.',
+                ? 'Jawaban jelas seputar konsultasi awal gratis, transparansi biaya layanan, dan estimasi waktu pengerjaan dokumen.'
+                : 'Clear answers regarding free initial consultations, upfront fixed-fee quotes, and document turnaround times.',
             rfqHeading: $isId
-                ? 'Ajukan Audit Termal Lokasi atau Perhitungan Beban Pendinginan (BoQ)'
-                : 'Request an On-Site Thermal Audit or Cooling Load & BoQ Calculation',
+                ? 'Diskusikan Kebutuhan Bisnis Anda Hari Ini Tanpa Biaya Awal'
+                : 'Talk to a Senior Consultant Today, Free of Charge',
             rfqSubheadline: $isId
-                ? 'Kirimkan parameter fasilitas atau gambar isometrik awal Anda. Tim insinyur aplikasi kami merespons dalam < 4 jam kerja dengan jadwal survei atau estimasi teknis.'
-                : 'Submit your facility parameters or preliminary isometric drawings. Our application engineers respond within 4 working hours with a survey schedule or technical estimate.',
+                ? 'Ceritakan rencana bisnis atau kebutuhan dokumen Anda. Tim konsultan senior kami akan merespons dalam maksimal 1 hari kerja dengan langkah solusi yang jelas.'
+                : 'Tell us about your business matter or licensing need. Our senior consultants respond within 1 business day with clear options and a transparent fee estimate.',
             services: $services,
             caseStudies: $caseStudies,
             faqs: $faqs,
@@ -867,4 +973,3 @@ class ComproMockRepository
         );
     }
 }
-
