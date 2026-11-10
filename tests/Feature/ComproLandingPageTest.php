@@ -141,16 +141,74 @@ it('rejects invalid rfq submissions and spam honeypot payloads with 422 errors',
         ->assertJsonValidationErrors(['company_website_hp']);
 });
 
-it('generates an xml sitemap with bilingual xhtml:link alternates and handles 301 legacy redirects', function () {
-    $sitemap = $this->get('/sitemap.xml');
+it('generates a compliant robots.txt and modular xml sitemap index with child sitemaps and handles 301 legacy redirects', function () {
+    $robots = $this->get('/robots.txt');
 
-    $sitemap->assertOk()
-        ->assertHeader('Content-Type', 'application/xml; charset=UTF-8')
-        ->assertSee('<urlset', false)
+    $robots->assertOk()
+        ->assertHeader('Content-Type', 'text/plain; charset=UTF-8')
+        ->assertSee('User-agent: *', false)
+        ->assertSee('Allow: /', false)
+        ->assertSee('Disallow: /cms', false)
+        ->assertSee('Sitemap: '.rtrim(config('app.url'), '/').'/sitemap.xml', false);
+
+    config(['app.url' => 'https://example.com']);
+    $customRobots = $this->get('/robots.txt');
+    $customRobots->assertOk()
+        ->assertSee('Sitemap: https://example.com/sitemap.xml', false);
+    config(['app.url' => 'http://localhost:8000']);
+
+    // 1. Parent Sitemap Index
+    $sitemapIndex = $this->get('/sitemap.xml');
+    $sitemapIndex->assertOk()
+        ->assertHeader('Content-Type', 'text/xml; charset=UTF-8')
+        ->assertSee('xml-stylesheet', false)
+        ->assertSee('sitemap.css', false)
+        ->assertDontSee('sitemap.xsl')
+        ->assertSee('<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"', false)
+        ->assertSee('/main-sitemap.xml', false)
+        ->assertSee('/services-sitemap.xml', false)
+        ->assertSee('/case-studies-sitemap.xml', false)
+        ->assertSee('/articles-sitemap.xml', false);
+
+    // 2. Main static pages child sitemap
+    $mainSitemap = $this->get('/main-sitemap.xml');
+    $mainSitemap->assertOk()
+        ->assertHeader('Content-Type', 'text/xml; charset=UTF-8')
+        ->assertSee('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"', false)
+        ->assertSee('/id/tentang-kami', false)
+        ->assertSee('/en/about', false)
+        ->assertSee('xhtml:link', false);
+
+    // 3. Services child sitemap
+    $servicesSitemap = $this->get('/services-sitemap.xml');
+    $servicesSitemap->assertOk()
+        ->assertHeader('Content-Type', 'text/xml; charset=UTF-8')
+        ->assertSee('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"', false)
+        ->assertSee('<lastmod>', false)
         ->assertSee('xhtml:link', false)
         ->assertSee('/id/layanan/pendirian-badan-usaha', false)
         ->assertSee('/en/services/company-formation-licensing', false);
 
+    // 4. Case studies child sitemap
+    $caseStudiesSitemap = $this->get('/case-studies-sitemap.xml');
+    $caseStudiesSitemap->assertOk()
+        ->assertHeader('Content-Type', 'text/xml; charset=UTF-8')
+        ->assertSee('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"', false)
+        ->assertSee('/id/studi-kasus/pendirian-pt-pma-logistik-jakarta', false)
+        ->assertSee('/en/case-studies/jakarta-logistics-pma-setup', false);
+
+    // 5. Articles child sitemap
+    $articlesSitemap = $this->get('/articles-sitemap.xml');
+    $articlesSitemap->assertOk()
+        ->assertHeader('Content-Type', 'text/xml; charset=UTF-8')
+        ->assertSee('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"', false);
+
+    // 6. Child sitemap aliases
+    $this->get('/sitemap_index.xml')->assertOk()->assertSee('<sitemapindex', false);
+    $this->get('/sitemap-main.xml')->assertOk()->assertSee('<urlset', false);
+    $this->get('/sitemap-services.xml')->assertOk()->assertSee('<urlset', false);
+
+    // 7. Legacy 301 redirects
     $this->get('/about-us.html')->assertRedirect('/id/tentang-kami')->assertStatus(301);
     $this->get('/services.html')->assertRedirect('/id/layanan')->assertStatus(301);
     $this->get('/product-detail?id=1')->assertRedirect('/id/layanan/pendirian-badan-usaha')->assertStatus(301);

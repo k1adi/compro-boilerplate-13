@@ -6,7 +6,14 @@ use App\Http\Controllers\ComproPageController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [ComproPageController::class, 'redirectRoot'])->name('compro.root');
+Route::get('/robots.txt', [ComproPageController::class, 'robots'])->name('compro.robots');
 Route::get('/sitemap.xml', [ComproPageController::class, 'sitemap'])->name('compro.sitemap');
+Route::get('/sitemap_index.xml', [ComproPageController::class, 'sitemapIndex'])->name('compro.sitemap.index');
+Route::get('/{section}-sitemap.xml', [ComproPageController::class, 'sitemapSection'])
+    ->whereIn('section', ['main', 'pages', 'services', 'products', 'case-studies', 'articles', 'posts', 'blog', 'all'])
+    ->name('compro.sitemap.section');
+Route::get('/sitemap-{section}.xml', [ComproPageController::class, 'sitemapSection'])
+    ->whereIn('section', ['main', 'pages', 'services', 'products', 'case-studies', 'articles', 'posts', 'blog', 'all']);
 
 // Legacy 301 SEO Redirects (from docs/knowledge-base.md Section 7)
 Route::redirect('/index.html', '/id', 301);

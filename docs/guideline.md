@@ -29,6 +29,7 @@ Design principle: **zero hardcoding in Blade**. Business copy comes from DTOs or
 5. [`docs/design.md`](design.md): before touching any color, spacing, layout, or page composition.
 6. [`docs/knowledge-base.md`](knowledge-base.md): before touching any business fact or copy.
 7. `.agents/skills/antislop/SKILL.md` and the sibling `antislop-*` skills: the quality rules (R-01 to R-40) enforced on UI and copy.
+8. `.agents/skills/modular-layout-scraper/SKILL.md`: the reference URL layout scraper and 4-level parent-child template inheritance skill.
 
 ---
 
@@ -57,9 +58,9 @@ Update this table in the same changeset whenever a phase, page, component, route
 | Phase 3: public pages | Done | `home`, `about`, `services` (index, show), `case-studies` (index, show), `contact` in both languages |
 | Phase 4.1 JSON-LD graph | Done | `SchemaGraphBuilder`: `Organization`, `LocalBusiness`, `WebSite`, `WebPage`, `BreadcrumbList`, `Service`, `FAQPage` |
 | Phase 4.2 bilingual routing | Done | `/{locale}` prefix, `SetLocaleMiddleware`, reciprocal `hreflang` (`id`, `en`, `x-default`), legacy 301 redirects |
-| Phase 4.3 on-page SEO and sitemap | Done | `<x-seo.meta>`, canonical, OpenGraph, Twitter, `/sitemap.xml` with `xhtml:link` alternates |
+| Phase 4.3 on-page SEO, robots.txt, and sitemap | Done | `<x-seo.meta>`, canonical, OpenGraph, Twitter, `/robots.txt` (http://www.robotstxt.org/robotstxt.html), `/sitemap.xml` index (`<sitemapindex>`) with modular child sitemaps (`main-sitemap.xml`, `services-sitemap.xml`, `case-studies-sitemap.xml`, `articles-sitemap.xml`) with `lastmod`, `xhtml:link` alternates, and CSS styling (https://www.sitemaps.org/index.html) |
 | Phase 4.4 articles and AMP | **Planned** | No `ArticleData`, article routes or views, `AmpSanitizer`, or `layouts/amp.blade.php` |
-| Phase 4.5 accessibility | Built, partly verified | Skip link, landmarks, labels, focus trap, theme toggle exist. Manual keyboard and screen-reader audit not performed |
+| Phase 4.5 accessibility | Built, partly verified | Skip link, landmarks, labels, focus trap, theme toggle exist. Worldwide audit reference: https://www.accessibilitychecker.org/. Manual keyboard and screen-reader audit not performed |
 | Phase 5: admin CMS and Eloquent | **Not started** | No Inertia, React, Spatie packages, migrations beyond Laravel defaults, or `/cms` routes |
 | Phase 6: delivery gate | Automated checks pass | Pest, Pint, and `npm run build` pass. Lighthouse and Web Vitals **not measured**. Manual click-through (R-35) not performed |
 
@@ -71,7 +72,7 @@ Update this table in the same changeset whenever a phase, page, component, route
 - `APP_LOCALE` in `.env.example` is `en`, but `/` redirects to `/id`. The URL prefix, not `APP_LOCALE`, decides the language.
 - `docs/design.md`, `resources/css/compro.css`, and public Blade section templates have been fully updated to the `koolom.webflow.io` Bento layout and the **White (Primary) + Blue (Secondary) + Orange (Tertiary)** triadic color spectrum.
 
-Last automated verification: 2026-11-04, `php artisan test --compact` (20 tests, 114 assertions passing), `vendor/bin/pint --format agent` passing, `npm run build` passing.
+Last automated verification: 2026-11-10, `php artisan test --compact` (20 tests, 158 assertions passing), `vendor/bin/pint --format agent` passing, `npm run build` passing.
 
 ---
 
@@ -80,7 +81,7 @@ Last automated verification: 2026-11-04, `php artisan test --compact` (20 tests,
 ```text
 AGENTS.md                         Governance, agents, verification commands
 docs/                             The five documentation files (Section 3, plus AGENTS.md at the root)
-.agents/skills/                   Antislop and Laravel skills (read before UI, copy, tests)
+.agents/skills/                   Antislop, Laravel, and modular-layout-scraper skills (read before UI, copy, URL scraping, tests)
 
 app/
   Data/
@@ -93,14 +94,14 @@ app/
     HomePageData.php              Everything the home page needs
     Mocks/ComproMockRepository.php  Localized seed data (id and en). Swap for Eloquent in Phase 5
   Http/
-    Controllers/ComproPageController.php   All public pages, RFQ submit, sitemap, legacy redirect
+    Controllers/ComproPageController.php   All public pages, RFQ submit, robots.txt, sitemap, legacy redirect
     Middleware/SetLocaleMiddleware.php     Validates {locale}, sets app locale and URL defaults
     Requests/StoreInquiryRequest.php       RFQ validation, localized messages, honeypot
   Services/
     SchemaGraphBuilder.php        Builds the JSON-LD @graph
-    SitemapGenerator.php          Builds sitemap entries with hreflang alternates
+    SitemapGenerator.php          Builds Sitemaps.org v0.9 XML index and modular child sitemaps with CSS styling
 
-routes/web.php                    Locale-prefixed route pairs (id and en slugs), legacy 301s, sitemap
+routes/web.php                    Locale-prefixed route pairs (id and en slugs), legacy 301s, robots.txt, sitemap index and section routes
 lang/{id,en}/ui.php               All static UI chrome strings (nav, form labels, section labels)
 
 resources/
@@ -114,11 +115,11 @@ resources/
     components/sections/          hero-split, proof-ledger, service-matrix, process-timeline,
                                   case-study-showcase, technical-faq, rfq-cta-banner
     pages/                        home, about, contact, services/{index,show}, case-studies/{index,show}
-    seo/sitemap.blade.php         XML sitemap view
     welcome.blade.php             Laravel default, unused (handoff cleanup target)
 
+public/sitemap.css                CSS stylesheet for human-readable browser rendering of sitemap.xml without deprecated XSLT
 public/images/placeholders/       SVG schematic placeholders (replace with real photos)
-tests/Feature/ComproLandingPageTest.php   Pages, SEO, schema, RFQ, sitemap, redirects
+tests/Feature/ComproLandingPageTest.php   Pages, SEO, schema, RFQ, robots.txt, sitemap, redirects
 tests/Feature/ExampleTest.php             Root redirect check
 ```
 
@@ -128,7 +129,7 @@ tests/Feature/ExampleTest.php             Root redirect check
 
 ```mermaid
 flowchart TD
-    A["Browser: GET /en/services/cold-chain-installation"] --> B["routes/web.php: prefix {locale}, middleware set.locale"]
+    A["Browser: GET /en/services/company-formation-licensing"] --> B["routes/web.php: prefix {locale}, middleware set.locale"]
     B --> C["SetLocaleMiddleware: validate id or en, set app locale, set URL defaults"]
     C --> D["ComproPageController::serviceShow"]
     D --> E["ComproMockRepository: localized ServiceData, CaseStudyData, FaqItemData"]
@@ -175,6 +176,7 @@ npm run build
 | List public routes | `php artisan route:list --except-vendor` |
 | Clear compiled views and caches | `php artisan optimize:clear` |
 | Contrast check | `python .agents/skills/antislop-human/contrast-check.py "#HEX_BG" "#HEX_FG"` |
+| Scrape reference URL layout | `python .agents/skills/modular-layout-scraper/scripts/scrape-layout.py --save-dir ./storage/app/scratch <url1> [<url2> ...]` |
 
 **Windows / Laragon troubleshooting**
 - If `php -v` does not report 8.5, call the project binary directly, for example `C:\laragon\bin\php\php-8.5.12-1-nts-Win32-vs17-x64\php.exe artisan test --compact`. Adjust the folder to your installed version.
@@ -254,7 +256,8 @@ Full rules are in `.agents/skills/antislop*/SKILL.md`. The ones that break build
 - **No em dashes** in copy, comments, or docs (R-02). Tests assert none appear in rendered HTML.
 - **No dead links or ghost features** (R-24, R-26): every nav and CTA target must exist.
 - **Honest data** (R-16, R-17, R-18, R-36, R-38): no invented clients, testimonials, logos, or metrics. Unverified data is an empty collection, and seed data stays labeled.
-- **Accessibility** (R-32, R-39): skip link, landmarks, one `<h1>`, visible `<label for>`, text-based errors, `:focus-visible`, 44px targets, native `<button>` and `<a href>`.
+- **Accessibility** (R-32, R-39, https://www.accessibilitychecker.org/): skip link, landmarks, one `<h1>`, visible `<label for>`, text-based errors, `:focus-visible`, 44px targets, native `<button>` and `<a href>`.
+- **Crawler & Sitemap Standards** (http://www.robotstxt.org/robotstxt.html, https://www.sitemaps.org/index.html): `/robots.txt` disallows `/cms` and points to `Sitemap: {APP_URL}/sitemap.xml`; `/sitemap.xml` serves a parent `<sitemapindex>` linking to modular child sitemaps (`main-sitemap.xml`, `services-sitemap.xml`, `case-studies-sitemap.xml`, `articles-sitemap.xml`) with `<loc>`, `<lastmod>`, `<changefreq>`, `<priority>`, reciprocal `xhtml:link` alternates, and modern CSS preview styling.
 - **Performance** (R-40): explicit `width` and `height` on media, only the hero image uses `priority`, no render-blocking third-party scripts, never claim a score that was not measured.
 - **Dependencies**: do not add packages without approval. The approved list and the deferred Phase 5 packages are in `docs/workflow.md` Step 0.4.
 

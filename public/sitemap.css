@@ -1,0 +1,131 @@
+/* Sitemaps.org v0.9 CSS Stylesheet for browser preview */
+@namespace url("http://www.sitemaps.org/schemas/sitemap/0.9");
+@namespace xhtml url("http://www.w3.org/1999/xhtml");
+
+sitemapindex,
+urlset {
+    display: block;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1.5rem 3rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: #0B1528;
+    background-color: #F8FAFC;
+}
+
+sitemapindex::before {
+    content: "XML Sitemap Index (Sitemaps.org Protocol v0.9)\A\A This parent sitemap index organizes modular sub-sitemaps (main pages, services, case studies, and articles). Search engines crawl each child sitemap automatically.";
+    display: block;
+    white-space: pre-wrap;
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+    line-height: 1.55;
+    color: #475569;
+    font-weight: 500;
+}
+
+urlset::before {
+    content: "XML Sitemap (Sitemaps.org Protocol v0.9)\A\A This XML sitemap is dynamically generated for search engine indexation (Google, Bing, Yandex). Each entry includes canonical URLs, last modification dates, change frequencies, priorities, and localized alternate links.";
+    display: block;
+    white-space: pre-wrap;
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+    line-height: 1.55;
+    color: #475569;
+    font-weight: 500;
+}
+
+sitemap,
+url {
+    display: block;
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 0.75rem;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+
+sitemap:hover,
+url:hover {
+    border-color: #CBD5E1;
+    background: #FFFFFF;
+}
+
+loc {
+    display: block;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1E3A8A;
+    word-break: break-all;
+    margin-bottom: 0.5rem;
+}
+
+lastmod {
+    display: inline-block;
+    font-size: 0.82rem;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    color: #475569;
+    margin-right: 1.25rem;
+}
+
+lastmod::before {
+    content: "Modified: ";
+    font-weight: 600;
+    color: #64748B;
+}
+
+changefreq {
+    display: inline-block;
+    font-size: 0.82rem;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    color: #475569;
+    margin-right: 1.25rem;
+}
+
+changefreq::before {
+    content: "Freq: ";
+    font-weight: 600;
+    color: #64748B;
+}
+
+priority {
+    display: inline-block;
+    font-size: 0.82rem;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    color: #92400E;
+    background: #FEF3C7;
+    padding: 0.1rem 0.45rem;
+    border-radius: 4px;
+    font-weight: 700;
+}
+
+priority::before {
+    content: "Priority: ";
+    color: #B45309;
+}
+
+xhtml|link {
+    display: inline-block;
+    font-size: 0.78rem;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    background: #F1F5F9;
+    color: #1E3A8A;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    border: 1px solid #E2E8F0;
+    margin-top: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+xhtml|link::before {
+    content: attr(hreflang) " \2192  " attr(href);
+}

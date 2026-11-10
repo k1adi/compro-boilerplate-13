@@ -146,6 +146,16 @@ This repository uses five canonical documentation files under `docs/`. Four are 
 - New developers start at [`docs/guideline.md`](docs/guideline.md). Its "Change-to-Document Sync Matrix" lists which file to update for each kind of change, and its "Implementation Status" table must be updated whenever a phase, page, component, or route is added or removed.
 - Before finishing any task that touched code, re-read the sections of `docs/` that describe it and fix every stale path, prop, route, command, or count in the same changeset.
 
+### 1.1 Worldwide Community Standards & Technical References
+
+When creating agents, defining standards, or implementing features for crawler governance, XML sitemaps, or web accessibility, all implementations must adhere to these global community specifications alongside modern framework practices:
+
+| Standard Domain | Worldwide Reference URL | Modern Implementation Requirement in This Codebase |
+| :--- | :--- | :--- |
+| **Robots Exclusion Standard (`robots.txt` / RFC 9309)** | http://www.robotstxt.org/robotstxt.html | Dynamic `/robots.txt` route (`ComproPageController::robots`) with `Content-Type: text/plain; charset=UTF-8`, `User-agent: *`, `Allow: /`, `Disallow: /cms`, `Disallow: /cms/`, and a dynamic `Sitemap: {APP_URL}/sitemap.xml` auto-discovery directive based on current environment / host. |
+| **Sitemaps XML Protocol (`sitemap.xml` v0.9)** | https://www.sitemaps.org/index.html | Generate UTF-8 XML natively via `App\Services\SitemapGenerator` (`DOMDocument`) with `text/xml; charset=UTF-8` and modern CSS styling (`/sitemap.css`, zero deprecated XSLT per ChromeStatus 4709671889534976) using a parent `<sitemapindex>` at `/sitemap.xml` referencing modular child sitemaps (`main-sitemap.xml`, `services-sitemap.xml`, `case-studies-sitemap.xml`, `articles-sitemap.xml`), each rendering `<urlset>`, `<loc>`, W3C Datetime `<lastmod>` (`YYYY-MM-DD`), `<changefreq>`, `<priority>`, and reciprocal `<xhtml:link rel="alternate" hreflang="..." />` (`id`, `en`, `x-default`). |
+| **Web Accessibility Compliance & Auditing (`WCAG 2.2 AA / ADA / EAA`)** | https://www.accessibilitychecker.org/ | Enforce semantic HTML5 landmarks, single `<h1>`, labeled controls (`<label for>`), keyboard operability (`:focus-visible`, `Escape` closure), `44x44px` minimum hit areas, local contrast math (`contrast-check.py` from `.agents/skills/antislop-human`), and live page audits against https://www.accessibilitychecker.org/ criteria. |
+
 ## 2. Environment & CLI Verification Commands
 
 When implementing features, agents must verify their changes using these exact commands:
@@ -155,6 +165,7 @@ When implementing features, agents must verify their changes using these exact c
 - **Route & Middleware Audit:** `php artisan route:list --path=cms` and `php artisan route:list --path=id`
 - **Clear Cached Views & Data:** `php artisan optimize:clear`
 - **WCAG Contrast Verification:** `python .agents/skills/antislop-human/contrast-check.py "#HEX_BG" "#HEX_FG"`
+- **Reference URL Modular Layout Scraper:** `python .agents/skills/modular-layout-scraper/scripts/scrape-layout.py --save-dir ./storage/app/scratch <url1> [<url2> ...]`
 - **Environment notes:** On the Laragon/Windows setup the `php` in `PATH` may be older than 8.5. Call the project binary explicitly (see `docs/guideline.md` Section 7). `vendor/bin/pint --dirty` only works inside a Git repository; without Git, run `vendor/bin/pint --format agent`.
 
 ## 3. Specialized Agent Personas (Invoke by `@Role` in Prompts)
@@ -165,11 +176,11 @@ When implementing features, agents must verify their changes using these exact c
 
 ### `@Compro-Blade-Crafter` (Public Frontend & Anti-Slop UI Specialist)
 - **Scope:** `resources/views/**`, `resources/css/compro.css`, `resources/js/compro.js`
-- **Mission:** Build pure Laravel 13 Blade `<x-ui.*>` and `<x-sections.*>` components with Tailwind CSS v4 and Alpine.js v3 following `docs/design.md`. Enforce all Antislop rules (R-01 to R-40), WCAG 2.2 AA accessibility, 3-state responsive reflow, and 0KB React leakage.
+- **Mission:** Build pure Laravel 13 Blade `<x-ui.*>` and `<x-sections.*>` components with Tailwind CSS v4 and Alpine.js v3 following `docs/design.md`. Enforce all Antislop rules (R-01 to R-40), WCAG 2.2 AA accessibility and https://www.accessibilitychecker.org/ audit compliance, 3-state responsive reflow, and 0KB React leakage.
 
 ### `@SEO-AMP-Auditor` (Technical SEO, JSON-LD & AMP Specialist)
-- **Scope:** `app/Services/AmpSanitizer.php`, `app/Services/SchemaGraphBuilder.php`, `resources/views/layouts/compro.blade.php`, `resources/views/layouts/amp.blade.php`
-- **Mission:** Verify `@stack('schema')` JSON-LD graphs against `docs/knowledge-base.md`, `hreflang` alternates (`id`, `en`, `x-default`), canonical tags, LCP image attributes (`fetchpriority="high"`, explicit dimensions), and valid `<html ⚡>` AMP output under 75KB CSS.
+- **Scope:** `app/Services/AmpSanitizer.php`, `app/Services/SchemaGraphBuilder.php`, `app/Services/SitemapGenerator.php`, `resources/views/layouts/compro.blade.php`, `resources/views/layouts/amp.blade.php`
+- **Mission:** Verify `@stack('schema')` JSON-LD graphs against `docs/knowledge-base.md`, `hreflang` alternates (`id`, `en`, `x-default`), canonical tags, dynamic `/robots.txt` compliance with http://www.robotstxt.org/robotstxt.html, `/sitemap.xml` compliance with https://www.sitemaps.org/index.html, accessibility compliance with https://www.accessibilitychecker.org/, LCP image attributes (`fetchpriority="high"`, explicit dimensions), and valid `<html ⚡>` AMP output under 75KB CSS.
 
 ### `@CMS-Inertia-Builder` (Phase 5 Admin Panel Specialist)
 - **Scope:** `routes/cms.php`, `app/Http/Controllers/Cms/**`, `resources/js/cms.jsx`, `resources/js/Pages/Cms/**/*.jsx`
@@ -191,21 +202,21 @@ When implementing features, agents must verify their changes using these exact c
 
 | Category | Files / Patterns | Action |
 | :--- | :--- | :--- |
-| Seed data | `app/Data/Mocks/ComproMockRepository.php` (all `GardaTek`, `PT Garda Teknika Presisi`, `SRV-0x`, `CS-0x`, `faq-0x` records) | Rewrite with real data, or swap to Eloquent per `docs/workflow.md` Step 5.3. Empty collections (`[]`) for anything unverified (R-17, R-18, R-38). |
+| Seed data | `app/Data/Mocks/ComproMockRepository.php` (all `Koolom`, `PT Koolom Mitra Konsultan`, `SRV-0x`, `CS-0x`, `faq-0x` records) | Rewrite with real data, or swap to Eloquent per `docs/workflow.md` Step 5.3. Empty collections (`[]`) for anything unverified (R-17, R-18, R-38). |
 | Placeholder media | `public/images/placeholders/*.svg` | Delete once real photos exist. Update every `MediaAssetData` that references them. |
 | Boilerplate notices | `isSampleBoilerplate`, `isSamplePlaceholder` flags, `ui.boilerplate_banner_*`, `ui.proof.seed_badge`, `ui.case_studies.seed_note` | Set flags to `false` for verified data. Remove the banner and badge markup only when no seed data remains. |
 | Sample copy | `lang/id/ui.php`, `lang/en/ui.php` strings that name the sample company, KBLI codes, cities, or capacity ranges | Rewrite for the real business in both locales. |
-| Hardcoded sample strings outside the mock repository | `resources/views/layouts/compro.blade.php` (`GT // 12` brand monogram, 2 places), `resources/views/components/sections/hero-split.blade.php` (SLA and capacity parameter bar, `[P&ID // REV.4]` caption), `resources/views/components/sections/technical-faq.blade.php` (escalation desk label), `resources/views/components/sections/rfq-cta-banner.blade.php` (fallback `SRV-0x` select options), `resources/views/pages/about.blade.php` (KBLI badge), `app/Http/Controllers/ComproPageController.php` (page titles naming cold storage, chiller, and piping), `app/Http/Requests/StoreInquiryRequest.php` (`Rule::in` list of `SRV-0x` codes), `resources/js/compro.js` | Move each value into a DTO or `lang/*/ui.php` key (zero-hardcoding rule), or rewrite it for the real business. Derive `service_code` validation from the real service list. |
+| Hardcoded sample strings outside the mock repository | `resources/views/layouts/compro.blade.php` (`Koolom Partners` brand monogram), `resources/views/components/sections/hero-split.blade.php` (SLA and parameter bar), `resources/views/components/sections/technical-faq.blade.php` (escalation desk label), `resources/views/components/sections/rfq-cta-banner.blade.php` (fallback `SRV-0x` select options), `resources/views/pages/about.blade.php` (KBLI badge), `app/Http/Controllers/ComproPageController.php` (page titles), `app/Http/Requests/StoreInquiryRequest.php` (`Rule::in` list of `SRV-0x` codes), `resources/js/compro.js` | Move each value into a DTO or `lang/*/ui.php` key (zero-hardcoding rule), or rewrite it for the real business. Derive `service_code` validation from the real service list. |
 | Legacy redirects | `/about-us.html`, `/services.html`, `/product-detail`, `/projects.php`, `/contact-us.html` in `routes/web.php` and `legacyProductRedirect()` | Keep only if the real business has old URLs. Otherwise delete them and the matching tests. |
 | Unrelated sections | Any `<x-sections.*>` or `pages/*` the real business does not need (for example `case-studies/*` when there are no projects) | Delete the view, route, controller method, nav and footer links, sitemap entries, and tests together, so no dead link remains (R-24, R-26). |
 | Framework leftovers | `resources/views/welcome.blade.php`, `tests/Feature/ExampleTest.php` if superseded, unused default `resources/css/app.css` and `resources/js/app.js` entries when Phase 5 is not used | Delete after confirming nothing imports them. |
 | Phase 5 scaffolding | `routes/cms.php`, `app/Http/Controllers/Cms/**`, `resources/js/cms.jsx`, `resources/js/Pages/Cms/**`, Inertia and React packages | Delete only if the client will never get the CMS. Needs explicit user approval because it changes dependencies. |
-| Tests | `tests/Feature/ComproLandingPageTest.php` assertions containing sample strings (`SRV-01`, `CS-01`, `faq-01`, sample slugs, `PIR/PUR`) | Update to the real data. Do not delete the test file. |
+| Tests | `tests/Feature/ComproLandingPageTest.php` assertions containing sample strings (`SRV-01`, `CS-01`, `faq-01`, sample slugs) | Update to the real data. Do not delete the test file. |
 | Docs | Sample-specific content in `docs/knowledge-base.md`, `docs/design.md` (brand name, palette rationale), `docs/data-contracts.md` examples | Replace with real facts. Keep structure and governance tables. |
 
 **Leftover Scan (must return zero hits before handoff):**
 ```powershell
-Select-String -Path (Get-ChildItem app,resources,lang,routes,tests,docs,public -Recurse -File).FullName -Pattern "GardaTek|Garda Teknika|BOILERPLATE|SAMPEL|SRV-0|CS-0|gardatek.co.id|Jababeka|placeholders/"
+Select-String -Path (Get-ChildItem app,resources,lang,routes,tests,docs,public -Recurse -File).FullName -Pattern "Koolom|Koolom Mitra|GardaTek|BOILERPLATE|SAMPEL|SRV-0|CS-0|koolom.co.id|placeholders/"
 ```
 
 **Hard Rules:**
@@ -216,13 +227,14 @@ Select-String -Path (Get-ChildItem app,resources,lang,routes,tests,docs,public -
 
 <!-- antislop:start -->
 ## antislop
-For UI, copy, people, mobile layout, or code comments work, read these installed skill files directly (use these paths even if a same-named global skill exists):
+For UI, copy, people, mobile layout, reference URL scraping, or code comments work, read these installed skill files directly (use these paths even if a same-named global skill exists):
 - Core filter, always on: `antislop`: `.agents/skills/antislop/SKILL.md`
 - UI / visual: `antislop-ui`: `.agents/skills/antislop-ui/SKILL.md`
 - Copy & text: `antislop-copywriting`: `.agents/skills/antislop-copywriting/SKILL.md`
 - People: `antislop-human`: `.agents/skills/antislop-human/SKILL.md`
 - Mobile / responsive: `antislop-layoutmobile`: `.agents/skills/antislop-layoutmobile/SKILL.md`
 - Code comments: `antislop-code`: `.agents/skills/antislop-code/SKILL.md`
+- Reference URL Layout Scraper & Modular Inheritance: `modular-layout-scraper`: `.agents/skills/modular-layout-scraper/SKILL.md`
 
 Before starting, follow the core's "Two Usage Modes" section in strict order: explicit session instruction first, then global preference, then ask. A session instruction always wins. For a resolved mode, say `antislop active: <mode> (session override).` or `antislop active: <mode> (global preference).` once before presenting findings or making edits, using the actual mode and source. Acknowledging the user's request without naming the source does not replace this notice.
 Only an explicit choice of antislop during or after selects a session mode. A request to review, audit, or avoid file edits does not select a mode; read the global preference in that case. Another skill's mode does not select antislop's mode.

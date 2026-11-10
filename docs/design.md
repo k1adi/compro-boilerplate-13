@@ -56,7 +56,9 @@ Every visual and structural decision in this guideline is backed by an explicit 
 
 ---
 
-## 3. Modern Three-Color Spectrum & Verified WCAG 2.2 AA Contrast Matrix (`antislop-human` R-25)
+## 3. Modern Three-Color Spectrum & Verified WCAG 2.2 AA Contrast Matrix (`antislop-human` R-25 & https://www.accessibilitychecker.org/)
+
+> **Accessibility Standard Reference:** All color pairings, interactive boundaries, focus indicators, and landmark structures are designed to pass local contrast math (`python .agents/skills/antislop-human/contrast-check.py`) and worldwide accessibility audits per https://www.accessibilitychecker.org/ (WCAG 2.2 AA, ADA, Section 508, and EAA).
 
 ### 3.1 Primary Color Spectrum: White & Cool Alabaster (60% Dominant Canvas)
 | Token Name | Hex | Role in Koolom Layout Architecture |
@@ -152,7 +154,7 @@ The exact token implementation in [`resources/css/compro.css`](../resources/css/
 ## 6. Sitemap, Simple Navbar Specification & Multi-Page Blueprints
 
 ### 6.1 Canonical Bilingual Route Table & Simple Navbar Labels (R-24: Zero Ghost Links)
-Every link in the header, footer, or section CTAs must resolve to one of the active routes below. Navbar items use **simple, plain text** matching `koolom.webflow.io`:
+Every link in the header, footer, or section CTAs must resolve to one of the active routes below. Crawler discovery and XML indexing follow http://www.robotstxt.org/robotstxt.html (`/robots.txt`) and https://www.sitemaps.org/index.html (`/sitemap.xml` index referencing `main-sitemap.xml`, `services-sitemap.xml`, `case-studies-sitemap.xml`, and `articles-sitemap.xml`). Navbar items use **simple, plain text** matching `koolom.webflow.io`:
 
 | Page Key | Simple Navbar Label (ID / EN) | Indonesian Route (`/id/...`) | English Route (`/en/...`) | Reference Koolom URL |
 | :--- | :--- | :--- | :--- | :--- |

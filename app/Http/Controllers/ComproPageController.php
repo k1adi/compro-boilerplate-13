@@ -342,13 +342,53 @@ class ComproPageController extends Controller
         return back()->with('rfq_success', $responsePayload);
     }
 
-    public function sitemap(): Response
+    public function robots(Request $request): Response
     {
-        $entries = $this->sitemapGenerator->getEntries();
+        $baseUrl = rtrim((string) (config('app.url') ?: $request->schemeAndHttpHost()), '/');
 
-        return response()
-            ->view('seo.sitemap', ['entries' => $entries], 200)
-            ->header('Content-Type', 'application/xml; charset=UTF-8');
+        $lines = [
+            '# http://www.robotstxt.org/robotstxt.html',
+            'User-agent: *',
+            'Allow: /',
+            'Disallow: /cms',
+            'Disallow: /cms/',
+            '',
+            '# https://www.sitemaps.org/index.html',
+            "Sitemap: {$baseUrl}/sitemap.xml",
+        ];
+
+        return response(implode("\n", $lines)."\n", 200)
+            ->header('Content-Type', 'text/plain; charset=UTF-8');
+    }
+
+    public function sitemap(Request $request): Response
+    {
+        return $this->sitemapIndex($request);
+    }
+
+    public function sitemapIndex(Request $request): Response
+    {
+        $baseUrl = rtrim((string) (config('app.url') ?: $request->schemeAndHttpHost()), '/');
+
+        return response($this->sitemapGenerator->toIndexXml($baseUrl), 200, [
+            'Content-Type' => 'text/xml; charset=UTF-8',
+        ]);
+    }
+
+    public function sitemapSection(Request $request, string $section): Response
+    {
+        $normalized = str_replace('_', '-', strtolower($section));
+        $allowed = ['main', 'pages', 'services', 'products', 'case-studies', 'articles', 'posts', 'blog', 'all'];
+
+        if (! in_array($normalized, $allowed, true)) {
+            abort(404);
+        }
+
+        $baseUrl = rtrim((string) (config('app.url') ?: $request->schemeAndHttpHost()), '/');
+
+        return response($this->sitemapGenerator->toSectionXml($normalized, $baseUrl), 200, [
+            'Content-Type' => 'text/xml; charset=UTF-8',
+        ]);
     }
 
     public function legacyProductRedirect(Request $request): RedirectResponse

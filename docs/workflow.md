@@ -62,7 +62,7 @@ To avoid `illuminate/support` version locks on Laravel 13 and keep TTFB near zer
 | **Bilingual Routing (`id` / `en`)** | `mcamara/laravel-localization` | Legacy route-caching hooks frequently lag behind new major Laravel releases (`^13.0`) | **Native Laravel 13 Prefix Group (`/{locale}`)** + custom 25-line `SetLocaleMiddleware` + `lang/{locale}/ui.php` | `0 KB` (100% `route:cache` safe) |
 | **On-Page SEO & `hreflang`** | `artesaos/seotools` | Global singleton facade state; lags behind `illuminate/support: ^13.0` constraints | **Native `<x-seo.meta :meta="$page->seo" />` Blade Component** driven by `SeoMetaData` | `0 KB` (Pure Blade + DTO) |
 | **JSON-LD Schema `@graph`** | Unstructured raw Blade arrays | Error-prone if scattered across views | **`App\Services\SchemaGraphBuilder`** service (pure PHP deterministic `@graph` builder; optionally compatible with `spatie/schema-org` which has zero Laravel version lock) | `0 KB` (Native PHP 8.5 service) |
-| **XML Sitemap (`/sitemap.xml`)** | `spatie/laravel-sitemap` | Pulls in `spatie/crawler`, Guzzle, and headless Chromium (`browsershot`) dependencies | **`App\Services\SitemapGenerator`** + cached XML Blade view (`resources/views/seo/sitemap.blade.php`) | `0 KB` (Generates in `< 2ms`) |
+| **XML Sitemap (`/sitemap.xml`) & Robots (`/robots.txt`)** | `spatie/laravel-sitemap` | Pulls in `spatie/crawler`, Guzzle, and headless Chromium (`browsershot`) dependencies | **`App\Services\SitemapGenerator`** (native PHP `DOMDocument` builder generating a parent `<sitemapindex>` at `/sitemap.xml` linking to modular child sitemaps `main-sitemap.xml`, `services-sitemap.xml`, `case-studies-sitemap.xml`, `articles-sitemap.xml` with modern CSS styling `public/sitemap.css`, zero deprecated XSLT per ChromeStatus 4709671889534976) following https://www.sitemaps.org/index.html + dynamic `/robots.txt` (`ComproPageController::robots`) following http://www.robotstxt.org/robotstxt.html | `0 KB` (Generates in `< 2ms`) |
 | **Form Spam & Bot Protection** | `spatie/laravel-honeypot` | Extra middleware/config overhead for a single RFQ form | **Native Laravel 13 `RateLimiter` (`throttle:10,1` on `POST /{locale}/inquiries`)** + hidden honeypot field (`company_website_hp => prohibited`) in `StoreInquiryRequest` | `0 KB` (Built into Laravel 13) |
 | **AMP HTML5 Sanitizer** | `lliure/amp` | Unmaintained on PHP 8.4/8.5 and triggers deprecation notices | **Native PHP 8.5 `Dom\HTMLDocument` (`ext-dom`)** inside `App\Services\AmpSanitizer` | `0 KB` (Native C-level HTML5 parser in PHP 8.5) |
 | **Web Fonts (`Plus Jakarta Sans` & `JetBrains Mono`)** | External Google Fonts render-blocking `<link>` | Violates Antislop **R-40** if render-blocking | **`laravel-vite-plugin/fonts` (`bunny()`)** already built into `laravel-vite-plugin: ^3.1` | `0 KB` extra package (Already installed) |
@@ -170,9 +170,10 @@ Use a dedicated `App\Services\SchemaGraphBuilder` service to push structured `@g
 - **Head Tags:** Automatic `<link rel="alternate" hreflang="id" ...>`, `hreflang="en"`, and `hreflang="x-default"` rendered in `layouts/compro.blade.php`.
 - **Translations:** Static UI chrome labels resolved via `__('ui.*')` in `lang/id/ui.php` and `lang/en/ui.php`; domain content resolved from localized DTO properties.
 
-### Step 4.3: On-Page SEO, Sitemap & Performance Mechanisms (R-40)
+### Step 4.3: On-Page SEO, Sitemap, Robots.txt & Performance Mechanisms (R-40)
 - Render `<x-seo.meta :meta="$page->seo" />` for unique `<title>`, `<meta name="description">`, canonical URL, OpenGraph, and Twitter Cards.
-- Generate `/sitemap.xml` with localized `xhtml:link` alternates for all public routes.
+- **Robots Exclusion Standard (http://www.robotstxt.org/robotstxt.html & RFC 9309):** Serve dynamic `/robots.txt` (`ComproPageController::robots`) declaring `User-agent: *`, `Allow: /`, `Disallow: /cms`, `Disallow: /cms/`, and `Sitemap: {APP_URL}/sitemap.xml` adapting to local development and production environments.
+- **Sitemaps XML Protocol (https://www.sitemaps.org/index.html):** Generate modular `/sitemap.xml` index (`<sitemapindex>`) referencing child sitemaps (`main-sitemap.xml`, `services-sitemap.xml`, `case-studies-sitemap.xml`, `articles-sitemap.xml`), each generating `<urlset>` with `<loc>`, W3C Datetime `<lastmod>` (`YYYY-MM-DD`), `<changefreq>`, `<priority>`, and localized `xhtml:link` alternates (`id`, `en`, `x-default`) for all public routes.
 - **Performance Mechanisms (R-40):**
   - Every `<img>`, `<video>`, and `<iframe>` must carry explicit `width` and `height` (or CSS `aspect-ratio`) to prevent layout shifts.
   - The above-the-fold hero image must be a standard `<img>` with `fetchpriority="high"` and `loading="eager"` (never lazy-loaded).
@@ -186,7 +187,8 @@ Use a dedicated `App\Services\SchemaGraphBuilder` service to push structured `@g
 - **AMP Route:** `/{locale}/artikel/{slug}/amp` and `/{locale}/articles/{slug}/amp` -> `pages/articles/amp.blade.php` extending `layouts/amp.blade.php` (`<!doctype html><html ⚡ lang="{{ app()->getLocale() }}">`).
 - **AMP Sanitizer Service:** `App\Services\AmpSanitizer` converts standard HTML article bodies into valid `<amp-img layout="responsive" width="..." height="...">` markup with inline `<style amp-custom>` kept strictly under 75KB.
 
-### Step 4.5: Accessibility (A11y) & Human Affordances Checklist (WCAG 2.2 AA)
+### Step 4.5: Accessibility (A11y) & Human Affordances Checklist (WCAG 2.2 AA & https://www.accessibilitychecker.org/)
+> Reference standard: verify every public page against local rules (`.agents/skills/antislop-human/SKILL.md` and `contrast-check.py`) and worldwide compliance criteria at https://www.accessibilitychecker.org/ (WCAG 2.1 / 2.2 AA, ADA, Section 508, and European Accessibility Act / EN 301 549).
 - [ ] `<html lang="{{ app()->getLocale() }}">`, unique `<title>`, and semantic landmarks (`<header>`, `<nav aria-label="...">`, `<main id="main-content">`, `<footer>`) on every page (R-39).
 - [ ] Single `<h1>` per page and strictly sequential heading hierarchy (`h1` -> `h2` -> `h3`) (R-39).
 - [ ] Viewport meta never includes `user-scalable=no` or `maximum-scale=1`, and text scales cleanly to 200% zoom without horizontal clipping (R-39).
